@@ -1,0 +1,5 @@
+1. Sim, pois era esperado que o sinal de clock aumentasse os valores dos bits dos SW e das KEY a cada ciclo.
+2. Sim, pois a saída LED é gerada baseada no valor SW e a saída HEX é igual a proposta no código hexcode, a partir da entrada keys.
+3. Poderiamos instanciar o modelo golden como uma entidade e fazer um test bench com ele, comparando-o com as nossas saídas.
+4. Incluir uma variável extra que verifica quais valores devem ser gerados para cada situação e, com isso, compara-los.
+5. Representar, na interface da simulação, os leds, o display, os botoes e os switches sendo alterados.

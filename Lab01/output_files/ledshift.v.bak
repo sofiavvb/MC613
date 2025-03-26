@@ -1,0 +1,33 @@
+module ledshift (
+    output reg [9:0] LEDR = 10'b0000100000,  
+    input [3:0] KEY,                        
+    input CLOCK_50                         
+);
+
+    reg [9:0] registrador = 10'b0000100000;  // Registrador para armazenar o estado dos LEDs
+	 reg [2:0] detector_dir, detector_esq = 3'b000;
+	 wire fiozinho, fiozao;
+	 
+	 assign fiozinho = ~detector_dir[2] & detector_dir[1];
+	 assign fiozao = ~detector_esq[2] & detector_esq[1];
+
+
+	always @(posedge CLOCK_50) begin
+			detector_dir <= {detector_dir[1:0], ~KEY[0]}
+			detector_esq <= {detector_esq[1:0], ~KEY[3]}
+	end
+	 
+	 
+    always @(posedge CLOCK_50) begin
+        if (registrador[0] == 0'b0 && fiozinho) begin
+            registrador <= registrador >> 1;
+        end
+
+        if (registrador[9] == 0'b0 && fiozao) begin
+            registrador <= registrador << 1;
+        end
+
+        LEDR <= registrador;  // Atualiza os LEDs de acordo com o valor do registrador
+    end
+
+endmodule

@@ -1,0 +1,18 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -vlog01compat -work work +incdir+/home/c-ec2023/ra252974/Documents/MC613/Lab01 {/home/c-ec2023/ra252974/Documents/MC613/Lab01/ledshift.v}
+
+vlog -vlog01compat -work work +incdir+/home/c-ec2023/ra252974/Documents/MC613/Lab01 {/home/c-ec2023/ra252974/Documents/MC613/Lab01/ledshift_tb.v}
+vlog -vlog01compat -work work +incdir+/home/c-ec2023/ra252974/Documents/MC613/Lab01 {/home/c-ec2023/ra252974/Documents/MC613/Lab01/ledshift.v}
+
+vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  ledshift_tb
+
+add wave *
+view structure
+view signals
+run 1000 ns

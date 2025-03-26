@@ -1,0 +1,118 @@
+$date
+	Mon Mar 24 21:06:51 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module ledshift_tb $end
+$var wire 10 ! LEDR [9:0] $end
+$var reg 1 " CLOCK_50 $end
+$var reg 4 # KEY [3:0] $end
+$scope module uut $end
+$var wire 1 " CLOCK_50 $end
+$var wire 4 $ KEY [3:0] $end
+$var wire 1 % fiozao $end
+$var wire 1 & fiozinho $end
+$var reg 10 ' LEDR [9:0] $end
+$var reg 3 ( detector_dir [2:0] $end
+$var reg 3 ) detector_esq [2:0] $end
+$var reg 10 * registrador [9:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b100000 *
+b0 )
+bx (
+b100000 '
+x&
+0%
+b1111 $
+b1111 #
+0"
+b100000 !
+$end
+#10000
+bx0 (
+1"
+#20000
+0"
+#30000
+0&
+bx00 (
+1"
+#40000
+0"
+#50000
+b1 (
+1"
+b1110 #
+b1110 $
+#60000
+0"
+#70000
+1&
+b10 (
+1"
+b1111 #
+b1111 $
+#80000
+0"
+#90000
+0&
+b100 (
+b10000 *
+1"
+#100000
+0"
+#110000
+b10000 !
+b10000 '
+b0 (
+1"
+#120000
+0"
+b111 #
+b111 $
+#130000
+b1 )
+1"
+#140000
+0"
+b1111 #
+b1111 $
+#150000
+1%
+b10 )
+1"
+#160000
+0"
+#170000
+0%
+b100 )
+b100000 *
+1"
+#180000
+0"
+#190000
+b100000 !
+b100000 '
+b0 )
+1"
+#200000
+0"
+#210000
+1"
+#220000
+0"
+#230000
+1"
+#240000
+0"

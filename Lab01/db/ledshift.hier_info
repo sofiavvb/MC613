@@ -1,0 +1,33 @@
+|ledshift
+LEDR[0] <= registrador[0].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[1] <= registrador[1].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[2] <= registrador[2].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[3] <= registrador[3].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[4] <= registrador[4].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[5] <= registrador[5].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[6] <= registrador[6].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[7] <= registrador[7].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[8] <= registrador[8].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[9] <= registrador[9].DB_MAX_OUTPUT_PORT_TYPE
+KEY[0] => detector_dir[0].DATAIN
+KEY[1] => ~NO_FANOUT~
+KEY[2] => ~NO_FANOUT~
+KEY[3] => detector_esq[0].DATAIN
+CLOCK_50 => registrador[0].CLK
+CLOCK_50 => registrador[1].CLK
+CLOCK_50 => registrador[2].CLK
+CLOCK_50 => registrador[3].CLK
+CLOCK_50 => registrador[4].CLK
+CLOCK_50 => registrador[5].CLK
+CLOCK_50 => registrador[6].CLK
+CLOCK_50 => registrador[7].CLK
+CLOCK_50 => registrador[8].CLK
+CLOCK_50 => registrador[9].CLK
+CLOCK_50 => detector_esq[0].CLK
+CLOCK_50 => detector_esq[1].CLK
+CLOCK_50 => detector_esq[2].CLK
+CLOCK_50 => detector_dir[0].CLK
+CLOCK_50 => detector_dir[1].CLK
+CLOCK_50 => detector_dir[2].CLK
+
+
