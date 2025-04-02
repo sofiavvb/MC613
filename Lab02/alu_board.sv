@@ -9,15 +9,15 @@ module alu_board (
     output logic [9:0] LEDR    // leds
 );
 
-    logic [3:0] A, B, R;  // A B e R de 4 bits
+    logic [31:0] A, B, R;  // A B e R de 4 bits
     logic [1:0] ALUCtl; // sinal ALUCtl 2 bits
     logic negA, negB, negR; // negativos
     logic Zero, Overflow, Cout; // flags
-    logic[3:0] sinalb; // reg extra para resolver overflow
+    logic[31:0] sinalb; // reg extra para resolver overflow
     
     assign ALUCtl = SW[9:8];
-    assign A = SW[7:4];
-    assign B = SW[3:0];
+    assign A = (SW[7]) ? {28'b1, SW[7:4]} : SW[7:4]; 
+    assign B = (SW[3]) ? {28'b1, SW[3:0]} : SW[3:0]; 
 
     two_comp_to_7seg inst_A (
         .bin(A),
@@ -54,8 +54,8 @@ module alu_board (
             {Cout, R} = A - B; // subtração com Cout
         end    
     end
-    assign Zero = (R == 4'b0);
-    assign Overflow = (A[3] & B[3] & ~R[3]) | (~A[3] & ~B[3] & R[3]);
+    assign Zero = (R == 32'b0);
+    assign Overflow = (A[31] & B[31] & ~R[31]) | (~A[31] & sinalb[31] & R[31]);
     assign sinalb = (ALUCtl[1]) ? ~B : B;
 
     assign LEDR[0] = Zero;
