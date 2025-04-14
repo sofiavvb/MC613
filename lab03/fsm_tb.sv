@@ -29,6 +29,10 @@ module fsm_tb;
     end
 
     initial begin //testes
+
+        $dumpfile("fsm_tb.vcd");
+        $dumpvars(0, fsm_tb);
+
         rst = 1; //inicializa
         r50 = 0;
         r100 = 0;
@@ -59,9 +63,14 @@ module fsm_tb;
         r100 = 0;
         #10;
 
-        r50 = 1; //insere 0,5
+        r100 = 1; //insere 0,5
         #10;
-        r50 = 0;
+        r100 = 0;
+        #10;
+
+        r200 = 1; //insere 0,5
+        #10;
+        r200 = 0;
         #10;
 
         $finish; //final

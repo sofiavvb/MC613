@@ -1,0 +1,181 @@
+$date
+	Mon Apr 14 16:31:07 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module fsm_tb $end
+$var wire 1 ! t50 $end
+$var wire 1 " t200 $end
+$var wire 1 # t100 $end
+$var wire 4 $ state [3:0] $end
+$var wire 1 % cafe $end
+$var reg 1 & clk $end
+$var reg 1 ' r100 $end
+$var reg 1 ( r200 $end
+$var reg 1 ) r50 $end
+$var reg 1 * rst $end
+$scope module dut $end
+$var wire 1 & clk $end
+$var wire 1 ' r100 $end
+$var wire 1 ( r200 $end
+$var wire 1 ) r50 $end
+$var wire 1 * rst $end
+$var wire 4 + state [3:0] $end
+$var reg 4 , atual_state [3:0] $end
+$var reg 1 % cafe $end
+$var reg 4 - proximo_state [3:0] $end
+$var reg 1 # t100 $end
+$var reg 1 " t200 $end
+$var reg 1 ! t50 $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 -
+b0 ,
+b0 +
+1*
+0)
+0(
+0'
+0&
+0%
+b0 $
+0#
+0"
+0!
+$end
+#5
+1&
+#10
+0&
+0*
+#15
+1&
+#20
+b1 -
+0&
+1)
+#25
+b10 -
+b1 $
+b1 +
+b1 ,
+1&
+#30
+b1 -
+0&
+0)
+#35
+1&
+#40
+b11 -
+0&
+1'
+#45
+b101 -
+b11 $
+b11 +
+b11 ,
+1&
+#50
+b11 -
+0&
+0'
+#55
+1&
+#60
+b111 -
+0&
+1(
+#65
+b0 -
+1#
+1%
+b111 $
+b111 +
+b111 ,
+1&
+#70
+1#
+1%
+b0 -
+0&
+0(
+#75
+0#
+0%
+b0 $
+b0 +
+b0 ,
+1&
+#80
+b10 -
+0&
+1'
+#85
+b100 -
+b10 $
+b10 +
+b10 ,
+1&
+#90
+b10 -
+0&
+0'
+#95
+1&
+#100
+b100 -
+0&
+1'
+#105
+b110 -
+b100 $
+b100 +
+b100 ,
+1&
+#110
+b100 -
+0&
+0'
+#115
+1&
+#120
+b1000 -
+0&
+1(
+#125
+b0 -
+1#
+1!
+1%
+b1000 $
+b1000 +
+b1000 ,
+1&
+#130
+1#
+1!
+1%
+b0 -
+0&
+0(
+#135
+0#
+0!
+0%
+b0 $
+b0 +
+b0 ,
+1&
+#140
+0&
