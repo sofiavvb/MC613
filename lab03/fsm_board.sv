@@ -7,25 +7,36 @@ module fsm_board (
     output logic [6:0] HEX0,    // valor inserido 3 
     output logic [9:0] LEDR    // leds
 );
-
-    logic [2:0] detector;
-    logic fio;
+    //sinais de controle
+    logic r50, r100, r200, reset;
+    logic cafe, t50, t100, t200;
+    logic [3:0] state;
+    
+    // detector de borda
+    logic [2:0] det_key0, det_key1, det_key2;
+    logic pulso_key0, pulso_key1, pulso_key2;
+    
     initial begin
-        detector = 3'b0;
+        det_key0 = 3'b000;
+        det_key1 = 3'b000;
+        det_key2 = 3'b000;
     end
-    assign detector = ~detector[2] & detector[1];
+
+    assign pulso_key0 = ~det_key0[2] & det_key0[1];
+    assign pulso_key1 = ~det_key1[2] & det_key1[1];
+    assign pulso_key2 = ~det_key2[2] & det_key2[1];
+
+	always @(posedge CLOCK_50) begin
+			det_key0 <= {det_key0[1:0], ~KEY[0]};
+			det_key1 <= {det_key1[1:0], ~KEY[1]};
+			det_key2 <= {det_key2[1:0], ~KEY[3]};
+	end
 
     //inputs
-    assign r50 = KEY[0];
-    assign r100 = KEY[1]; 
-    assign r200 = KEY[2];
+    assign r50  = pulso_key0;
+    assign r100 = pulso_key1;
+    assign r200 = pulso_key2;
     assign reset = SW[0];
-    //outputs
-    assign cafe = LEDR[0];
-    assign t50 = LEDR[2];
-    assign t100 = LEDR[3];
-    assign t200 = LEDR[4];
-    assign state = LEDR[9:6];
 
     //definindo os estados
     typedef enum logic [3:0] {
@@ -43,14 +54,22 @@ module fsm_board (
     //definindo os estados como tipo estado
     state_t proximo_state, atual_state; 
 
-
     //transição de estado
     always_ff @(posedge CLOCK_50 or posedge reset) begin
-        if (CLOCK_50)
+        if (reset)
             atual_state <= S0; //reset para o estado inicial
         else
             atual_state <= proximo_state; //avança para o próximo estado
     end
+
+
+    //transição de estado
+    //always_ff @(posedge CLOCK_50 or posedge reset) begin
+    //    if (CLOCK_50)
+    //        atual_state <= S0; //reset para o estado inicial
+    //    else
+    //        atual_state <= proximo_state; //avança para o próximo estado
+    //end
 
 
     //lógica de transição de estados
@@ -63,6 +82,9 @@ module fsm_board (
 
         case (atual_state)
             S0: begin
+                HEX0 = ~7'b0111111; // 0
+                HEX1 = ~7'b0111111; // 0
+                HEX2 = ~7'b0111111; // 0
                 if (r50)
                     proximo_state = S50;
                 else if (r100)
@@ -71,6 +93,9 @@ module fsm_board (
                     proximo_state = S200;
             end
             S50: begin
+                HEX0 = ~7'b0111111; // 0
+                HEX1 = ~7'b1101101; // 5
+                HEX2 = ~7'b0111111; // 0
                 if (r50)
                     proximo_state = S100;
                 else if (r100)
@@ -79,6 +104,9 @@ module fsm_board (
                     proximo_state = S250;
             end
             S100: begin
+                HEX0 = ~7'b0111111; // 0
+                HEX1 = ~7'b0111111; // 0
+                HEX2 = ~7'b0000110; // 1
                 if (r50)
                     proximo_state = S150;
                 else if (r100)
@@ -87,6 +115,9 @@ module fsm_board (
                     proximo_state = S300;
             end
             S150: begin
+                HEX0 = ~7'b0111111; // 0
+                HEX1 = ~7'b1101101; // 5
+                HEX2 = ~7'b0000110; // 1
                 if (r50)
                     proximo_state = S200;
                 else if (r100)
@@ -95,6 +126,9 @@ module fsm_board (
                     proximo_state = S350;
             end
             S200: begin
+                HEX0 = ~7'b0111111; // 0
+                HEX1 = ~7'b0111111; // 0
+                HEX2 = ~7'b1011011; // 2
                 if (r50)
                     proximo_state = S250;
                 else if (r100)
@@ -103,20 +137,32 @@ module fsm_board (
                     proximo_state = S400;
             end
             S250: begin
+                HEX0 = ~7'b0111111; // 0
+                HEX1 = ~7'b1101101; // 5
+                HEX2 = ~7'b1011011; // 2
                 cafe = 1;
                 proximo_state = S0;
             end
             S300: begin
+                HEX0 = ~7'b0111111; // 0
+                HEX1 = ~7'b0111111; // 0
+                HEX2 = ~7'b1001111; // 3
                 cafe = 1;
                 t50 = 1;
                 proximo_state = S0;
             end
             S350: begin
+                HEX0 = ~7'b0111111; // 0
+                HEX1 = ~7'b1101101; // 5
+                HEX2 = ~7'b1001111; // 3
                 cafe = 1;
                 t100 = 1;
                 proximo_state = S0;
             end
             S400: begin
+                HEX0 = ~7'b0111111; // 0
+                HEX1 = ~7'b0111111; // 0
+                HEX2 = ~7'b1100110; // 4
                 cafe = 1;
                 t50 = 1;
                 t100 = 1;
@@ -126,5 +172,13 @@ module fsm_board (
     end
 
     assign state = atual_state; //estado atual de saída
+
+    //outputs
+    assign LEDR[0] = cafe;
+    assign LEDR[2] = t50;
+    assign LEDR[3] = t100;
+    assign LEDR[4] = t200;
+    assign LEDR[9:6] = state;
+
 
 endmodule

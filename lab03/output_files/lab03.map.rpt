@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab03
-Mon Apr 14 17:55:44 2025
+Mon Apr 14 20:46:28 2025
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -44,7 +44,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Apr 14 17:55:44 2025       ;
+; Analysis & Synthesis Status     ; Successful - Mon Apr 14 20:46:28 2025       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; lab03                                       ;
 ; Top-level Entity Name           ; fsm                                         ;
@@ -298,7 +298,7 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Mon Apr 14 17:55:35 2025
+    Info: Processing started: Mon Apr 14 20:46:20 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab03 -c lab03
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -319,8 +319,8 @@ Info (21057): Implemented 28 device resources after synthesis - the final resour
     Info (21061): Implemented 15 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
     Info: Peak virtual memory: 1254 megabytes
-    Info: Processing ended: Mon Apr 14 17:55:44 2025
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:18
+    Info: Processing ended: Mon Apr 14 20:46:28 2025
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:17
 
 
