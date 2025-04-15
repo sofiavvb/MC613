@@ -8,11 +8,11 @@ module ledshift (
 	 reg [2:0] detector_dir, detector_esq;
 	 wire fiozinho, fiozao;
 	 
-	 initial begin
+	initial begin
 		registrador = 10'b0000100000;
 		detector_esq = 3'b000;
 		detector_dir = 3'b000;
-	 end
+	end
 	 
 	 assign fiozinho = ~detector_dir[2] & detector_dir[1];
 	 assign fiozao = ~detector_esq[2] & detector_esq[1];

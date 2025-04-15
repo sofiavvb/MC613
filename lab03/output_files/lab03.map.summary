@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Mon Apr 14 20:46:28 2025
+Analysis & Synthesis Status : Successful - Tue Apr 15 20:40:10 2025
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : lab03
-Top-level Entity Name : fsm
+Top-level Entity Name : fsm_board
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
 Total registers : 9
-Total pins : 13
+Total pins : 45
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0

@@ -1,5 +1,5 @@
 
-State Machine - |fsm|atual_state
+State Machine - |fsm_board|atual_state
 Name atual_state.S350 atual_state.S300 atual_state.S250 atual_state.S200 atual_state.S150 atual_state.S100 atual_state.S50 atual_state.S0 atual_state.S400 
 atual_state.S0 0 0 0 0 0 0 0 0 0 
 atual_state.S50 0 0 0 0 0 0 1 1 0 

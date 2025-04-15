@@ -1,7 +1,7 @@
 module fsm_board (
     input logic [3:0] KEY,
     input logic [9:0] SW,      // switches
-    input logic CLOCK_50,
+    // input logic CLOCK_50,
     output logic [6:0] HEX2,    // valor inserido 1
     output logic [6:0] HEX1,    // valor inserido 2
     output logic [6:0] HEX0,    // valor inserido 3 
@@ -11,31 +11,11 @@ module fsm_board (
     logic r50, r100, r200, reset;
     logic cafe, t50, t100, t200;
     logic [3:0] state;
-    
-    // detector de borda
-    logic [2:0] det_key0, det_key1, det_key2;
-    logic pulso_key0, pulso_key1, pulso_key2;
-    
-    initial begin
-        det_key0 = 3'b000;
-        det_key1 = 3'b000;
-        det_key2 = 3'b000;
-    end
-
-    assign pulso_key0 = ~det_key0[2] & det_key0[1];
-    assign pulso_key1 = ~det_key1[2] & det_key1[1];
-    assign pulso_key2 = ~det_key2[2] & det_key2[1];
-
-	always @(posedge CLOCK_50) begin
-			det_key0 <= {det_key0[1:0], ~KEY[0]};
-			det_key1 <= {det_key1[1:0], ~KEY[1]};
-			det_key2 <= {det_key2[1:0], ~KEY[3]};
-	end
 
     //inputs
-    assign r50  = pulso_key0;
-    assign r100 = pulso_key1;
-    assign r200 = pulso_key2;
+    assign r50  = ~KEY[3];
+    assign r100 = ~KEY[2];
+    assign r200 = ~KEY[1];
     assign reset = SW[0];
 
     //definindo os estados
@@ -55,7 +35,7 @@ module fsm_board (
     state_t proximo_state, atual_state; 
 
     //transição de estado
-    always_ff @(posedge CLOCK_50 or posedge reset) begin
+    always_ff @(posedge ~KEY[0] or posedge reset) begin
         if (reset)
             atual_state <= S0; //reset para o estado inicial
         else
@@ -63,14 +43,12 @@ module fsm_board (
     end
 
 
-    //transição de estado
-    //always_ff @(posedge CLOCK_50 or posedge reset) begin
-    //    if (CLOCK_50)
-    //        atual_state <= S0; //reset para o estado inicial
-    //    else
-    //        atual_state <= proximo_state; //avança para o próximo estado
-    //end
-
+    initial begin
+        LEDR = 10'b0000000000;
+        HEX0 = 7'b1000000;
+        HEX1 = 7'b1000000;
+        HEX2 = 7'b1000000;
+    end
 
     //lógica de transição de estados
     always_comb begin
