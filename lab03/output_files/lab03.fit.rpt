@@ -1,5 +1,5 @@
 Fitter report for lab03
-Wed Apr 16 15:36:10 2025
+Wed Apr 16 18:40:30 2025
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -63,7 +63,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Successful - Wed Apr 16 15:36:10 2025       ;
+; Fitter Status                   ; Successful - Wed Apr 16 18:40:30 2025       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; lab03                                       ;
 ; Top-level Entity Name           ; fsm_board                                   ;
@@ -158,8 +158,8 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.2%      ;
-;     Processor 3            ;   0.2%      ;
+;     Processor 2            ;   0.3%      ;
+;     Processor 3            ;   0.3%      ;
 ;     Processors 4-12        ;   0.1%      ;
 +----------------------------+-------------+
 
@@ -2328,7 +2328,7 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.15 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.16 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -2337,10 +2337,10 @@ Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:02
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Info (144001): Generated suppressed messages file /home/c-ec2022/ra248220/Documents/MC613 - git/MC613/lab03/output_files/lab03.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 221 warnings
-    Info: Peak virtual memory: 3141 megabytes
-    Info: Processing ended: Wed Apr 16 15:36:11 2025
+    Info: Peak virtual memory: 3138 megabytes
+    Info: Processing ended: Wed Apr 16 18:40:30 2025
     Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:50
+    Info: Total CPU time (on all processors): 00:00:52
 
 
 +----------------------------+

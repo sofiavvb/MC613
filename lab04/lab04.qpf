@@ -18,13 +18,15 @@
 #
 # Quartus Prime
 # Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-# Date created = 17:15:10  April 16, 2025
+# Date created = 18:44:04  April 16, 2025
 #
 # -------------------------------------------------------------------------- #
 
 QUARTUS_VERSION = "17.1"
-DATE = "17:15:10  April 16, 2025"
+DATE = "18:44:04  April 16, 2025"
 
 # Revisions
 
+PROJECT_REVISION = "lab04"
+PROJECT_REVISION = "multiplier_board"
 PROJECT_REVISION = "multiplier_tb"
