@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab03
-Tue Apr 15 20:40:10 2025
+Wed Apr 16 15:35:53 2025
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -44,7 +44,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Apr 15 20:40:10 2025       ;
+; Analysis & Synthesis Status     ; Successful - Wed Apr 16 15:35:53 2025       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; lab03                                       ;
 ; Top-level Entity Name           ; fsm_board                                   ;
@@ -157,52 +157,53 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 6           ;
-; Maximum allowed            ; 6           ;
+; Number detected on machine ; 20          ;
+; Maximum allowed            ; 12          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 6           ;
+; Maximum used               ; 12          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-6         ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-12        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                         ;
-+----------------------------------+-----------------+------------------------------------+------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                               ; Library ;
-+----------------------------------+-----------------+------------------------------------+------------------------------------------------------------+---------+
-; fsm_board.sv                     ; yes             ; Auto-Found SystemVerilog HDL File  ; /home/c-ec2023/ra252974/Documents/MC613/lab03/fsm_board.sv ;         ;
-+----------------------------------+-----------------+------------------------------------+------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                               ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                           ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------+---------+
+; fsm_board.sv                     ; yes             ; User SystemVerilog HDL File  ; /home/c-ec2022/ra248220/Documents/MC613 - git/MC613/lab03/fsm_board.sv ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                ;
-+---------------------------------------------+--------------+
-; Resource                                    ; Usage        ;
-+---------------------------------------------+--------------+
-; Estimate of Logic utilization (ALMs needed) ; 12           ;
-;                                             ;              ;
-; Combinational ALUT usage for logic          ; 20           ;
-;     -- 7 input functions                    ; 1            ;
-;     -- 6 input functions                    ; 3            ;
-;     -- 5 input functions                    ; 3            ;
-;     -- 4 input functions                    ; 8            ;
-;     -- <=3 input functions                  ; 5            ;
-;                                             ;              ;
-; Dedicated logic registers                   ; 9            ;
-;                                             ;              ;
-; I/O pins                                    ; 45           ;
-;                                             ;              ;
-; Total DSP Blocks                            ; 0            ;
-;                                             ;              ;
-; Maximum fan-out node                        ; KEY[1]~input ;
-; Maximum fan-out                             ; 9            ;
-; Total fan-out                               ; 172          ;
-; Average fan-out                             ; 1.45         ;
-+---------------------------------------------+--------------+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimate of Logic utilization (ALMs needed) ; 14          ;
+;                                             ;             ;
+; Combinational ALUT usage for logic          ; 22          ;
+;     -- 7 input functions                    ; 1           ;
+;     -- 6 input functions                    ; 4           ;
+;     -- 5 input functions                    ; 6           ;
+;     -- 4 input functions                    ; 7           ;
+;     -- <=3 input functions                  ; 4           ;
+;                                             ;             ;
+; Dedicated logic registers                   ; 9           ;
+;                                             ;             ;
+; I/O pins                                    ; 45          ;
+;                                             ;             ;
+; Total DSP Blocks                            ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; SW[0]~input ;
+; Maximum fan-out                             ; 18          ;
+; Total fan-out                               ; 189         ;
+; Average fan-out                             ; 1.56        ;
++---------------------------------------------+-------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -210,7 +211,7 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; |fsm_board                 ; 20 (20)             ; 9 (9)                     ; 0                 ; 0          ; 45   ; 0            ; |fsm_board          ; fsm_board   ; work         ;
+; |fsm_board                 ; 22 (22)             ; 9 (9)                     ; 0                 ; 0          ; 45   ; 0            ; |fsm_board          ; fsm_board   ; work         ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -272,16 +273,15 @@ Encoding Type:  One-Hot
 ;         7 data inputs ; 1                           ;
 ;     normal            ; 25                          ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 4                           ;
-;         2 data inputs ; 3                           ;
-;         3 data inputs ; 2                           ;
-;         4 data inputs ; 8                           ;
-;         5 data inputs ; 3                           ;
-;         6 data inputs ; 3                           ;
+;         1 data inputs ; 2                           ;
+;         3 data inputs ; 4                           ;
+;         4 data inputs ; 7                           ;
+;         5 data inputs ; 6                           ;
+;         6 data inputs ; 4                           ;
 ; boundary_port         ; 45                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.35                        ;
+; Average LUT depth     ; 1.27                        ;
 +-----------------------+-----------------------------+
 
 
@@ -300,56 +300,58 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Tue Apr 15 20:40:02 2025
+    Info: Processing started: Wed Apr 16 15:35:43 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab03 -c lab03
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Warning (10261): Verilog HDL Event Control warning at fsm_board.sv(37): Event Control contains a complex event expression File: /home/c-ec2022/ra248220/Documents/MC613 - git/MC613/lab03/fsm_board.sv Line: 37
+Info (12021): Found 1 design units, including 1 entities, in source file fsm_board.sv
+    Info (12023): Found entity 1: fsm_board File: /home/c-ec2022/ra248220/Documents/MC613 - git/MC613/lab03/fsm_board.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file fsm_tb.sv
-    Info (12023): Found entity 1: fsm_tb File: /home/c-ec2023/ra252974/Documents/MC613/lab03/fsm_tb.sv Line: 1
+    Info (12023): Found entity 1: fsm_tb File: /home/c-ec2022/ra248220/Documents/MC613 - git/MC613/lab03/fsm_tb.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file fsm.sv
-    Info (12023): Found entity 1: fsm File: /home/c-ec2023/ra252974/Documents/MC613/lab03/fsm.sv Line: 1
-Warning (10261): Verilog HDL Event Control warning at fsm_board.sv(61): Event Control contains a complex event expression File: /home/c-ec2023/ra252974/Documents/MC613/lab03/fsm_board.sv Line: 61
-Warning (12125): Using design file fsm_board.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: fsm_board File: /home/c-ec2023/ra252974/Documents/MC613/lab03/fsm_board.sv Line: 1
+    Info (12023): Found entity 1: fsm File: /home/c-ec2022/ra248220/Documents/MC613 - git/MC613/lab03/fsm.sv Line: 1
 Info (12127): Elaborating entity "fsm_board" for the top level hierarchy
+Warning (10034): Output port "LEDR[5]" at fsm_board.sv(9) has no driver File: /home/c-ec2022/ra248220/Documents/MC613 - git/MC613/lab03/fsm_board.sv Line: 9
+Warning (10034): Output port "LEDR[1]" at fsm_board.sv(9) has no driver File: /home/c-ec2022/ra248220/Documents/MC613 - git/MC613/lab03/fsm_board.sv Line: 9
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX2[1]" is stuck at GND File: /home/c-ec2023/ra252974/Documents/MC613/lab03/fsm_board.sv Line: 5
-    Warning (13410): Pin "HEX1[0]" is stuck at GND File: /home/c-ec2023/ra252974/Documents/MC613/lab03/fsm_board.sv Line: 6
-    Warning (13410): Pin "HEX1[2]" is stuck at GND File: /home/c-ec2023/ra252974/Documents/MC613/lab03/fsm_board.sv Line: 6
-    Warning (13410): Pin "HEX1[3]" is stuck at GND File: /home/c-ec2023/ra252974/Documents/MC613/lab03/fsm_board.sv Line: 6
-    Warning (13410): Pin "HEX1[5]" is stuck at GND File: /home/c-ec2023/ra252974/Documents/MC613/lab03/fsm_board.sv Line: 6
-    Warning (13410): Pin "HEX0[0]" is stuck at GND File: /home/c-ec2023/ra252974/Documents/MC613/lab03/fsm_board.sv Line: 7
-    Warning (13410): Pin "HEX0[1]" is stuck at GND File: /home/c-ec2023/ra252974/Documents/MC613/lab03/fsm_board.sv Line: 7
-    Warning (13410): Pin "HEX0[2]" is stuck at GND File: /home/c-ec2023/ra252974/Documents/MC613/lab03/fsm_board.sv Line: 7
-    Warning (13410): Pin "HEX0[3]" is stuck at GND File: /home/c-ec2023/ra252974/Documents/MC613/lab03/fsm_board.sv Line: 7
-    Warning (13410): Pin "HEX0[4]" is stuck at GND File: /home/c-ec2023/ra252974/Documents/MC613/lab03/fsm_board.sv Line: 7
-    Warning (13410): Pin "HEX0[5]" is stuck at GND File: /home/c-ec2023/ra252974/Documents/MC613/lab03/fsm_board.sv Line: 7
-    Warning (13410): Pin "HEX0[6]" is stuck at VCC File: /home/c-ec2023/ra252974/Documents/MC613/lab03/fsm_board.sv Line: 7
-    Warning (13410): Pin "LEDR[1]" is stuck at GND File: /home/c-ec2023/ra252974/Documents/MC613/lab03/fsm_board.sv Line: 9
-    Warning (13410): Pin "LEDR[4]" is stuck at GND File: /home/c-ec2023/ra252974/Documents/MC613/lab03/fsm_board.sv Line: 9
-    Warning (13410): Pin "LEDR[5]" is stuck at GND File: /home/c-ec2023/ra252974/Documents/MC613/lab03/fsm_board.sv Line: 9
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: /home/c-ec2022/ra248220/Documents/MC613 - git/MC613/lab03/fsm_board.sv Line: 5
+    Warning (13410): Pin "HEX1[0]" is stuck at GND File: /home/c-ec2022/ra248220/Documents/MC613 - git/MC613/lab03/fsm_board.sv Line: 6
+    Warning (13410): Pin "HEX1[2]" is stuck at GND File: /home/c-ec2022/ra248220/Documents/MC613 - git/MC613/lab03/fsm_board.sv Line: 6
+    Warning (13410): Pin "HEX1[3]" is stuck at GND File: /home/c-ec2022/ra248220/Documents/MC613 - git/MC613/lab03/fsm_board.sv Line: 6
+    Warning (13410): Pin "HEX1[5]" is stuck at GND File: /home/c-ec2022/ra248220/Documents/MC613 - git/MC613/lab03/fsm_board.sv Line: 6
+    Warning (13410): Pin "HEX0[0]" is stuck at GND File: /home/c-ec2022/ra248220/Documents/MC613 - git/MC613/lab03/fsm_board.sv Line: 7
+    Warning (13410): Pin "HEX0[1]" is stuck at GND File: /home/c-ec2022/ra248220/Documents/MC613 - git/MC613/lab03/fsm_board.sv Line: 7
+    Warning (13410): Pin "HEX0[2]" is stuck at GND File: /home/c-ec2022/ra248220/Documents/MC613 - git/MC613/lab03/fsm_board.sv Line: 7
+    Warning (13410): Pin "HEX0[3]" is stuck at GND File: /home/c-ec2022/ra248220/Documents/MC613 - git/MC613/lab03/fsm_board.sv Line: 7
+    Warning (13410): Pin "HEX0[4]" is stuck at GND File: /home/c-ec2022/ra248220/Documents/MC613 - git/MC613/lab03/fsm_board.sv Line: 7
+    Warning (13410): Pin "HEX0[5]" is stuck at GND File: /home/c-ec2022/ra248220/Documents/MC613 - git/MC613/lab03/fsm_board.sv Line: 7
+    Warning (13410): Pin "HEX0[6]" is stuck at VCC File: /home/c-ec2022/ra248220/Documents/MC613 - git/MC613/lab03/fsm_board.sv Line: 7
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: /home/c-ec2022/ra248220/Documents/MC613 - git/MC613/lab03/fsm_board.sv Line: 9
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: /home/c-ec2022/ra248220/Documents/MC613 - git/MC613/lab03/fsm_board.sv Line: 9
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: /home/c-ec2022/ra248220/Documents/MC613 - git/MC613/lab03/fsm_board.sv Line: 9
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 9 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "SW[1]" File: /home/c-ec2023/ra252974/Documents/MC613/lab03/fsm_board.sv Line: 3
-    Warning (15610): No output dependent on input pin "SW[2]" File: /home/c-ec2023/ra252974/Documents/MC613/lab03/fsm_board.sv Line: 3
-    Warning (15610): No output dependent on input pin "SW[3]" File: /home/c-ec2023/ra252974/Documents/MC613/lab03/fsm_board.sv Line: 3
-    Warning (15610): No output dependent on input pin "SW[4]" File: /home/c-ec2023/ra252974/Documents/MC613/lab03/fsm_board.sv Line: 3
-    Warning (15610): No output dependent on input pin "SW[5]" File: /home/c-ec2023/ra252974/Documents/MC613/lab03/fsm_board.sv Line: 3
-    Warning (15610): No output dependent on input pin "SW[6]" File: /home/c-ec2023/ra252974/Documents/MC613/lab03/fsm_board.sv Line: 3
-    Warning (15610): No output dependent on input pin "SW[7]" File: /home/c-ec2023/ra252974/Documents/MC613/lab03/fsm_board.sv Line: 3
-    Warning (15610): No output dependent on input pin "SW[8]" File: /home/c-ec2023/ra252974/Documents/MC613/lab03/fsm_board.sv Line: 3
-    Warning (15610): No output dependent on input pin "SW[9]" File: /home/c-ec2023/ra252974/Documents/MC613/lab03/fsm_board.sv Line: 3
-Info (21057): Implemented 65 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "SW[1]" File: /home/c-ec2022/ra248220/Documents/MC613 - git/MC613/lab03/fsm_board.sv Line: 3
+    Warning (15610): No output dependent on input pin "SW[2]" File: /home/c-ec2022/ra248220/Documents/MC613 - git/MC613/lab03/fsm_board.sv Line: 3
+    Warning (15610): No output dependent on input pin "SW[3]" File: /home/c-ec2022/ra248220/Documents/MC613 - git/MC613/lab03/fsm_board.sv Line: 3
+    Warning (15610): No output dependent on input pin "SW[4]" File: /home/c-ec2022/ra248220/Documents/MC613 - git/MC613/lab03/fsm_board.sv Line: 3
+    Warning (15610): No output dependent on input pin "SW[5]" File: /home/c-ec2022/ra248220/Documents/MC613 - git/MC613/lab03/fsm_board.sv Line: 3
+    Warning (15610): No output dependent on input pin "SW[6]" File: /home/c-ec2022/ra248220/Documents/MC613 - git/MC613/lab03/fsm_board.sv Line: 3
+    Warning (15610): No output dependent on input pin "SW[7]" File: /home/c-ec2022/ra248220/Documents/MC613 - git/MC613/lab03/fsm_board.sv Line: 3
+    Warning (15610): No output dependent on input pin "SW[8]" File: /home/c-ec2022/ra248220/Documents/MC613 - git/MC613/lab03/fsm_board.sv Line: 3
+    Warning (15610): No output dependent on input pin "SW[9]" File: /home/c-ec2022/ra248220/Documents/MC613 - git/MC613/lab03/fsm_board.sv Line: 3
+Info (21057): Implemented 67 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 14 input pins
     Info (21059): Implemented 31 output pins
-    Info (21061): Implemented 20 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 29 warnings
-    Info: Peak virtual memory: 1255 megabytes
-    Info: Processing ended: Tue Apr 15 20:40:10 2025
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:17
+    Info (21061): Implemented 22 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 30 warnings
+    Info: Peak virtual memory: 1319 megabytes
+    Info: Processing ended: Wed Apr 16 15:35:53 2025
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:29
 
 

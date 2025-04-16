@@ -1,5 +1,5 @@
 Fitter report for lab03
-Tue Apr 15 20:40:37 2025
+Wed Apr 16 15:36:10 2025
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -63,14 +63,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Successful - Tue Apr 15 20:40:37 2025       ;
+; Fitter Status                   ; Successful - Wed Apr 16 15:36:10 2025       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; lab03                                       ;
 ; Top-level Entity Name           ; fsm_board                                   ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 13 / 32,070 ( < 1 % )                       ;
+; Logic utilization (in ALMs)     ; 14 / 32,070 ( < 1 % )                       ;
 ; Total registers                 ; 9                                           ;
 ; Total pins                      ; 45 / 457 ( 10 % )                           ;
 ; Total virtual pins              ; 0                                           ;
@@ -150,18 +150,17 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 6           ;
-; Maximum allowed            ; 6           ;
+; Number detected on machine ; 20          ;
+; Maximum allowed            ; 12          ;
 ;                            ;             ;
 ; Average used               ; 1.01        ;
-; Maximum used               ; 6           ;
+; Maximum used               ; 12          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.3%      ;
-;     Processor 3            ;   0.3%      ;
-;     Processor 4            ;   0.3%      ;
-;     Processors 5-6         ;   0.3%      ;
+;     Processor 2            ;   0.2%      ;
+;     Processor 3            ;   0.2%      ;
+;     Processors 4-12        ;   0.1%      ;
 +----------------------------+-------------+
 
 
@@ -401,8 +400,8 @@ refer to the applicable agreement for further details.
 ; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+--------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 121 ) ; 0.00 % ( 0 / 121 )         ; 0.00 % ( 0 / 121 )       ;
-;     -- Achieved     ; 0.00 % ( 0 / 121 ) ; 0.00 % ( 0 / 121 )         ; 0.00 % ( 0 / 121 )       ;
+;     -- Requested    ; 0.00 % ( 0 / 123 ) ; 0.00 % ( 0 / 123 )         ; 0.00 % ( 0 / 123 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 123 ) ; 0.00 % ( 0 / 123 )         ; 0.00 % ( 0 / 123 )       ;
 ;                     ;                    ;                            ;                          ;
 ; Routing (by net)    ;                    ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -425,7 +424,7 @@ refer to the applicable agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 121 )    ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 123 )    ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 0 )      ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -433,7 +432,7 @@ refer to the applicable agreement for further details.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in /home/c-ec2023/ra252974/Documents/MC613/lab03/output_files/lab03.pin.
+The pin-out file can be found in /home/c-ec2022/ra248220/Documents/MC613 - git/MC613/lab03/output_files/lab03.pin.
 
 
 +------------------------------------------------------------------------------------------+
@@ -441,14 +440,14 @@ The pin-out file can be found in /home/c-ec2023/ra252974/Documents/MC613/lab03/o
 +-------------------------------------------------------------+--------------------+-------+
 ; Resource                                                    ; Usage              ; %     ;
 +-------------------------------------------------------------+--------------------+-------+
-; Logic utilization (ALMs needed / total ALMs on device)      ; 13 / 32,070        ; < 1 % ;
-; ALMs needed [=A-B+C]                                        ; 13                 ;       ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 13 / 32,070        ; < 1 % ;
+; Logic utilization (ALMs needed / total ALMs on device)      ; 14 / 32,070        ; < 1 % ;
+; ALMs needed [=A-B+C]                                        ; 14                 ;       ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 17 / 32,070        ; < 1 % ;
 ;         [a] ALMs used for LUT logic and registers           ; 5                  ;       ;
-;         [b] ALMs used for LUT logic                         ; 8                  ;       ;
+;         [b] ALMs used for LUT logic                         ; 12                 ;       ;
 ;         [c] ALMs used for registers                         ; 0                  ;       ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                  ;       ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 0 / 32,070         ; 0 %   ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 3 / 32,070         ; < 1 % ;
 ;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 0 / 32,070         ; 0 %   ;
 ;         [a] Due to location constrained logic               ; 0                  ;       ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                  ;       ;
@@ -457,16 +456,16 @@ The pin-out file can be found in /home/c-ec2023/ra252974/Documents/MC613/lab03/o
 ;                                                             ;                    ;       ;
 ; Difficulty packing design                                   ; Low                ;       ;
 ;                                                             ;                    ;       ;
-; Total LABs:  partially or completely used                   ; 4 / 3,207          ; < 1 % ;
-;     -- Logic LABs                                           ; 4                  ;       ;
+; Total LABs:  partially or completely used                   ; 3 / 3,207          ; < 1 % ;
+;     -- Logic LABs                                           ; 3                  ;       ;
 ;     -- Memory LABs (up to half of total LABs)               ; 0                  ;       ;
 ;                                                             ;                    ;       ;
-; Combinational ALUT usage for logic                          ; 21                 ;       ;
+; Combinational ALUT usage for logic                          ; 23                 ;       ;
 ;     -- 7 input functions                                    ; 1                  ;       ;
-;     -- 6 input functions                                    ; 3                  ;       ;
-;     -- 5 input functions                                    ; 3                  ;       ;
-;     -- 4 input functions                                    ; 8                  ;       ;
-;     -- <=3 input functions                                  ; 6                  ;       ;
+;     -- 6 input functions                                    ; 4                  ;       ;
+;     -- 5 input functions                                    ; 6                  ;       ;
+;     -- 4 input functions                                    ; 7                  ;       ;
+;     -- <=3 input functions                                  ; 5                  ;       ;
 ; Combinational ALUT usage for route-throughs                 ; 0                  ;       ;
 ;                                                             ;                    ;       ;
 ; Dedicated logic registers                                   ; 9                  ;       ;
@@ -531,11 +530,11 @@ The pin-out file can be found in /home/c-ec2023/ra252974/Documents/MC613/lab03/o
 ; Impedance control blocks                                    ; 0 / 4              ; 0 %   ;
 ; Hard Memory Controllers                                     ; 0 / 2              ; 0 %   ;
 ; Average interconnect usage (total/H/V)                      ; 0.0% / 0.0% / 0.0% ;       ;
-; Peak interconnect usage (total/H/V)                         ; 0.5% / 0.5% / 0.6% ;       ;
-; Maximum fan-out                                             ; 9                  ;       ;
-; Highest non-global fan-out                                  ; 9                  ;       ;
-; Total fan-out                                               ; 173                ;       ;
-; Average fan-out                                             ; 1.43               ;       ;
+; Peak interconnect usage (total/H/V)                         ; 0.4% / 0.4% / 0.5% ;       ;
+; Maximum fan-out                                             ; 18                 ;       ;
+; Highest non-global fan-out                                  ; 18                 ;       ;
+; Total fan-out                                               ; 190                ;       ;
+; Average fan-out                                             ; 1.54               ;       ;
 +-------------------------------------------------------------+--------------------+-------+
 
 
@@ -544,14 +543,14 @@ The pin-out file can be found in /home/c-ec2023/ra252974/Documents/MC613/lab03/o
 +-------------------------------------------------------------+----------------------+--------------------------------+
 ; Statistic                                                   ; Top                  ; hard_block:auto_generated_inst ;
 +-------------------------------------------------------------+----------------------+--------------------------------+
-; Logic utilization (ALMs needed / total ALMs on device)      ; 13 / 32070 ( < 1 % ) ; 0 / 32070 ( 0 % )              ;
-; ALMs needed [=A-B+C]                                        ; 13                   ; 0                              ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 13 / 32070 ( < 1 % ) ; 0 / 32070 ( 0 % )              ;
+; Logic utilization (ALMs needed / total ALMs on device)      ; 14 / 32070 ( < 1 % ) ; 0 / 32070 ( 0 % )              ;
+; ALMs needed [=A-B+C]                                        ; 14                   ; 0                              ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 17 / 32070 ( < 1 % ) ; 0 / 32070 ( 0 % )              ;
 ;         [a] ALMs used for LUT logic and registers           ; 5                    ; 0                              ;
-;         [b] ALMs used for LUT logic                         ; 8                    ; 0                              ;
+;         [b] ALMs used for LUT logic                         ; 12                   ; 0                              ;
 ;         [c] ALMs used for registers                         ; 0                    ; 0                              ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                    ; 0                              ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 0 / 32070 ( 0 % )    ; 0 / 32070 ( 0 % )              ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 3 / 32070 ( < 1 % )  ; 0 / 32070 ( 0 % )              ;
 ;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 0 / 32070 ( 0 % )    ; 0 / 32070 ( 0 % )              ;
 ;         [a] Due to location constrained logic               ; 0                    ; 0                              ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                    ; 0                              ;
@@ -560,16 +559,16 @@ The pin-out file can be found in /home/c-ec2023/ra252974/Documents/MC613/lab03/o
 ;                                                             ;                      ;                                ;
 ; Difficulty packing design                                   ; Low                  ; Low                            ;
 ;                                                             ;                      ;                                ;
-; Total LABs:  partially or completely used                   ; 4 / 3207 ( < 1 % )   ; 0 / 3207 ( 0 % )               ;
-;     -- Logic LABs                                           ; 4                    ; 0                              ;
+; Total LABs:  partially or completely used                   ; 3 / 3207 ( < 1 % )   ; 0 / 3207 ( 0 % )               ;
+;     -- Logic LABs                                           ; 3                    ; 0                              ;
 ;     -- Memory LABs (up to half of total LABs)               ; 0                    ; 0                              ;
 ;                                                             ;                      ;                                ;
-; Combinational ALUT usage for logic                          ; 21                   ; 0                              ;
+; Combinational ALUT usage for logic                          ; 23                   ; 0                              ;
 ;     -- 7 input functions                                    ; 1                    ; 0                              ;
-;     -- 6 input functions                                    ; 3                    ; 0                              ;
-;     -- 5 input functions                                    ; 3                    ; 0                              ;
-;     -- 4 input functions                                    ; 8                    ; 0                              ;
-;     -- <=3 input functions                                  ; 6                    ; 0                              ;
+;     -- 6 input functions                                    ; 4                    ; 0                              ;
+;     -- 5 input functions                                    ; 6                    ; 0                              ;
+;     -- 4 input functions                                    ; 7                    ; 0                              ;
+;     -- <=3 input functions                                  ; 5                    ; 0                              ;
 ; Combinational ALUT usage for route-throughs                 ; 0                    ; 0                              ;
 ; Memory ALUT usage                                           ; 0                    ; 0                              ;
 ;     -- 64-address deep                                      ; 0                    ; 0                              ;
@@ -598,8 +597,8 @@ The pin-out file can be found in /home/c-ec2023/ra252974/Documents/MC613/lab03/o
 ;     -- Registered Output Connections                        ; 0                    ; 0                              ;
 ;                                                             ;                      ;                                ;
 ; Internal Connections                                        ;                      ;                                ;
-;     -- Total Connections                                    ; 173                  ; 0                              ;
-;     -- Registered Connections                               ; 57                   ; 0                              ;
+;     -- Total Connections                                    ; 190                  ; 0                              ;
+;     -- Registered Connections                               ; 65                   ; 0                              ;
 ;                                                             ;                      ;                                ;
 ; External Connections                                        ;                      ;                                ;
 ;     -- Top                                                  ; 0                    ; 0                              ;
@@ -635,7 +634,7 @@ The pin-out file can be found in /home/c-ec2023/ra252974/Documents/MC613/lab03/o
 ; KEY[1] ; AA15  ; 3B       ; 36           ; 0            ; 17           ; 9                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 ; KEY[2] ; W15   ; 3B       ; 40           ; 0            ; 0            ; 9                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 ; KEY[3] ; Y16   ; 3B       ; 40           ; 0            ; 17           ; 9                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
-; SW[0]  ; AB12  ; 3A       ; 12           ; 0            ; 17           ; 9                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
+; SW[0]  ; AB12  ; 3A       ; 12           ; 0            ; 17           ; 18                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 ; SW[1]  ; AC12  ; 3A       ; 16           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 ; SW[2]  ; AF9   ; 3A       ; 8            ; 0            ; 34           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 ; SW[3]  ; AF10  ; 3A       ; 4            ; 0            ; 51           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
@@ -1659,11 +1658,11 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; LEDR[7]  ; Incomplete set of assignments ;
 ; LEDR[8]  ; Incomplete set of assignments ;
 ; LEDR[9]  ; Incomplete set of assignments ;
+; SW[0]    ; Incomplete set of assignments ;
 ; KEY[1]   ; Incomplete set of assignments ;
 ; KEY[2]   ; Incomplete set of assignments ;
 ; KEY[3]   ; Incomplete set of assignments ;
 ; KEY[0]   ; Incomplete set of assignments ;
-; SW[0]    ; Incomplete set of assignments ;
 +----------+-------------------------------+
 
 
@@ -1672,7 +1671,7 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +----------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; ALMs needed [=A-B+C] ; [A] ALMs used in final placement ; [B] Estimate of ALMs recoverable by dense packing ; [C] Estimate of ALMs unavailable ; ALMs used for memory ; Combinational ALUTs ; Dedicated Logic Registers ; I/O Registers ; Block Memory Bits ; M10Ks ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+---------------------+-------------+--------------+
-; |fsm_board                 ; 12.5 (12.5)          ; 12.5 (12.5)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 21 (21)             ; 9 (9)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 45   ; 0            ; |fsm_board          ; fsm_board   ; work         ;
+; |fsm_board                 ; 14.0 (14.0)          ; 16.0 (16.0)                      ; 2.0 (2.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 23 (23)             ; 9 (9)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 45   ; 0            ; |fsm_board          ; fsm_board   ; work         ;
 +----------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1722,11 +1721,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; LEDR[7] ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; LEDR[8] ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; LEDR[9] ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
+; SW[0]   ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; KEY[1]  ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; KEY[2]  ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; KEY[2]  ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; KEY[3]  ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; KEY[0]  ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; SW[0]   ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 +---------+----------+----+------+------+----+------+-------+--------+------------------------+--------------------------+
 
 
@@ -1744,48 +1743,57 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SW[7]                      ;                   ;         ;
 ; SW[8]                      ;                   ;         ;
 ; SW[9]                      ;                   ;         ;
+; SW[0]                      ;                   ;         ;
+;      - atual_state.S400    ; 0                 ; 0       ;
+;      - atual_state.S100    ; 0                 ; 0       ;
+;      - atual_state.S150    ; 0                 ; 0       ;
+;      - HEX2~0              ; 0                 ; 0       ;
+;      - atual_state.S200    ; 0                 ; 0       ;
+;      - atual_state.S250    ; 0                 ; 0       ;
+;      - HEX2~1              ; 0                 ; 0       ;
+;      - atual_state.S0      ; 0                 ; 0       ;
+;      - atual_state.S50     ; 0                 ; 0       ;
+;      - HEX2~2              ; 0                 ; 0       ;
+;      - HEX2~3              ; 0                 ; 0       ;
+;      - HEX2~4              ; 0                 ; 0       ;
+;      - atual_state.S350    ; 0                 ; 0       ;
+;      - HEX1~0              ; 0                 ; 0       ;
+;      - atual_state.S300    ; 0                 ; 0       ;
+;      - cafe~0              ; 0                 ; 0       ;
+;      - t50~0               ; 0                 ; 0       ;
+;      - t100~0              ; 0                 ; 0       ;
 ; KEY[1]                     ;                   ;         ;
 ;      - Selector4~0         ; 0                 ; 0       ;
 ;      - Selector8~0         ; 0                 ; 0       ;
 ;      - Selector2~0         ; 0                 ; 0       ;
 ;      - Selector3~0         ; 0                 ; 0       ;
 ;      - Selector5~0         ; 0                 ; 0       ;
-;      - Selector0~0         ; 0                 ; 0       ;
 ;      - Selector1~0         ; 0                 ; 0       ;
 ;      - Selector7~0         ; 0                 ; 0       ;
 ;      - Selector6~0         ; 0                 ; 0       ;
+;      - Selector0~1         ; 0                 ; 0       ;
 ; KEY[2]                     ;                   ;         ;
-;      - Selector8~0         ; 0                 ; 0       ;
-;      - Selector2~0         ; 0                 ; 0       ;
-;      - Selector3~0         ; 0                 ; 0       ;
-;      - Selector5~0         ; 0                 ; 0       ;
-;      - Selector0~0         ; 0                 ; 0       ;
-;      - Selector1~0         ; 0                 ; 0       ;
-;      - Selector7~0         ; 0                 ; 0       ;
-;      - Selector6~0         ; 0                 ; 0       ;
-;      - Selector4~0         ; 0                 ; 0       ;
+;      - Selector8~0         ; 1                 ; 0       ;
+;      - Selector2~0         ; 1                 ; 0       ;
+;      - Selector3~0         ; 1                 ; 0       ;
+;      - Selector5~0         ; 1                 ; 0       ;
+;      - Selector1~0         ; 1                 ; 0       ;
+;      - Selector7~0         ; 1                 ; 0       ;
+;      - Selector6~0         ; 1                 ; 0       ;
+;      - Selector0~1         ; 1                 ; 0       ;
+;      - Selector4~0         ; 1                 ; 0       ;
 ; KEY[3]                     ;                   ;         ;
 ;      - Selector4~0         ; 0                 ; 0       ;
 ;      - Selector8~0         ; 0                 ; 0       ;
 ;      - Selector2~0         ; 0                 ; 0       ;
 ;      - Selector3~0         ; 0                 ; 0       ;
 ;      - Selector5~0         ; 0                 ; 0       ;
-;      - Selector0~0         ; 0                 ; 0       ;
 ;      - Selector1~0         ; 0                 ; 0       ;
 ;      - Selector7~0         ; 0                 ; 0       ;
 ;      - Selector6~0         ; 0                 ; 0       ;
+;      - Selector0~1         ; 0                 ; 0       ;
 ; KEY[0]                     ;                   ;         ;
 ;      - KEY[0]~inputCLKENA0 ; 0                 ; 0       ;
-; SW[0]                      ;                   ;         ;
-;      - atual_state.S400    ; 0                 ; 0       ;
-;      - atual_state.S0      ; 0                 ; 0       ;
-;      - atual_state.S50     ; 0                 ; 0       ;
-;      - atual_state.S100    ; 0                 ; 0       ;
-;      - atual_state.S150    ; 0                 ; 0       ;
-;      - atual_state.S200    ; 0                 ; 0       ;
-;      - atual_state.S250    ; 0                 ; 0       ;
-;      - atual_state.S300    ; 0                 ; 0       ;
-;      - atual_state.S350    ; 0                 ; 0       ;
 +----------------------------+-------------------+---------+
 
 
@@ -1795,7 +1803,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name   ; Location ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +--------+----------+---------+--------------+--------+----------------------+------------------+---------------------------+
 ; KEY[0] ; PIN_AA14 ; 9       ; Clock        ; yes    ; Global Clock         ; GCLK6            ; --                        ;
-; SW[0]  ; PIN_AB12 ; 9       ; Async. clear ; no     ; --                   ; --               ; --                        ;
+; SW[0]  ; PIN_AB12 ; 18      ; Async. clear ; no     ; --                   ; --               ; --                        ;
 +--------+----------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -1813,14 +1821,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------+------------------------+
 ; Routing Resource Type                       ; Usage                  ;
 +---------------------------------------------+------------------------+
-; Block interconnects                         ; 45 / 289,320 ( < 1 % ) ;
-; C12 interconnects                           ; 4 / 13,420 ( < 1 % )   ;
-; C2 interconnects                            ; 10 / 119,108 ( < 1 % ) ;
-; C4 interconnects                            ; 31 / 56,300 ( < 1 % )  ;
+; Block interconnects                         ; 42 / 289,320 ( < 1 % ) ;
+; C12 interconnects                           ; 6 / 13,420 ( < 1 % )   ;
+; C2 interconnects                            ; 13 / 119,108 ( < 1 % ) ;
+; C4 interconnects                            ; 23 / 56,300 ( < 1 % )  ;
 ; DQS bus muxes                               ; 0 / 25 ( 0 % )         ;
 ; DQS-18 I/O buses                            ; 0 / 25 ( 0 % )         ;
 ; DQS-9 I/O buses                             ; 0 / 25 ( 0 % )         ;
-; Direct links                                ; 3 / 289,320 ( < 1 % )  ;
+; Direct links                                ; 0 / 289,320 ( 0 % )    ;
 ; Global clocks                               ; 1 / 16 ( 6 % )         ;
 ; HPS SDRAM PLL inputs                        ; 0 / 1 ( 0 % )          ;
 ; HPS SDRAM PLL outputs                       ; 0 / 1 ( 0 % )          ;
@@ -1876,12 +1884,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; HPS_INTERFACE_TPIU_TRACE_INPUTs             ; 0 / 2 ( 0 % )          ;
 ; HPS_INTERFACE_TPIU_TRACE_OUTPUTs            ; 0 / 33 ( 0 % )         ;
 ; Horizontal periphery clocks                 ; 0 / 72 ( 0 % )         ;
-; Local interconnects                         ; 9 / 84,580 ( < 1 % )   ;
+; Local interconnects                         ; 8 / 84,580 ( < 1 % )   ;
 ; Quadrant clocks                             ; 0 / 66 ( 0 % )         ;
 ; R14 interconnects                           ; 19 / 12,676 ( < 1 % )  ;
-; R14/C12 interconnect drivers                ; 20 / 20,720 ( < 1 % )  ;
-; R3 interconnects                            ; 25 / 130,992 ( < 1 % ) ;
-; R6 interconnects                            ; 24 / 266,960 ( < 1 % ) ;
+; R14/C12 interconnect drivers                ; 22 / 20,720 ( < 1 % )  ;
+; R3 interconnects                            ; 23 / 130,992 ( < 1 % ) ;
+; R6 interconnects                            ; 20 / 266,960 ( < 1 % ) ;
 ; Spine clocks                                ; 1 / 360 ( < 1 % )      ;
 ; Wire stub REs                               ; 0 / 15,858 ( 0 % )     ;
 +---------------------------------------------+------------------------+
@@ -1986,11 +1994,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; LEDR[7]            ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
 ; LEDR[8]            ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
 ; LEDR[9]            ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
+; SW[0]              ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
 ; KEY[1]             ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
 ; KEY[2]             ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
 ; KEY[3]             ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
 ; KEY[0]             ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
-; SW[0]              ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
 +--------------------+--------------+-----------+-----------+--------------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+-----------+--------------+
 
 
@@ -2042,7 +2050,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------+----------------------+-------------------+
 ; Source Clock(s) ; Destination Clock(s) ; Delay Added in ns ;
 +-----------------+----------------------+-------------------+
-; KEY[0]          ; KEY[0]               ; 5.1               ;
+; KEY[0]          ; KEY[0]               ; 6.3               ;
 +-----------------+----------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the TimeQuest Timing Analyzer.
@@ -2053,15 +2061,15 @@ This will disable optimization of problematic paths and expose them for further 
 +------------------+----------------------+-------------------+
 ; Source Register  ; Destination Register ; Delay Added in ns ;
 +------------------+----------------------+-------------------+
-; atual_state.S50  ; atual_state.S250     ; 0.397             ;
+; atual_state.S50  ; atual_state.S250     ; 0.403             ;
+; atual_state.S250 ; atual_state.S0       ; 0.370             ;
+; atual_state.S350 ; atual_state.S0       ; 0.368             ;
+; atual_state.S300 ; atual_state.S0       ; 0.337             ;
 ; atual_state.S100 ; atual_state.S150     ; 0.333             ;
 ; atual_state.S200 ; atual_state.S200     ; 0.333             ;
+; atual_state.S0   ; atual_state.S50      ; 0.333             ;
 ; atual_state.S150 ; atual_state.S250     ; 0.333             ;
-; atual_state.S0   ; atual_state.S50      ; 0.317             ;
-; atual_state.S400 ; atual_state.S0       ; 0.194             ;
-; atual_state.S350 ; atual_state.S0       ; 0.192             ;
-; atual_state.S250 ; atual_state.S0       ; 0.183             ;
-; atual_state.S300 ; atual_state.S0       ; 0.162             ;
+; atual_state.S400 ; atual_state.S0       ; 0.308             ;
 +------------------+----------------------+-------------------+
 Note: This table only shows the top 9 path(s) that have the largest delay added for hold.
 
@@ -2070,7 +2078,7 @@ Note: This table only shows the top 9 path(s) that have the largest delay added 
 ; Fitter Messages ;
 +-----------------+
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (119006): Selected device 5CSEMA5F31C6 for design "lab03"
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
@@ -2307,10 +2315,10 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "VGA_R[7]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "VGA_SYNC_N" is assigned to location or region, but does not exist in design
     Warning (15706): Node "VGA_VS" is assigned to location or region, but does not exist in design
-Info (11798): Fitter preparation operations ending: elapsed time is 00:00:10
+Info (11798): Fitter preparation operations ending: elapsed time is 00:00:05
 Info (170189): Fitter placement preparation operations beginning
 Info (14951): The Fitter is using Advanced Physical Optimization.
-Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:01
+Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
@@ -2320,24 +2328,24 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.26 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.15 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:03
+Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:02
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
-Info (144001): Generated suppressed messages file /home/c-ec2023/ra252974/Documents/MC613/lab03/output_files/lab03.fit.smsg
+Info (144001): Generated suppressed messages file /home/c-ec2022/ra248220/Documents/MC613 - git/MC613/lab03/output_files/lab03.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 221 warnings
-    Info: Peak virtual memory: 2756 megabytes
-    Info: Processing ended: Tue Apr 15 20:40:37 2025
-    Info: Elapsed time: 00:00:26
-    Info: Total CPU time (on all processors): 00:00:48
+    Info: Peak virtual memory: 3141 megabytes
+    Info: Processing ended: Wed Apr 16 15:36:11 2025
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:50
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in /home/c-ec2023/ra252974/Documents/MC613/lab03/output_files/lab03.fit.smsg.
+The suppressed messages can be found in /home/c-ec2022/ra248220/Documents/MC613 - git/MC613/lab03/output_files/lab03.fit.smsg.
 
 

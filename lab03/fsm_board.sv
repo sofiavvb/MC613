@@ -10,7 +10,6 @@ module fsm_board (
     //sinais de controle
     logic r50, r100, r200, reset;
     logic cafe, t50, t100, t200;
-    logic [3:0] state;
 
     //inputs
     assign r50  = ~KEY[3];
@@ -42,121 +41,125 @@ module fsm_board (
             atual_state <= proximo_state; //avança para o próximo estado
     end
 
-
-    initial begin
-        LEDR = 10'b0000000000;
-        HEX0 = 7'b1000000;
-        HEX1 = 7'b1000000;
-        HEX2 = 7'b1000000;
-    end
-
     //lógica de transição de estados
-    always_comb begin
+    always begin
         proximo_state = atual_state; 
         cafe = 0;
         t50 = 0;
         t100 = 0;
         t200 = 0;
 
-        case (atual_state)
-            S0: begin
-                HEX0 = ~7'b0111111; // 0
-                HEX1 = ~7'b0111111; // 0
-                HEX2 = ~7'b0111111; // 0
-                if (r50)
-                    proximo_state = S50;
-                else if (r100)
-                    proximo_state = S100;
-                else if (r200)
-                    proximo_state = S200;
-            end
-            S50: begin
-                HEX0 = ~7'b0111111; // 0
-                HEX1 = ~7'b1101101; // 5
-                HEX2 = ~7'b0111111; // 0
-                if (r50)
-                    proximo_state = S100;
-                else if (r100)
-                    proximo_state = S150;
-                else if (r200)
-                    proximo_state = S250;
-            end
-            S100: begin
-                HEX0 = ~7'b0111111; // 0
-                HEX1 = ~7'b0111111; // 0
-                HEX2 = ~7'b0000110; // 1
-                if (r50)
-                    proximo_state = S150;
-                else if (r100)
-                    proximo_state = S200;
-                else if (r200)
-                    proximo_state = S300;
-            end
-            S150: begin
-                HEX0 = ~7'b0111111; // 0
-                HEX1 = ~7'b1101101; // 5
-                HEX2 = ~7'b0000110; // 1
-                if (r50)
-                    proximo_state = S200;
-                else if (r100)
-                    proximo_state = S250;
-                else if (r200)
-                    proximo_state = S350;
-            end
-            S200: begin
-                HEX0 = ~7'b0111111; // 0
-                HEX1 = ~7'b0111111; // 0
-                HEX2 = ~7'b1011011; // 2
-                if (r50)
-                    proximo_state = S250;
-                else if (r100)
-                    proximo_state = S300;
-                else if (r200)
-                    proximo_state = S400;
-            end
-            S250: begin
-                HEX0 = ~7'b0111111; // 0
-                HEX1 = ~7'b1101101; // 5
-                HEX2 = ~7'b1011011; // 2
-                cafe = 1;
-                proximo_state = S0;
-            end
-            S300: begin
-                HEX0 = ~7'b0111111; // 0
-                HEX1 = ~7'b0111111; // 0
-                HEX2 = ~7'b1001111; // 3
-                cafe = 1;
-                t50 = 1;
-                proximo_state = S0;
-            end
-            S350: begin
-                HEX0 = ~7'b0111111; // 0
-                HEX1 = ~7'b1101101; // 5
-                HEX2 = ~7'b1001111; // 3
-                cafe = 1;
-                t100 = 1;
-                proximo_state = S0;
-            end
-            S400: begin
-                HEX0 = ~7'b0111111; // 0
-                HEX1 = ~7'b0111111; // 0
-                HEX2 = ~7'b1100110; // 4
-                cafe = 1;
-                t50 = 1;
-                t100 = 1;
-                proximo_state = S0;
-            end
-        endcase
+        if (reset) begin
+            HEX0 = 7'b1000000;
+            HEX1 = 7'b1000000;
+            HEX2 = 7'b1000000;
+        end else begin
+            case (atual_state)
+                S0: begin
+                    HEX0 = ~7'b0111111; // 0
+                    HEX1 = ~7'b0111111; // 0
+                    HEX2 = ~7'b0111111; // 0
+                    if (r50)
+                        proximo_state = S50;
+                    else if (r100)
+                        proximo_state = S100;
+                    else if (r200)
+                        proximo_state = S200;
+                end
+                S50: begin
+                    HEX0 = ~7'b0111111; // 0
+                    HEX1 = ~7'b1101101; // 5
+                    HEX2 = ~7'b0111111; // 0
+                    if (r50)
+                        proximo_state = S100;
+                    else if (r100)
+                        proximo_state = S150;
+                    else if (r200)
+                        proximo_state = S250;
+                end
+                S100: begin
+                    HEX0 = ~7'b0111111; // 0
+                    HEX1 = ~7'b0111111; // 0
+                    HEX2 = ~7'b0000110; // 1
+                    if (r50)
+                        proximo_state = S150;
+                    else if (r100)
+                        proximo_state = S200;
+                    else if (r200)
+                        proximo_state = S300;
+                end
+                S150: begin
+                    HEX0 = ~7'b0111111; // 0
+                    HEX1 = ~7'b1101101; // 5
+                    HEX2 = ~7'b0000110; // 1
+                    if (r50)
+                        proximo_state = S200;
+                    else if (r100)
+                        proximo_state = S250;
+                    else if (r200)
+                        proximo_state = S350;
+                end
+                S200: begin
+                    HEX0 = ~7'b0111111; // 0
+                    HEX1 = ~7'b0111111; // 0
+                    HEX2 = ~7'b1011011; // 2
+                    if (r50)
+                        proximo_state = S250;
+                    else if (r100)
+                        proximo_state = S300;
+                    else if (r200)
+                        proximo_state = S400;
+                end
+                S250: begin
+                    HEX0 = ~7'b0111111; // 0
+                    HEX1 = ~7'b1101101; // 5
+                    HEX2 = ~7'b1011011; // 2
+                    cafe = 1;
+                    t50 = 0;
+                    t100 = 0;
+                    t200 = 0;
+                    proximo_state = S0;
+                end
+                S300: begin
+                    HEX0 = ~7'b0111111; // 0
+                    HEX1 = ~7'b0111111; // 0
+                    HEX2 = ~7'b1001111; // 3
+                    cafe = 1;
+                    t50 = 1;
+                    t100 = 0;
+                    t200 = 0;
+                    proximo_state = S0;
+                end
+                S350: begin
+                    HEX0 = ~7'b0111111; // 0
+                    HEX1 = ~7'b1101101; // 5
+                    HEX2 = ~7'b1001111; // 3
+                    cafe = 1;
+                    t50 = 0;
+                    t100 = 1;
+                    t200 = 0;
+                    proximo_state = S0;
+                end
+                S400: begin
+                    HEX0 = ~7'b0111111; // 0
+                    HEX1 = ~7'b0111111; // 0
+                    HEX2 = ~7'b1100110; // 4
+                    cafe = 1;
+                    t50 = 1;
+                    t100 = 1;
+                    t200 = 0;
+                    proximo_state = S0;
+                end
+            endcase
+        end
     end
-
-    assign state = atual_state; //estado atual de saída
 
     //outputs
     assign LEDR[0] = cafe;
     assign LEDR[2] = t50;
     assign LEDR[3] = t100;
     assign LEDR[4] = t200;
-    assign LEDR[9:6] = state;
+    assign LEDR[9:6] = atual_state;
 
 
 endmodule
