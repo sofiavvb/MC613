@@ -45,6 +45,7 @@ set_global_assignment -name LAST_QUARTUS_VERSION "17.1.0 Lite Edition"
 set_global_assignment -name SYSTEMVERILOG_FILE multiplier.sv
 set_global_assignment -name SYSTEMVERILOG_FILE multiplier_tb.sv
 set_global_assignment -name SYSTEMVERILOG_FILE multiplier_board.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hex_7seg.sv
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name BOARD "DE1-SoC Board"
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (SystemVerilog)"

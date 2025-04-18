@@ -32,7 +32,7 @@ module multiplier_board (
             A_mul <= {5'b00000, A}; //ele joga na parte baixa
             B_mul <= B;  
         end else begin 
-            if(B[0] == 1) begin
+            if(B_mul[0] == 1) begin
                 R <= R + A_mul;
             end
             A_mul <= A_mul << 1; 
