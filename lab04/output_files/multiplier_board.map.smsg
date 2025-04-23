@@ -1,0 +1,1 @@
+Info (10281): Verilog HDL Declaration information at multiplier.sv(7): object "b" differs only in case from object "B" in the same scope File: /home/c-ec2022/ra248220/Documents/MC613 - git/MC613/lab04/multiplier.sv Line: 7

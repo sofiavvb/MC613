@@ -1,0 +1,64 @@
+module multiplier_board (
+    input logic [9:0] SW,
+    input logic [3:0] KEY,
+    input logic CLOCK_50,
+    output logic [6:0] HEX2,  
+    output logic [6:0] HEX1,  
+    output logic [6:0] HEX0, 
+    output logic [9:0] LEDR
+);
+
+    //sinais de controle
+    logic set; 
+    logic [1:0] detector;
+    logic [4:0] A, B, B_mul; 
+    logic [9:0] R, A_mul;
+
+
+    //detector de borda para o set com o clock
+    //assign set = ~detector[1] & detector[0];
+
+    //always_ff @(posedge CLOCK_50) begin
+    //    detector <= {detector[0], ~KEY};
+    //end
+
+
+    //inputs
+    assign A = SW[9:5];
+    assign B = SW[4:0];
+    assign LEDR = R;
+
+    //multiplicador
+    always_ff @(posedge CLOCK_50) begin
+        if (~KEY[0] == 1 && set) begin
+            R <= 0;
+            A_mul <= {5'b00000, A}; //ele joga na parte baixa
+            B_mul <= B;  
+        end else begin 
+            if(B_mul[0] == 1) begin
+                R <= R + A_mul;
+            end
+            A_mul <= A_mul << 1; 
+            B_mul <= B_mul >> 1;  
+        end
+    end
+
+    //outputs para seguimentos
+    hex_7seg display0 (
+        .bin(R[3:0]),
+        .segs(HEX0)
+    );
+
+    hex_7seg display1 (
+        .bin(R[7:4]),
+        .segs(HEX1)
+    );
+
+    hex_7seg display2 (
+        .bin({2'b0, R[9:8]}),
+        .segs(HEX2)
+    );
+
+
+endmodule
+

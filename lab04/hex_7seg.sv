@@ -1,4 +1,4 @@
-module two_comp_to_7seg (
+module hex_7seg (
     input  logic [3:0] bin,   
     output logic [6:0] segs  
 );

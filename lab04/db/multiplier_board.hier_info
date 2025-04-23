@@ -1,0 +1,91 @@
+|multiplier_board
+SW[0] => Mult0.IN9
+SW[1] => Mult0.IN8
+SW[2] => Mult0.IN7
+SW[3] => Mult0.IN6
+SW[4] => Mult0.IN5
+SW[5] => Mult0.IN4
+SW[6] => Mult0.IN3
+SW[7] => Mult0.IN2
+SW[8] => Mult0.IN1
+SW[9] => Mult0.IN0
+KEY[0] => ~NO_FANOUT~
+KEY[1] => ~NO_FANOUT~
+KEY[2] => ~NO_FANOUT~
+KEY[3] => ~NO_FANOUT~
+CLOCK_50 => ~NO_FANOUT~
+HEX2[0] <= hex_7seg:display2.segs
+HEX2[1] <= hex_7seg:display2.segs
+HEX2[2] <= hex_7seg:display2.segs
+HEX2[3] <= hex_7seg:display2.segs
+HEX2[4] <= hex_7seg:display2.segs
+HEX2[5] <= hex_7seg:display2.segs
+HEX2[6] <= hex_7seg:display2.segs
+HEX1[0] <= hex_7seg:display1.segs
+HEX1[1] <= hex_7seg:display1.segs
+HEX1[2] <= hex_7seg:display1.segs
+HEX1[3] <= hex_7seg:display1.segs
+HEX1[4] <= hex_7seg:display1.segs
+HEX1[5] <= hex_7seg:display1.segs
+HEX1[6] <= hex_7seg:display1.segs
+HEX0[0] <= hex_7seg:display0.segs
+HEX0[1] <= hex_7seg:display0.segs
+HEX0[2] <= hex_7seg:display0.segs
+HEX0[3] <= hex_7seg:display0.segs
+HEX0[4] <= hex_7seg:display0.segs
+HEX0[5] <= hex_7seg:display0.segs
+HEX0[6] <= hex_7seg:display0.segs
+LEDR[0] <= <GND>
+LEDR[1] <= <GND>
+LEDR[2] <= <GND>
+LEDR[3] <= <GND>
+LEDR[4] <= <GND>
+LEDR[5] <= <GND>
+LEDR[6] <= <GND>
+LEDR[7] <= <GND>
+LEDR[8] <= <GND>
+LEDR[9] <= <GND>
+
+
+|multiplier_board|hex_7seg:display0
+bin[0] => Decoder0.IN3
+bin[1] => Decoder0.IN2
+bin[2] => Decoder0.IN1
+bin[3] => Decoder0.IN0
+segs[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+segs[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segs[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segs[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segs[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segs[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segs[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplier_board|hex_7seg:display1
+bin[0] => Decoder0.IN3
+bin[1] => Decoder0.IN2
+bin[2] => Decoder0.IN1
+bin[3] => Decoder0.IN0
+segs[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+segs[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segs[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segs[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segs[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segs[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segs[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplier_board|hex_7seg:display2
+bin[0] => Decoder0.IN3
+bin[1] => Decoder0.IN2
+bin[2] => Decoder0.IN1
+bin[3] => Decoder0.IN0
+segs[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+segs[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segs[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segs[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segs[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segs[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segs[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
