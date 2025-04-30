@@ -1,16 +1,24 @@
 module stopwatch(
     input logic clk,
-    input logic rst,
-    output logic clk_seg,
+    input logic rst, //KEY[1]
+    input logic start_stop_btn,  // KEY[2]
 );
     logic [18:0] counter;
     logic enable;
+    // Contadores
+    logic [6:0] centesimos;
+    logic [5:0] segundos;
+    logic [6:0] minutos;
+
 
     //dividir o clock para pegar 1 cent de segundo
     always_ff @(posedge clk or posedge rst) begin
         if (rst) begin
             counter <= 0;
             enable <= 0;
+            centesimos <= 0;
+            segunos <= 0;
+            minutos <= 0;
         end else begin
             if (counter == 499_999) begin
                 enable <= 1;
@@ -22,13 +30,20 @@ module stopwatch(
         end
     end
 
-    // Contadores
-    logic [6:0] centesimos;
-    logic [5:0] segundos;
-    logic [6:0] minutos;
+    //FSM DO CRONOMETRO
+    typedef enum logic {IDLE, RUNNING} state_t;
+    state_t state;
+
+    always_ff @(posedge clk or posedge rst) begin
+        if (rst) begin
+            state <= IDLE; //parado
+        end else if (start_stop_btn) begin
+            state <= (state == IDLE) ? RUNNING : IDLE;
+        end
+    end
 
     always_ff @(posedge clk) begin 
-        if(enable == 1) begin
+        if(enable == 1 && state == RUNNING) begin
             if(centesimos == 99) begin
                 centesimos <= 0;
                 if (segundos == 59) begin

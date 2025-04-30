@@ -1,6 +1,5 @@
 module watch(
     input logic clk,
-    input logic rst
 );
 
     logic [25:0] counter;
@@ -11,11 +10,8 @@ module watch(
     logic [4:0] horas;
 
     // Divisor de clock: gera pulso de 1s
-    always_ff @(posedge clk or posedge rst) begin
-        if (rst) begin
-            counter <= 0;
-            enable <= 0;
-        end else begin
+    always_ff @(posedge clk) begin
+        if begin
             if (counter == 49_999_999) begin
                 enable <= 1;
                 counter <= 0;
@@ -27,12 +23,8 @@ module watch(
     end
 
     // Contador de tempo (hora:min:seg)
-    always_ff @(posedge clk or posedge rst) begin 
-        if (rst) begin
-            segundos <= 0;
-            minutos <= 0;
-            horas <= 0;
-        end else if (enable == 1) begin
+    always_ff @(posedge clk) begin 
+        if (enable == 1) begin
             if (segundos == 59) begin
                 segundos <= 0;
                 if (minutos == 59) begin
