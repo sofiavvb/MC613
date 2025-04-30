@@ -1,5 +1,7 @@
 module watch(
     input logic clk,
+    input logic [5:0] val; //valor para acertar o relogio - colocar nos switches
+    input logic mode_btn, //KEY[2]
     output logic [5:0] segundos;
     output logic [5:0] minutos;
     output logic [4:0] horas;
@@ -9,7 +11,6 @@ module watch(
     logic [25:0] counter;
     logic enable;
     logic [1:0] mode;  // 2 bits → 0 a 3 (normal, hora, minuto, segundo)
-    input logic [5:0] val; //valor para acertar o relogio
 
 
 
@@ -56,11 +57,11 @@ module watch(
     // Lógica para ajuste do relógio
     always_ff @(posedge clk) begin
         if (mode == 2'b01) begin //horas
-           if (sw_val <= 6'd23) horas <= sw_val;
+           if (val <= 6'd23) horas <= val;
         end else if (mode == 2'b10) begin // min
-            if (sw_val <= 6'd59) min <= sw_val;
+            if (val <= 6'd59) min <= val;
         end else if (mode == 2'b11) begin // seg
-            if (sw_val <= 6'd59) seg <= sw_val;
+            if (val <= 6'd59) seg <= val;
         end
     end
 
