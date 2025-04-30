@@ -1,14 +1,15 @@
 module stopwatch(
     input logic clk,
-    input logic rst, //KEY[1]
-    input logic start_stop_btn,  // KEY[2]
+    input logic rst, 
+    input logic start_stop_btn,  
+    output logic [6:0] centesimos;
+    output logic [5:0] segundos;
+    output logic [6:0] minutos;
 );
     logic [18:0] counter;
     logic enable;
     // Contadores
-    logic [6:0] centesimos;
-    logic [5:0] segundos;
-    logic [6:0] minutos;
+   
 
 
     //dividir o clock para pegar 1 cent de segundo
@@ -17,7 +18,7 @@ module stopwatch(
             counter <= 0;
             enable <= 0;
             centesimos <= 0;
-            segunos <= 0;
+            segundos <= 0;
             minutos <= 0;
         end else begin
             if (counter == 499_999) begin
