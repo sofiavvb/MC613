@@ -1,68 +1,67 @@
 module watch(
     input logic clk,
-    input logic [5:0] val; //valor para acertar o relogio - colocar nos switches
-    input logic mode_btn, //KEY[2]
-    output logic [5:0] segundos;
-    output logic [5:0] minutos;
-    output logic [4:0] horas;
-    output logic blink;
+    input logic [5:0] val,      // valor para acertar o relógio (SW[5:0])
+    input logic mode_btn,       // botão para alternar o modo (KEY[2])
+    output logic [5:0] segundos,
+    output logic [5:0] minutos,
+    output logic [4:0] horas,
+    output logic blink
 );
-
+    logic mode_btn_antigo;
     logic [25:0] counter;
     logic enable;
-    logic [1:0] mode;  // 2 bits → 0 a 3 (normal, hora, minuto, segundo)
+    logic [1:0] mode;
 
+    logic [5:0] seg_reg, min_reg;
+    logic [4:0] hour_reg;
 
+    assign segundos = seg_reg;
+    assign minutos = min_reg;
+    assign horas = hour_reg;
 
-    // Divisor de clock: gera pulso de 1s
+    // Divisor de clock
     always_ff @(posedge clk) begin
-        if begin
-            if (counter == 49_999_999) begin
-                enable <= 1;
-                counter <= 0;
-                blink <= ~blink;
-            end else begin
-                enable <= 0;
-                counter <= counter + 1;
-            end
+        if (counter == 49_999_999) begin
+            enable <= 1;
+            counter <= 0;
+            blink <= ~blink;
+        end else begin
+            enable <= 0;
+            counter <= counter + 1;
         end
     end
 
-    // Contador de tempo (hora:min:seg)
-    always_ff @(posedge clk) begin 
-        if (enable == 1) begin
-            if (segundos == 59) begin
-                segundos <= 0;
-                if (minutos == 59) begin
-                    minutos <= 0;
-                    if (horas == 23)
-                        horas <= 0;
-                    else
-                        horas <= horas + 1;
-                end else begin
-                    minutos <= minutos + 1;
-                end 
-            end else begin
-                segundos <= segundos + 1; 
-            end
-        end
-    end
-
+    // Alterna o modo
     always_ff @(posedge clk) begin
-        if (mode_btn) begin  // KEY[2]
+        mode_btn_antigo <= mode_btn;
+
+        if (~mode_btn_antigo & mode_btn) begin // borda de subida
             mode <= (mode == 2'b11) ? 2'b00 : mode + 1;
         end
     end
 
-    // Lógica para ajuste do relógio
     always_ff @(posedge clk) begin
-        if (mode == 2'b01) begin //horas
-           if (val <= 6'd23) horas <= val;
-        end else if (mode == 2'b10) begin // min
-            if (val <= 6'd59) min <= val;
-        end else if (mode == 2'b11) begin // seg
-            if (val <= 6'd59) seg <= val;
-        end
+        case (mode)
+            2'b01: if (val <= 6'd23) hour_reg <= val;
+            2'b10: if (val <= 6'd59) min_reg  <= val;
+            2'b11: if (val <= 6'd59) seg_reg  <= val;
+            default: if (enable) begin
+                if (seg_reg == 59) begin
+                    seg_reg <= 0;
+                    if (min_reg == 59) begin
+                        min_reg <= 0;
+                        if (hour_reg == 23)
+                            hour_reg <= 0;
+                        else
+                            hour_reg <= hour_reg + 1;
+                    end else begin
+                        min_reg <= min_reg + 1;
+                    end
+                end else begin
+                    seg_reg <= seg_reg + 1;
+                end
+            end
+        endcase
     end
 
-endmodule   
+endmodule

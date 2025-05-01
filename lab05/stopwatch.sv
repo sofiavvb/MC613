@@ -1,25 +1,29 @@
 module stopwatch(
     input logic clk,
     input logic rst, 
-    input logic start_stop_btn,  
-    output logic [6:0] centesimos;
-    output logic [5:0] segundos;
-    output logic [6:0] minutos;
+    input logic start_stop_btn,
+    output logic [6:0] centesimos,
+    output logic [5:0] segundos,
+    output logic [6:0] minutos
 );
+    logic [6:0] cent_reg;
+    logic [5:0] seg_reg;
+    logic [6:0] min_reg;
+
+    assign centesimos = cent_reg;
+    assign segundos   = seg_reg;
+    assign minutos    = min_reg;
+
+    // Clock divisor para gerar pulso a cada 1 centésimo de segundo (0.01s)
     logic [18:0] counter;
     logic enable;
-    // Contadores
-   
 
 
-    //dividir o clock para pegar 1 cent de segundo
+    // Divisor de clock para 1 centésimo (~500k ciclos)
     always_ff @(posedge clk or posedge rst) begin
         if (rst) begin
             counter <= 0;
             enable <= 0;
-            centesimos <= 0;
-            segundos <= 0;
-            minutos <= 0;
         end else begin
             if (counter == 499_999) begin
                 enable <= 1;
@@ -31,30 +35,36 @@ module stopwatch(
         end
     end
 
-    //FSM DO CRONOMETRO
+
+    // Máquina de estados: controla se o cronômetro está parado ou rodando
     typedef enum logic {IDLE, RUNNING} state_t;
     state_t state;
 
     always_ff @(posedge clk or posedge rst) begin
         if (rst) begin
-            state <= IDLE; //parado
+            state <= IDLE;
         end else if (start_stop_btn) begin
             state <= (state == IDLE) ? RUNNING : IDLE;
         end
     end
 
-    always_ff @(posedge clk) begin 
-        if(enable == 1 && state == RUNNING) begin
-            if(centesimos == 99) begin
-                centesimos <= 0;
-                if (segundos == 59) begin
-                    segundos <= 0;
-                    minutos <= minutos + 1;
+    // Lógica do cronômetro
+    always_ff @(posedge clk or posedge rst) begin
+        if (rst) begin
+            cent_reg <= 0;
+            seg_reg  <= 0;
+            min_reg  <= 0;
+        end else if (enable && state == RUNNING) begin
+            if (cent_reg == 99) begin
+                cent_reg <= 0;
+                if (seg_reg == 59) begin
+                    seg_reg <= 0;
+                    min_reg <= min_reg + 1;
                 end else begin
-                    segundos <= segundos + 1;
-                end 
+                    seg_reg <= seg_reg + 1;
+                end
             end else begin
-                centesimos <= centesimos + 1; 
+                cent_reg <= cent_reg + 1;
             end
         end
     end

@@ -1,0 +1,61 @@
+module stopwatch(
+    input logic clk,
+    input logic rst, 
+    input logic start_stop_btn,
+    output logic [5:0] segundos,
+    output logic [5:0] minutos,
+    output logic [4:0] horas,
+);
+    assign centesimos = centesimos_reg;
+    assign segundos = segundos_reg;
+    assign minutos = minutos_reg;
+
+    // Divisor de clock para 1 centésimo (~500k ciclos)
+    always_ff @(posedge clk or posedge rst) begin
+        if (rst) begin
+            counter <= 0;
+            enable <= 0;
+        end else begin
+            if (counter == 499_999) begin
+                enable <= 1;
+                counter <= 0;
+            end else begin
+                enable <= 0;
+                counter <= counter + 1;
+            end
+        end
+    end
+
+    // FSM do cronômetro
+    typedef enum logic {IDLE, RUNNING} state_t;
+    state_t state;
+
+    always_ff @(posedge clk or posedge rst) begin
+        if (rst)
+            state <= IDLE;
+        else if (start_stop_btn)
+            state <= (state == IDLE) ? RUNNING : IDLE;
+    end
+
+    // Contador do tempo
+    always_ff @(posedge clk or posedge rst) begin
+        if (rst) begin
+            centesimos_reg <= 0;
+            segundos_reg <= 0;
+            minutos_reg <= 0;
+        end else if (enable && state == RUNNING) begin
+            if (centesimos_reg == 99) begin
+                centesimos_reg <= 0;
+                if (segundos_reg == 59) begin
+                    segundos_reg <= 0;
+                    minutos_reg <= minutos_reg + 1;
+                end else begin
+                    segundos_reg <= segundos_reg + 1;
+                end
+            end else begin
+                centesimos_reg <= centesimos_reg + 1;
+            end
+        end
+    end
+
+endmodule
