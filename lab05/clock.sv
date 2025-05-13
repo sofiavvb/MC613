@@ -7,12 +7,14 @@ module clock (
     output logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5
 );
     logic mode = 0; // 0 = stopwatch, 1 = watch
-    logic [1:0] mode_detector = 0;
+    logic [1:0] mode_detector = 0; // para o debounce do key3
+    logic [1:0] mode_edit = 0; // para def modo dentro de clock
     logic [4:0] unidade_0, dezena_0, unidade_1, dezena_1, unidade_2, dezena_2, w_horas;
     logic [5:0] s_segundos, w_segundos, w_minutos;
     logic [6:0] s_minutos, s_centesimos;
     logic [3:0] unidade, dezena;
     logic rst, start_stop_btn, blink;
+    logic [5:0] set_numero;
 
     // debounce para KEY[2]
     logic [2:0] shift_key2;
@@ -53,6 +55,7 @@ module clock (
         .segundos(w_segundos),
         .minutos(w_minutos),
         .horas(w_horas),
+        .mode_edit(mode_edit),
         .blink(blink)
     );
 
@@ -68,12 +71,12 @@ module clock (
             unidade_2 = s_minutos % 10;
         end else begin
             // watch
-            dezena_0  = w_segundos / 10;
-            unidade_0 = w_segundos % 10;
-            dezena_1  = w_minutos / 10;
-            unidade_1 = w_minutos % 10;
-            dezena_2  = w_horas / 10;
-            unidade_2 = w_horas % 10;
+            dezena_0  = (mode_edit == 2'b11 && blink) ? 4'd10 : w_segundos / 10;
+            unidade_0 = (mode_edit == 2'b11 && blink) ? 4'd10 : w_segundos % 10;
+            dezena_1  = (mode_edit == 2'b10 && blink) ? 4'd10 : w_minutos / 10;
+            unidade_1 = (mode_edit == 2'b10 && blink) ? 4'd10 : w_minutos % 10;
+            dezena_2  = (mode_edit == 2'b01 && blink) ? 4'd10 : w_horas / 10;
+            unidade_2 = (mode_edit == 2'b01 && blink) ? 4'd10 : w_horas % 10;
         end
     end
 

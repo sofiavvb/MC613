@@ -5,6 +5,7 @@ module watch(
     output logic [5:0] segundos,
     output logic [5:0] minutos,
     output logic [4:0] horas,
+    output logic [1:0] mode_edit,
     output logic blink
 );
     logic mode_btn_antigo;
@@ -18,6 +19,7 @@ module watch(
     assign segundos = seg_reg;
     assign minutos = min_reg;
     assign horas = hour_reg;
+    assign mode_edit = mode;
 
     // Divisor de clock
     always_ff @(posedge clk) begin
@@ -41,29 +43,37 @@ module watch(
     end
     
 
-    always_ff @(posedge clk) begin
-        case (mode)
-            2'b01: 
-                if (val <= 6'd23) begin
-                    hour_reg = val;
-                end b  
-            2'b10: 
-                if (val <= 6'd59) begin
-                    min_reg = val;
-                end
-            2'b11: 
-                if (val <= 6'd59) begin
-                    seg_reg = val;
-                end
-            default: if (enable) begin
-                if (seg_reg => 59) begin
+always_ff @(posedge clk) begin
+    case (mode)
+        2'b01: 
+            if (val <= 6'd23) begin
+                hour_reg = val[4:0];
+            end else begin
+                hour_reg = 23;
+            end
+        2'b10: 
+            if (val <= 6'd59) begin
+                min_reg = val;
+            end else begin
+                min_reg = 59
+            end
+        2'b11: 
+            if (val <= 6'd59) begin
+                seg_reg = val;
+            end else begin
+                seg_reg = 59
+            end
+        default:
+            if (enable) begin
+                if (seg_reg >= 59) begin
                     seg_reg = 0;
-                    if (min_reg => 59) begin
+                    if (min_reg >= 59) begin
                         min_reg = 0;
-                        if (hour_reg => 23)
+                        if (hour_reg >= 23) begin
                             hour_reg = 0;
-                        else
+                        end else begin
                             hour_reg = hour_reg + 1;
+                        end
                     end else begin
                         min_reg = min_reg + 1;
                     end
@@ -71,7 +81,7 @@ module watch(
                     seg_reg = seg_reg + 1;
                 end
             end
-        endcase
-    end
+    endcase
+end
 
 endmodule
