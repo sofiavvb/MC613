@@ -39,26 +39,36 @@ module watch(
             mode <= (mode == 2'b11) ? 2'b00 : mode + 1;
         end
     end
+    
 
     always_ff @(posedge clk) begin
         case (mode)
-            2'b01: if (val <= 6'd23) hour_reg <= val;
-            2'b10: if (val <= 6'd59) min_reg  <= val;
-            2'b11: if (val <= 6'd59) seg_reg  <= val;
+            2'b01: 
+                if (val <= 6'd23) begin
+                    hour_reg = val;
+                end b  
+            2'b10: 
+                if (val <= 6'd59) begin
+                    min_reg = val;
+                end
+            2'b11: 
+                if (val <= 6'd59) begin
+                    seg_reg = val;
+                end
             default: if (enable) begin
-                if (seg_reg == 59) begin
-                    seg_reg <= 0;
-                    if (min_reg == 59) begin
-                        min_reg <= 0;
-                        if (hour_reg == 23)
-                            hour_reg <= 0;
+                if (seg_reg => 59) begin
+                    seg_reg = 0;
+                    if (min_reg => 59) begin
+                        min_reg = 0;
+                        if (hour_reg => 23)
+                            hour_reg = 0;
                         else
-                            hour_reg <= hour_reg + 1;
+                            hour_reg = hour_reg + 1;
                     end else begin
-                        min_reg <= min_reg + 1;
+                        min_reg = min_reg + 1;
                     end
                 end else begin
-                    seg_reg <= seg_reg + 1;
+                    seg_reg = seg_reg + 1;
                 end
             end
         endcase

@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at watch.sv(45): always construct contains both blocking and non-blocking assignments File: /home/c-ec2023/ra252974/Documents/MC613/lab05/watch.sv Line: 45

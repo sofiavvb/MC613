@@ -1,7 +1,7 @@
 // clock para board -> unit watch e stopwatch
 
 module clock (
-    input logic CLOCK_50,
+    input logic CLOCK_100,
     input logic[3:0] KEY,
     input logic [5:0] SW,
     output logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5
@@ -19,7 +19,7 @@ module clock (
     logic key2_debounced;
 
     // debounce do botão KEY[2] (modo do relógio)
-    always_ff @(posedge CLOCK_50) begin
+    always_ff @(posedge CLOCK_100) begin
         shift_key2 <= {shift_key2[1:0], ~KEY[2]}; // botão ativo baixo
     end
 
@@ -28,7 +28,7 @@ module clock (
     assign set_numero = SW; 
 
     // debounce do botão KEY[3]
-    always_ff @(posedge CLOCK_50) begin
+    always_ff @(posedge CLOCK_100) begin
         mode_detector <= {mode_detector[0], ~KEY[3]};
         if (~mode_detector[1] & mode_detector[0])
             mode <= ~mode;
@@ -37,9 +37,9 @@ module clock (
 
     // instancia stopwatch
     stopwatch stopwatch_inst (
-        .clk(CLOCK_50),
+        .clk(CLOCK_100),
         .rst(~KEY[1]),
-        .start_stop_btn(KEY[2]),
+        .start_stop_btn(key2_debounced),
         .centesimos(s_centesimos),
         .segundos(s_segundos),
         .minutos(s_minutos)
@@ -47,7 +47,7 @@ module clock (
 
     // instancia watch
     watch watch_inst (
-        .clk(CLOCK_50),
+        .clk(CLOCK_100),
         .val(SW), 
         .mode_btn(key2_debounced),
         .segundos(w_segundos),

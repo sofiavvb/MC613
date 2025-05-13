@@ -1,4 +1,4 @@
-Fitter Status : Successful - Wed Apr 30 21:01:40 2025
+Fitter Status : Successful - Mon May 12 18:38:09 2025
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : clock
 Top-level Entity Name : clock
@@ -6,7 +6,7 @@ Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
 Logic utilization (in ALMs) : 292 / 32,070 ( < 1 % )
-Total registers : 115
+Total registers : 116
 Total pins : 53 / 457 ( 12 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 4,065,280 ( 0 % )

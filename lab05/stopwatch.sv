@@ -25,7 +25,7 @@ module stopwatch(
             counter <= 0;
             enable <= 0;
         end else begin
-            if (counter == 499_999) begin
+            if (counter == 19'd499_999) begin
                 enable <= 1;
                 counter <= 0;
             end else begin
