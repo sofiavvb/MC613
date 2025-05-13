@@ -23,7 +23,7 @@ module uart_board (
     assign rx_clear = ~KEY[1]; 
 
     // UART TX
-    uart_tx uart_tx_inst (
+    tx uart_tx_inst (
         .clk(CLOCK_50),
         .tick(pulse),
         .send(send),
@@ -33,7 +33,7 @@ module uart_board (
     );
 
     // UART RX
-    uart_rx uart_rx_inst (
+    rx uart_rx_inst (
         .clk(CLOCK_50),
         .tick(pulse),
         .rx(GPIO_0[1]),     // RX da GPIO

@@ -53,7 +53,7 @@ module uart_tb();
 
     // Simulação principal
     initial begin
-        $display("Iniciando simulação UART...");
+        $display("Iniciando simulacao UART...");
         $dumpfile("uart_tb.vcd");
         $dumpvars;
 

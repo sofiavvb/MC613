@@ -8,21 +8,22 @@ module rx(
     output logic done
 );
 
-    logic [3:0] bit_cnt;
-    logic [9:0] shift_reg;
-    logic receiving;
+    logic [3:0] bit_cnt = 0;
+    logic [9:0] shift_reg = 0;
+    logic receiving = 0;
 
     always_ff @(posedge clk) begin
         if (!receiving && !rx) begin
             receiving <= 1;
             bit_cnt <= 0;
+            done <= 0;
         end else if (tick && receiving) begin
-            shift_reg <= {rx, shift_reg[9:1]};
+            shift_reg <= {shift_reg[8:0], rx};
             bit_cnt <= bit_cnt + 1;
 
             if (bit_cnt == 9) begin
                 receiving <= 0;
-                data_out <= shift_reg[8:1];
+                data_out <= shift_reg[8:1]; // Assumindo que posição 0 = start, 9 = paridade
                 done <= 1;
             end else begin
                 done <= 0;

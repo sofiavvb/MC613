@@ -22,7 +22,7 @@ module uart(
     );
 
     // Transmissor UART
-    uart_tx tx_inst (
+    tx tx_inst (
         .clk(clk),
         .tick(tick),
         .send(send),
@@ -32,7 +32,7 @@ module uart(
     );
 
     // Receptor UART
-    uart_rx rx_inst (
+    rx rx_inst (
         .clk(clk),
         .tick(tick),
         .rx(rx),
