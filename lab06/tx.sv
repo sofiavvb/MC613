@@ -10,7 +10,7 @@ module tx(
 );
 
     logic [3:0] bit_cnt = 0;
-    logic [9:0] shift_reg = 10'b1111111111;  // Linha ociosa = 1
+    logic [10:0] shift_reg = 11'b1111111111;  // Linha ociosa = 1
     logic sending = 0;
 
     // Função para calcular paridade par
@@ -20,18 +20,18 @@ module tx(
 
     always_ff @(posedge clk) begin
         if (send && !sending) begin
-            shift_reg <= {1'b1,  data_in,  calc_parity(data_in), 1'b0}; // STOP | PAR | DATA | START
+            shift_reg <= {1'b1,  calc_parity(data_in), data_in, 1'b0}; // STOP | PAR | DATA | START
             bit_cnt   <= 0;
             sending   <= 1;
             busy      <= 1;
             tx        <= 0; // START bit
         end
         else if (tick && sending) begin
-            tx        <= shift_reg[0];
+            tx <= shift_reg[0];
             shift_reg <= shift_reg >> 1;
             bit_cnt   <= bit_cnt + 1;
 
-            if (bit_cnt == 9) begin
+            if (bit_cnt == 10) begin
                 sending <= 0;
                 busy    <= 0;
                 tx      <= 1; // Linha idle após fim

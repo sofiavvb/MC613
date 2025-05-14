@@ -66,8 +66,9 @@ module uart_tb();
         $display("Byte enviado: 0xA5");
 
         // Espera o receptor sinalizar conclusão
-        wait(rx_done == 1);
-        @(negedge clk); // Espera um ciclo para estabilidade
+        wait (rx_done);
+        # (BAUD_TICK);
+        // Espera um ciclo para estabilidade
 
         if (rx_data == 8'hA5) begin
             $display("SUCESSO! Byte recebido corretamente: %h", rx_data);
