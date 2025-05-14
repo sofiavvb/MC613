@@ -55,13 +55,13 @@ always_ff @(posedge clk) begin
             if (val <= 6'd59) begin
                 min_reg = val;
             end else begin
-                min_reg = 59
+                min_reg = 59;
             end
         2'b11: 
             if (val <= 6'd59) begin
                 seg_reg = val;
             end else begin
-                seg_reg = 59
+                seg_reg = 59;
             end
         default:
             if (enable) begin

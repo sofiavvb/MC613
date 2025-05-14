@@ -1,0 +1,60 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/c-ec2022/ra248220/Documents/MC613/MC613/lab05/quartus/simulation/modelsim
+vstopwatch
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1747252247
+!i10b 1
+!s100 ?hj89RA53P6MReReDZ9P:0
+If2b_6YLWUPnhWnC=@hRLh3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 stopwatch_sv_unit
+S1
+R0
+w1747242240
+8/home/c-ec2022/ra248220/Documents/MC613/MC613/lab05/quartus/../stopwatch.sv
+F/home/c-ec2022/ra248220/Documents/MC613/MC613/lab05/quartus/../stopwatch.sv
+L0 1
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1747252247.000000
+!s107 /home/c-ec2022/ra248220/Documents/MC613/MC613/lab05/quartus/../stopwatch.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/c-ec2022/ra248220/Documents/MC613/MC613/lab05/quartus/..|/home/c-ec2022/ra248220/Documents/MC613/MC613/lab05/quartus/../stopwatch.sv|
+!i113 1
+Z6 o-sv -work work
+Z7 !s92 -sv -work work +incdir+/home/c-ec2022/ra248220/Documents/MC613/MC613/lab05/quartus/..
+Z8 tCvgOpt 0
+vstopwatch_tb
+R1
+R2
+!i10b 1
+!s100 XMXz5JWDzeTE]7`0RNDf]3
+IdE:XaCQHZo>C=EFDkNWzz0
+R3
+!s105 stopwatch_tb_sv_unit
+S1
+R0
+w1747252195
+8/home/c-ec2022/ra248220/Documents/MC613/MC613/lab05/quartus/../stopwatch_tb.sv
+F/home/c-ec2022/ra248220/Documents/MC613/MC613/lab05/quartus/../stopwatch_tb.sv
+L0 3
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/c-ec2022/ra248220/Documents/MC613/MC613/lab05/quartus/../stopwatch_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/c-ec2022/ra248220/Documents/MC613/MC613/lab05/quartus/..|/home/c-ec2022/ra248220/Documents/MC613/MC613/lab05/quartus/../stopwatch_tb.sv|
+!i113 1
+R6
+R7
+R8

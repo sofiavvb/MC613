@@ -1,0 +1,90 @@
+`timescale 1ns/1ps
+
+module watch_tb;
+
+    // Sinais do DUT
+    logic clk;
+    logic [5:0] val;
+    logic mode_btn;
+    logic [5:0] segundos, minutos;
+    logic [4:0] horas;
+    logic [1:0] mode_edit;
+    logic blink;
+
+    // Instancia o módulo watch
+    watch uut (
+        .clk(clk),
+        .val(val),
+        .mode_btn(mode_btn),
+        .segundos(segundos),
+        .minutos(minutos),
+        .horas(horas),
+        .mode_edit(mode_edit),
+        .blink(blink)
+    );
+
+    // Geração de clock de 10ns (100MHz)
+    always #5 clk = ~clk;
+	 
+	 // Tarefa para simular o pressionamento do botão 
+    task press_mode_button();
+        @(posedge clk);
+        mode_btn = 1;
+        @(posedge clk);
+        mode_btn = 0;
+        @(posedge clk);
+    endtask
+
+    // Simulação
+    initial begin
+        $display("Iniciando simulação do módulo watch");
+        clk = 0;
+        val = 6'd0;
+        mode_btn = 0;
+
+        // Aguarda alguns ciclos
+        repeat (10) @(posedge clk);
+
+        // Pressiona o botão para entrar no modo de ajuste de horas (modo 01)
+        press_mode_button();
+        val = 6'd15;
+        repeat (10) @(posedge clk); // aplica valor
+
+        // Entra no modo de ajuste de minutos (modo 10)
+        press_mode_button();
+        val = 6'd45;
+        repeat (10) @(posedge clk);
+
+        // Entra no modo de ajuste de segundos (modo 11)
+        press_mode_button();
+        val = 6'd30;
+        repeat (10) @(posedge clk);
+
+        // Retorna ao modo normal (modo 00) e deixa o relógio contar
+        press_mode_button();
+
+        // Espera 3 "segundos" simulando contagem — acelera o tempo artificialmente
+        repeat (3) simulate_second();
+
+        // Mostra o horário após a simulação
+        $display("Tempo final: %0d:%0d:%0d", horas, minutos, segundos);
+
+        $stop;
+    end
+
+    // Tarefa para simular o pressionamento do botão
+    task press_mode_button();
+        mode_btn = 0;
+        repeat (2) @(posedge clk);
+        mode_btn = 1;
+        repeat (2) @(posedge clk);
+        mode_btn = 0;
+    endtask
+
+    // Tarefa para simular um "segundo" artificialmente
+    task simulate_second();
+        // Simula o contador de 5 mil de ciclos
+        repeat (5000) @(posedge clk);
+    endtask
+
+endmodule

@@ -1,7 +1,7 @@
 |clock
 CLOCK_100 => CLOCK_100.IN1
 KEY[0] => ~NO_FANOUT~
-KEY[1] => _.IN1
+KEY[1] => key1.IN1
 KEY[2] => shift_key2[0].DATAIN
 KEY[3] => mode_detector[0].DATAIN
 SW[0] => watch:watch_inst.val[0]
@@ -10,48 +10,48 @@ SW[2] => watch:watch_inst.val[2]
 SW[3] => watch:watch_inst.val[3]
 SW[4] => watch:watch_inst.val[4]
 SW[5] => watch:watch_inst.val[5]
-HEX0[0] <= dec_7seg:dis_0.segs
-HEX0[1] <= dec_7seg:dis_0.segs
-HEX0[2] <= dec_7seg:dis_0.segs
-HEX0[3] <= dec_7seg:dis_0.segs
-HEX0[4] <= dec_7seg:dis_0.segs
-HEX0[5] <= dec_7seg:dis_0.segs
-HEX0[6] <= dec_7seg:dis_0.segs
-HEX1[0] <= dec_7seg:dis_1.segs
-HEX1[1] <= dec_7seg:dis_1.segs
-HEX1[2] <= dec_7seg:dis_1.segs
-HEX1[3] <= dec_7seg:dis_1.segs
-HEX1[4] <= dec_7seg:dis_1.segs
-HEX1[5] <= dec_7seg:dis_1.segs
-HEX1[6] <= dec_7seg:dis_1.segs
-HEX2[0] <= dec_7seg:dis_2.segs
-HEX2[1] <= dec_7seg:dis_2.segs
-HEX2[2] <= dec_7seg:dis_2.segs
-HEX2[3] <= dec_7seg:dis_2.segs
-HEX2[4] <= dec_7seg:dis_2.segs
-HEX2[5] <= dec_7seg:dis_2.segs
-HEX2[6] <= dec_7seg:dis_2.segs
-HEX3[0] <= dec_7seg:dis_3.segs
-HEX3[1] <= dec_7seg:dis_3.segs
-HEX3[2] <= dec_7seg:dis_3.segs
-HEX3[3] <= dec_7seg:dis_3.segs
-HEX3[4] <= dec_7seg:dis_3.segs
-HEX3[5] <= dec_7seg:dis_3.segs
-HEX3[6] <= dec_7seg:dis_3.segs
-HEX4[0] <= dec_7seg:dis_4.segs
-HEX4[1] <= dec_7seg:dis_4.segs
-HEX4[2] <= dec_7seg:dis_4.segs
-HEX4[3] <= dec_7seg:dis_4.segs
-HEX4[4] <= dec_7seg:dis_4.segs
-HEX4[5] <= dec_7seg:dis_4.segs
-HEX4[6] <= dec_7seg:dis_4.segs
-HEX5[0] <= dec_7seg:dis_5.segs
-HEX5[1] <= dec_7seg:dis_5.segs
-HEX5[2] <= dec_7seg:dis_5.segs
-HEX5[3] <= dec_7seg:dis_5.segs
-HEX5[4] <= dec_7seg:dis_5.segs
-HEX5[5] <= dec_7seg:dis_5.segs
-HEX5[6] <= dec_7seg:dis_5.segs
+HEX0[0] << dec_7seg:dis_01.segs_unidade
+HEX0[1] << dec_7seg:dis_01.segs_unidade
+HEX0[2] << dec_7seg:dis_01.segs_unidade
+HEX0[3] << dec_7seg:dis_01.segs_unidade
+HEX0[4] << dec_7seg:dis_01.segs_unidade
+HEX0[5] << dec_7seg:dis_01.segs_unidade
+HEX0[6] << dec_7seg:dis_01.segs_unidade
+HEX1[0] << dec_7seg:dis_01.segs_dezena
+HEX1[1] << dec_7seg:dis_01.segs_dezena
+HEX1[2] << dec_7seg:dis_01.segs_dezena
+HEX1[3] << dec_7seg:dis_01.segs_dezena
+HEX1[4] << dec_7seg:dis_01.segs_dezena
+HEX1[5] << dec_7seg:dis_01.segs_dezena
+HEX1[6] << dec_7seg:dis_01.segs_dezena
+HEX2[0] << dec_7seg:dis_23.segs_unidade
+HEX2[1] << dec_7seg:dis_23.segs_unidade
+HEX2[2] << dec_7seg:dis_23.segs_unidade
+HEX2[3] << dec_7seg:dis_23.segs_unidade
+HEX2[4] << dec_7seg:dis_23.segs_unidade
+HEX2[5] << dec_7seg:dis_23.segs_unidade
+HEX2[6] << dec_7seg:dis_23.segs_unidade
+HEX3[0] << dec_7seg:dis_23.segs_dezena
+HEX3[1] << dec_7seg:dis_23.segs_dezena
+HEX3[2] << dec_7seg:dis_23.segs_dezena
+HEX3[3] << dec_7seg:dis_23.segs_dezena
+HEX3[4] << dec_7seg:dis_23.segs_dezena
+HEX3[5] << dec_7seg:dis_23.segs_dezena
+HEX3[6] << dec_7seg:dis_23.segs_dezena
+HEX4[0] << dec_7seg:dis_45.segs_unidade
+HEX4[1] << dec_7seg:dis_45.segs_unidade
+HEX4[2] << dec_7seg:dis_45.segs_unidade
+HEX4[3] << dec_7seg:dis_45.segs_unidade
+HEX4[4] << dec_7seg:dis_45.segs_unidade
+HEX4[5] << dec_7seg:dis_45.segs_unidade
+HEX4[6] << dec_7seg:dis_45.segs_unidade
+HEX5[0] << dec_7seg:dis_45.segs_dezena
+HEX5[1] << dec_7seg:dis_45.segs_dezena
+HEX5[2] << dec_7seg:dis_45.segs_dezena
+HEX5[3] << dec_7seg:dis_45.segs_dezena
+HEX5[4] << dec_7seg:dis_45.segs_dezena
+HEX5[5] << dec_7seg:dis_45.segs_dezena
+HEX5[6] << dec_7seg:dis_45.segs_dezena
 
 
 |clock|stopwatch:stopwatch_inst
@@ -211,31 +211,25 @@ clk => counter[25].CLK
 clk => enable.CLK
 val[0] => LessThan0.IN12
 val[0] => hour_reg.DATAB
-val[0] => min_reg.DATAB
 val[0] => LessThan1.IN12
 val[0] => seg_reg.DATAB
 val[1] => LessThan0.IN11
 val[1] => hour_reg.DATAB
-val[1] => min_reg.DATAB
 val[1] => LessThan1.IN11
 val[1] => seg_reg.DATAB
 val[2] => LessThan0.IN10
 val[2] => hour_reg.DATAB
-val[2] => min_reg.DATAB
 val[2] => LessThan1.IN10
 val[2] => seg_reg.DATAB
 val[3] => LessThan0.IN9
 val[3] => hour_reg.DATAB
-val[3] => min_reg.DATAB
 val[3] => LessThan1.IN9
 val[3] => seg_reg.DATAB
 val[4] => LessThan0.IN8
 val[4] => hour_reg.DATAB
-val[4] => min_reg.DATAB
 val[4] => LessThan1.IN8
 val[4] => seg_reg.DATAB
 val[5] => LessThan0.IN7
-val[5] => min_reg.DATAB
 val[5] => LessThan1.IN7
 val[5] => seg_reg.DATAB
 mode_btn => always1.IN1
@@ -262,87 +256,75 @@ mode_edit[1] <= mode[1].DB_MAX_OUTPUT_PORT_TYPE
 blink <= blink~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|clock|dec_7seg:dis_0
-bin[0] => Decoder0.IN3
-bin[1] => Decoder0.IN2
-bin[2] => Decoder0.IN1
-bin[3] => Decoder0.IN0
-segs[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-segs[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-segs[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-segs[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-segs[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-segs[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-segs[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+|clock|dec_7seg:dis_01
+bin[0] => Decoder0.IN6
+bin[1] => Decoder0.IN5
+bin[2] => Decoder0.IN4
+bin[3] => Decoder0.IN3
+bin[4] => Decoder0.IN2
+bin[5] => Decoder0.IN1
+bin[6] => Decoder0.IN0
+segs_dezena[0] <= WideOr33.DB_MAX_OUTPUT_PORT_TYPE
+segs_dezena[1] <= WideOr32.DB_MAX_OUTPUT_PORT_TYPE
+segs_dezena[2] <= segs_dezena.DB_MAX_OUTPUT_PORT_TYPE
+segs_dezena[3] <= WideOr31.DB_MAX_OUTPUT_PORT_TYPE
+segs_dezena[4] <= WideOr30.DB_MAX_OUTPUT_PORT_TYPE
+segs_dezena[5] <= WideOr29.DB_MAX_OUTPUT_PORT_TYPE
+segs_dezena[6] <= WideOr28.DB_MAX_OUTPUT_PORT_TYPE
+segs_unidade[0] <= WideOr27.DB_MAX_OUTPUT_PORT_TYPE
+segs_unidade[1] <= WideOr26.DB_MAX_OUTPUT_PORT_TYPE
+segs_unidade[2] <= segs_unidade.DB_MAX_OUTPUT_PORT_TYPE
+segs_unidade[3] <= WideOr25.DB_MAX_OUTPUT_PORT_TYPE
+segs_unidade[4] <= WideOr24.DB_MAX_OUTPUT_PORT_TYPE
+segs_unidade[5] <= WideOr23.DB_MAX_OUTPUT_PORT_TYPE
+segs_unidade[6] <= WideOr22.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|clock|dec_7seg:dis_1
-bin[0] => Decoder0.IN3
-bin[1] => Decoder0.IN2
-bin[2] => Decoder0.IN1
-bin[3] => Decoder0.IN0
-segs[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-segs[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-segs[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-segs[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-segs[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-segs[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-segs[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+|clock|dec_7seg:dis_23
+bin[0] => Decoder0.IN6
+bin[1] => Decoder0.IN5
+bin[2] => Decoder0.IN4
+bin[3] => Decoder0.IN3
+bin[4] => Decoder0.IN2
+bin[5] => Decoder0.IN1
+bin[6] => Decoder0.IN0
+segs_dezena[0] <= WideOr33.DB_MAX_OUTPUT_PORT_TYPE
+segs_dezena[1] <= WideOr32.DB_MAX_OUTPUT_PORT_TYPE
+segs_dezena[2] <= segs_dezena.DB_MAX_OUTPUT_PORT_TYPE
+segs_dezena[3] <= WideOr31.DB_MAX_OUTPUT_PORT_TYPE
+segs_dezena[4] <= WideOr30.DB_MAX_OUTPUT_PORT_TYPE
+segs_dezena[5] <= WideOr29.DB_MAX_OUTPUT_PORT_TYPE
+segs_dezena[6] <= WideOr28.DB_MAX_OUTPUT_PORT_TYPE
+segs_unidade[0] <= WideOr27.DB_MAX_OUTPUT_PORT_TYPE
+segs_unidade[1] <= WideOr26.DB_MAX_OUTPUT_PORT_TYPE
+segs_unidade[2] <= segs_unidade.DB_MAX_OUTPUT_PORT_TYPE
+segs_unidade[3] <= WideOr25.DB_MAX_OUTPUT_PORT_TYPE
+segs_unidade[4] <= WideOr24.DB_MAX_OUTPUT_PORT_TYPE
+segs_unidade[5] <= WideOr23.DB_MAX_OUTPUT_PORT_TYPE
+segs_unidade[6] <= WideOr22.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|clock|dec_7seg:dis_2
-bin[0] => Decoder0.IN3
-bin[1] => Decoder0.IN2
-bin[2] => Decoder0.IN1
-bin[3] => Decoder0.IN0
-segs[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-segs[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-segs[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-segs[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-segs[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-segs[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-segs[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|clock|dec_7seg:dis_3
-bin[0] => Decoder0.IN3
-bin[1] => Decoder0.IN2
-bin[2] => Decoder0.IN1
-bin[3] => Decoder0.IN0
-segs[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-segs[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-segs[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-segs[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-segs[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-segs[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-segs[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|clock|dec_7seg:dis_4
-bin[0] => Decoder0.IN3
-bin[1] => Decoder0.IN2
-bin[2] => Decoder0.IN1
-bin[3] => Decoder0.IN0
-segs[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-segs[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-segs[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-segs[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-segs[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-segs[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-segs[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|clock|dec_7seg:dis_5
-bin[0] => Decoder0.IN3
-bin[1] => Decoder0.IN2
-bin[2] => Decoder0.IN1
-bin[3] => Decoder0.IN0
-segs[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-segs[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-segs[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-segs[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-segs[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-segs[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-segs[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+|clock|dec_7seg:dis_45
+bin[0] => Decoder0.IN6
+bin[1] => Decoder0.IN5
+bin[2] => Decoder0.IN4
+bin[3] => Decoder0.IN3
+bin[4] => Decoder0.IN2
+bin[5] => Decoder0.IN1
+bin[6] => Decoder0.IN0
+segs_dezena[0] <= WideOr33.DB_MAX_OUTPUT_PORT_TYPE
+segs_dezena[1] <= WideOr32.DB_MAX_OUTPUT_PORT_TYPE
+segs_dezena[2] <= segs_dezena.DB_MAX_OUTPUT_PORT_TYPE
+segs_dezena[3] <= WideOr31.DB_MAX_OUTPUT_PORT_TYPE
+segs_dezena[4] <= WideOr30.DB_MAX_OUTPUT_PORT_TYPE
+segs_dezena[5] <= WideOr29.DB_MAX_OUTPUT_PORT_TYPE
+segs_dezena[6] <= WideOr28.DB_MAX_OUTPUT_PORT_TYPE
+segs_unidade[0] <= WideOr27.DB_MAX_OUTPUT_PORT_TYPE
+segs_unidade[1] <= WideOr26.DB_MAX_OUTPUT_PORT_TYPE
+segs_unidade[2] <= segs_unidade.DB_MAX_OUTPUT_PORT_TYPE
+segs_unidade[3] <= WideOr25.DB_MAX_OUTPUT_PORT_TYPE
+segs_unidade[4] <= WideOr24.DB_MAX_OUTPUT_PORT_TYPE
+segs_unidade[5] <= WideOr23.DB_MAX_OUTPUT_PORT_TYPE
+segs_unidade[6] <= WideOr22.DB_MAX_OUTPUT_PORT_TYPE
 
 
