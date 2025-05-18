@@ -9,7 +9,8 @@ module uart(
     output logic tx,
     output logic [7:0] rx_data,
     output logic tx_busy,
-    output logic rx_done
+    output logic rx_done,
+    output logic rx_error
 );
 
     logic tick;
@@ -26,6 +27,7 @@ module uart(
         .clk(clk),
         .tick(tick),
         .send(send),
+        .rst(rst),
         .data_in(tx_data),
         .tx(tx),
         .busy(tx_busy)
@@ -34,10 +36,12 @@ module uart(
     // Receptor UART
     rx rx_inst (
         .clk(clk),
+        .rst(rst),
         .tick(tick),
         .rx(rx),
         .data_out(rx_data),
-        .done(rx_done)
+        .done(rx_done),
+        .error(rx_error)
     );
 
 endmodule

@@ -1,7 +1,7 @@
-Analysis & Elaboration Status : Successful - Tue May 13 20:27:57 2025
+Analysis & Synthesis Status : Failed - Sun May 18 20:40:01 2025
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : uart_board
-Top-level Entity Name : uart_tb
+Top-level Entity Name : uart_board
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A until Partition Merge
 Total registers : N/A until Partition Merge

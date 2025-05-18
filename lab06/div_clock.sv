@@ -12,7 +12,7 @@ module div_clock #(parameter DIV = 5208) (
         if (rst) begin
             counter <= 0;
             pulse <= 0;
-        end else if (counter == DIV - 1) begin
+        end else if (counter == DIV / 2) begin
             counter <= 0;
             pulse <= 1;
         end else begin

@@ -1,5 +1,5 @@
 Fitter report for uart_board
-Tue May 13 19:10:34 2025
+Sun May 18 20:06:35 2025
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Successful - Tue May 13 19:10:34 2025       ;
+; Fitter Status                   ; Successful - Sun May 18 20:06:35 2025       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; uart_board                                  ;
 ; Top-level Entity Name           ; uart_board                                  ;
@@ -72,7 +72,7 @@ refer to the applicable agreement for further details.
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
 ; Logic utilization (in ALMs)     ; 32 / 32,070 ( < 1 % )                       ;
-; Total registers                 ; 67                                          ;
+; Total registers                 ; 65                                          ;
 ; Total pins                      ; 55 / 457 ( 12 % )                           ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                       ;
@@ -154,16 +154,16 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 6           ;
 ; Maximum allowed            ; 6           ;
 ;                            ;             ;
-; Average used               ; 1.02        ;
+; Average used               ; 1.01        ;
 ; Maximum used               ; 6           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.4%      ;
-;     Processor 3            ;   0.4%      ;
-;     Processor 4            ;   0.4%      ;
-;     Processor 5            ;   0.4%      ;
-;     Processor 6            ;   0.4%      ;
+;     Processor 2            ;   0.2%      ;
+;     Processor 3            ;   0.2%      ;
+;     Processor 4            ;   0.2%      ;
+;     Processor 5            ;   0.2%      ;
+;     Processor 6            ;   0.2%      ;
 +----------------------------+-------------+
 
 
@@ -176,9 +176,7 @@ refer to the applicable agreement for further details.
 ; div_clock:div_clock_inst|counter[0]  ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; div_clock:div_clock_inst|counter[0]~DUPLICATE  ;                  ;                       ;
 ; div_clock:div_clock_inst|counter[2]  ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; div_clock:div_clock_inst|counter[2]~DUPLICATE  ;                  ;                       ;
 ; div_clock:div_clock_inst|counter[10] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; div_clock:div_clock_inst|counter[10]~DUPLICATE ;                  ;                       ;
-; rx:uart_rx_inst|shift_reg[2]         ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; rx:uart_rx_inst|shift_reg[2]~DUPLICATE         ;                  ;                       ;
-; rx:uart_rx_inst|shift_reg[5]         ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; rx:uart_rx_inst|shift_reg[5]~DUPLICATE         ;                  ;                       ;
-; rx:uart_rx_inst|shift_reg[6]         ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; rx:uart_rx_inst|shift_reg[6]~DUPLICATE         ;                  ;                       ;
+; div_clock:div_clock_inst|pulse       ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; div_clock:div_clock_inst|pulse~DUPLICATE       ;                  ;                       ;
 +--------------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+------------------------------------------------+------------------+-----------------------+
 
 
@@ -544,7 +542,7 @@ refer to the applicable agreement for further details.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/quartus/output_files/uart_board.pin.
+The pin-out file can be found in /home/c-ec2023/ra252974/Documents/MC613/lab06/quartus/output_files/uart_board.pin.
 
 
 +------------------------------------------------------------------------------------------+
@@ -554,12 +552,12 @@ The pin-out file can be found in /home/c-ec2022/ra248220/Documents/MC613/MC613/l
 +-------------------------------------------------------------+--------------------+-------+
 ; Logic utilization (ALMs needed / total ALMs on device)      ; 32 / 32,070        ; < 1 % ;
 ; ALMs needed [=A-B+C]                                        ; 32                 ;       ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 39 / 32,070        ; < 1 % ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 38 / 32,070        ; < 1 % ;
 ;         [a] ALMs used for LUT logic and registers           ; 16                 ;       ;
 ;         [b] ALMs used for LUT logic                         ; 8                  ;       ;
-;         [c] ALMs used for registers                         ; 15                 ;       ;
+;         [c] ALMs used for registers                         ; 14                 ;       ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                  ;       ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 7 / 32,070         ; < 1 % ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 6 / 32,070         ; < 1 % ;
 ;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 0 / 32,070         ; 0 %   ;
 ;         [a] Due to location constrained logic               ; 0                  ;       ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                  ;       ;
@@ -573,20 +571,20 @@ The pin-out file can be found in /home/c-ec2022/ra248220/Documents/MC613/MC613/l
 ;     -- Memory LABs (up to half of total LABs)               ; 0                  ;       ;
 ;                                                             ;                    ;       ;
 ; Combinational ALUT usage for logic                          ; 40                 ;       ;
-;     -- 7 input functions                                    ; 1                  ;       ;
+;     -- 7 input functions                                    ; 0                  ;       ;
 ;     -- 6 input functions                                    ; 4                  ;       ;
 ;     -- 5 input functions                                    ; 6                  ;       ;
-;     -- 4 input functions                                    ; 7                  ;       ;
+;     -- 4 input functions                                    ; 8                  ;       ;
 ;     -- <=3 input functions                                  ; 22                 ;       ;
-; Combinational ALUT usage for route-throughs                 ; 18                 ;       ;
+; Combinational ALUT usage for route-throughs                 ; 16                 ;       ;
 ;                                                             ;                    ;       ;
-; Dedicated logic registers                                   ; 67                 ;       ;
+; Dedicated logic registers                                   ; 65                 ;       ;
 ;     -- By type:                                             ;                    ;       ;
-;         -- Primary logic registers                          ; 61 / 64,140        ; < 1 % ;
+;         -- Primary logic registers                          ; 59 / 64,140        ; < 1 % ;
 ;         -- Secondary logic registers                        ; 6 / 64,140         ; < 1 % ;
 ;     -- By function:                                         ;                    ;       ;
 ;         -- Design implementation registers                  ; 61                 ;       ;
-;         -- Routing optimization registers                   ; 6                  ;       ;
+;         -- Routing optimization registers                   ; 4                  ;       ;
 ;                                                             ;                    ;       ;
 ; Virtual pins                                                ; 0                  ;       ;
 ; I/O pins                                                    ; 55 / 457           ; 12 %  ;
@@ -642,11 +640,11 @@ The pin-out file can be found in /home/c-ec2022/ra248220/Documents/MC613/MC613/l
 ; Impedance control blocks                                    ; 0 / 4              ; 0 %   ;
 ; Hard Memory Controllers                                     ; 0 / 2              ; 0 %   ;
 ; Average interconnect usage (total/H/V)                      ; 0.0% / 0.0% / 0.0% ;       ;
-; Peak interconnect usage (total/H/V)                         ; 0.6% / 0.6% / 0.5% ;       ;
-; Maximum fan-out                                             ; 67                 ;       ;
-; Highest non-global fan-out                                  ; 17                 ;       ;
-; Total fan-out                                               ; 473                ;       ;
-; Average fan-out                                             ; 1.74               ;       ;
+; Peak interconnect usage (total/H/V)                         ; 0.4% / 0.5% / 0.1% ;       ;
+; Maximum fan-out                                             ; 65                 ;       ;
+; Highest non-global fan-out                                  ; 18                 ;       ;
+; Total fan-out                                               ; 463                ;       ;
+; Average fan-out                                             ; 1.73               ;       ;
 +-------------------------------------------------------------+--------------------+-------+
 
 
@@ -657,12 +655,12 @@ The pin-out file can be found in /home/c-ec2022/ra248220/Documents/MC613/MC613/l
 +-------------------------------------------------------------+----------------------+--------------------------------+
 ; Logic utilization (ALMs needed / total ALMs on device)      ; 32 / 32070 ( < 1 % ) ; 0 / 32070 ( 0 % )              ;
 ; ALMs needed [=A-B+C]                                        ; 32                   ; 0                              ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 39 / 32070 ( < 1 % ) ; 0 / 32070 ( 0 % )              ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 38 / 32070 ( < 1 % ) ; 0 / 32070 ( 0 % )              ;
 ;         [a] ALMs used for LUT logic and registers           ; 16                   ; 0                              ;
 ;         [b] ALMs used for LUT logic                         ; 8                    ; 0                              ;
-;         [c] ALMs used for registers                         ; 15                   ; 0                              ;
+;         [c] ALMs used for registers                         ; 14                   ; 0                              ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                    ; 0                              ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 7 / 32070 ( < 1 % )  ; 0 / 32070 ( 0 % )              ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 6 / 32070 ( < 1 % )  ; 0 / 32070 ( 0 % )              ;
 ;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 0 / 32070 ( 0 % )    ; 0 / 32070 ( 0 % )              ;
 ;         [a] Due to location constrained logic               ; 0                    ; 0                              ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                    ; 0                              ;
@@ -676,23 +674,23 @@ The pin-out file can be found in /home/c-ec2022/ra248220/Documents/MC613/MC613/l
 ;     -- Memory LABs (up to half of total LABs)               ; 0                    ; 0                              ;
 ;                                                             ;                      ;                                ;
 ; Combinational ALUT usage for logic                          ; 40                   ; 0                              ;
-;     -- 7 input functions                                    ; 1                    ; 0                              ;
+;     -- 7 input functions                                    ; 0                    ; 0                              ;
 ;     -- 6 input functions                                    ; 4                    ; 0                              ;
 ;     -- 5 input functions                                    ; 6                    ; 0                              ;
-;     -- 4 input functions                                    ; 7                    ; 0                              ;
+;     -- 4 input functions                                    ; 8                    ; 0                              ;
 ;     -- <=3 input functions                                  ; 22                   ; 0                              ;
-; Combinational ALUT usage for route-throughs                 ; 18                   ; 0                              ;
+; Combinational ALUT usage for route-throughs                 ; 16                   ; 0                              ;
 ; Memory ALUT usage                                           ; 0                    ; 0                              ;
 ;     -- 64-address deep                                      ; 0                    ; 0                              ;
 ;     -- 32-address deep                                      ; 0                    ; 0                              ;
 ;                                                             ;                      ;                                ;
 ; Dedicated logic registers                                   ; 0                    ; 0                              ;
 ;     -- By type:                                             ;                      ;                                ;
-;         -- Primary logic registers                          ; 61 / 64140 ( < 1 % ) ; 0 / 64140 ( 0 % )              ;
+;         -- Primary logic registers                          ; 59 / 64140 ( < 1 % ) ; 0 / 64140 ( 0 % )              ;
 ;         -- Secondary logic registers                        ; 6 / 64140 ( < 1 % )  ; 0 / 64140 ( 0 % )              ;
 ;     -- By function:                                         ;                      ;                                ;
 ;         -- Design implementation registers                  ; 61                   ; 0                              ;
-;         -- Routing optimization registers                   ; 6                    ; 0                              ;
+;         -- Routing optimization registers                   ; 4                    ; 0                              ;
 ;                                                             ;                      ;                                ;
 ;                                                             ;                      ;                                ;
 ; Virtual pins                                                ; 0                    ; 0                              ;
@@ -709,8 +707,8 @@ The pin-out file can be found in /home/c-ec2022/ra248220/Documents/MC613/MC613/l
 ;     -- Registered Output Connections                        ; 0                    ; 0                              ;
 ;                                                             ;                      ;                                ;
 ; Internal Connections                                        ;                      ;                                ;
-;     -- Total Connections                                    ; 473                  ; 0                              ;
-;     -- Registered Connections                               ; 143                  ; 0                              ;
+;     -- Total Connections                                    ; 463                  ; 0                              ;
+;     -- Registered Connections                               ; 138                  ; 0                              ;
 ;                                                             ;                      ;                                ;
 ; External Connections                                        ;                      ;                                ;
 ;     -- Top                                                  ; 72                   ; 0                              ;
@@ -742,8 +740,8 @@ The pin-out file can be found in /home/c-ec2022/ra248220/Documents/MC613/MC613/l
 +----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
 ; Name     ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Termination Control Block ; Location assigned by ; Slew Rate ;
 +----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
-; CLOCK_50 ; AF14  ; 3B       ; 32           ; 0            ; 0            ; 67                    ; 0                  ; yes    ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
-; KEY[0]   ; AA14  ; 3B       ; 36           ; 0            ; 0            ; 9                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
+; CLOCK_50 ; AF14  ; 3B       ; 32           ; 0            ; 0            ; 65                    ; 0                  ; yes    ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
+; KEY[0]   ; AA14  ; 3B       ; 36           ; 0            ; 0            ; 10                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 ; KEY[1]   ; AA15  ; 3B       ; 36           ; 0            ; 17           ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 ; SW[0]    ; AB12  ; 3A       ; 12           ; 0            ; 17           ; 2                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 ; SW[1]    ; AC12  ; 3A       ; 16           ; 0            ; 0            ; 2                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
@@ -788,7 +786,7 @@ The pin-out file can be found in /home/c-ec2022/ra248220/Documents/MC613/MC613/l
 ; GPIO_0[17] ; AA19  ; 4A       ; 72           ; 0            ; 17           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; 1         ; no              ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Off               ; Series 50 Ohm without Calibration ; --                        ; no                         ; 0                   ; Off                         ; User                 ; 0 pF                 ; -                   ;
 ; GPIO_0[18] ; AE17  ; 4A       ; 50           ; 0            ; 40           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; 1         ; no              ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Off               ; Series 50 Ohm without Calibration ; --                        ; no                         ; 0                   ; Off                         ; User                 ; 0 pF                 ; -                   ;
 ; GPIO_0[19] ; AC20  ; 4A       ; 76           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; 1         ; no              ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Off               ; Series 50 Ohm without Calibration ; --                        ; no                         ; 0                   ; Off                         ; User                 ; 0 pF                 ; -                   ;
-; GPIO_0[1]  ; Y17   ; 4A       ; 68           ; 0            ; 0            ; 8                     ; 0                  ; no     ; no             ; no              ; no                     ; 1         ; no              ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Off               ; Series 50 Ohm without Calibration ; --                        ; no                         ; 0                   ; Off                         ; User                 ; 0 pF                 ; -                   ;
+; GPIO_0[1]  ; Y17   ; 4A       ; 68           ; 0            ; 0            ; 7                     ; 0                  ; no     ; no             ; no              ; no                     ; 1         ; no              ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Off               ; Series 50 Ohm without Calibration ; --                        ; no                         ; 0                   ; Off                         ; User                 ; 0 pF                 ; -                   ;
 ; GPIO_0[20] ; AH19  ; 4A       ; 58           ; 0            ; 91           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; 1         ; no              ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Off               ; Series 50 Ohm without Calibration ; --                        ; no                         ; 0                   ; Off                         ; User                 ; 0 pF                 ; -                   ;
 ; GPIO_0[21] ; AJ20  ; 4A       ; 62           ; 0            ; 34           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; 1         ; no              ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Off               ; Series 50 Ohm without Calibration ; --                        ; no                         ; 0                   ; Off                         ; User                 ; 0 pF                 ; -                   ;
 ; GPIO_0[22] ; AH20  ; 4A       ; 54           ; 0            ; 17           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; 1         ; no              ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Off               ; Series 50 Ohm without Calibration ; --                        ; no                         ; 0                   ; Off                         ; User                 ; 0 pF                 ; -                   ;
@@ -1811,10 +1809,10 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +-------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+--------------------------------------+-------------+--------------+
 ; Compilation Hierarchy Node    ; ALMs needed [=A-B+C] ; [A] ALMs used in final placement ; [B] Estimate of ALMs recoverable by dense packing ; [C] Estimate of ALMs unavailable ; ALMs used for memory ; Combinational ALUTs ; Dedicated Logic Registers ; I/O Registers ; Block Memory Bits ; M10Ks ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                  ; Entity Name ; Library Name ;
 +-------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+--------------------------------------+-------------+--------------+
-; |uart_board                   ; 32.0 (2.0)           ; 38.0 (4.5)                       ; 6.0 (2.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 40 (2)              ; 67 (8)                    ; 0 (0)         ; 0                 ; 0     ; 0          ; 55   ; 0            ; |uart_board                          ; uart_board  ; work         ;
-;    |div_clock:div_clock_inst| ; 8.0 (8.0)            ; 8.6 (8.6)                        ; 0.6 (0.6)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 16 (16)             ; 17 (17)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |uart_board|div_clock:div_clock_inst ; div_clock   ; work         ;
-;    |rx:uart_rx_inst|          ; 10.0 (10.0)          ; 12.9 (12.9)                      ; 2.9 (2.9)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 10 (10)             ; 26 (26)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |uart_board|rx:uart_rx_inst          ; rx          ; work         ;
-;    |tx:uart_tx_inst|          ; 12.0 (12.0)          ; 12.0 (12.0)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 12 (12)             ; 16 (16)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |uart_board|tx:uart_tx_inst          ; tx          ; work         ;
+; |uart_board                   ; 32.0 (2.3)           ; 37.5 (4.5)                       ; 5.5 (2.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 40 (2)              ; 65 (8)                    ; 0 (0)         ; 0                 ; 0     ; 0          ; 55   ; 0            ; |uart_board                          ; uart_board  ; work         ;
+;    |div_clock:div_clock_inst| ; 9.2 (9.2)            ; 10.0 (10.0)                      ; 0.8 (0.8)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 16 (16)             ; 18 (18)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |uart_board|div_clock:div_clock_inst ; div_clock   ; work         ;
+;    |rx:uart_rx_inst|          ; 9.0 (9.0)            ; 11.5 (11.5)                      ; 2.5 (2.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 9 (9)               ; 22 (22)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |uart_board|rx:uart_rx_inst          ; rx          ; work         ;
+;    |tx:uart_tx_inst|          ; 11.5 (11.5)          ; 11.5 (11.5)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 13 (13)             ; 17 (17)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |uart_board|tx:uart_tx_inst          ; tx          ; work         ;
 +-------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+--------------------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1867,17 +1865,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; GPIO_0[34] ; Bidir    ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; GPIO_0[35] ; Bidir    ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; GPIO_0[0]  ; Bidir    ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
-; GPIO_0[1]  ; Bidir    ; -- ; (0)  ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
+; GPIO_0[1]  ; Bidir    ; -- ; --   ; (0)  ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; CLOCK_50   ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; KEY[1]     ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; KEY[0]     ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; SW[0]      ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; KEY[1]     ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; KEY[0]     ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; SW[0]      ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; SW[1]      ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; SW[2]      ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; SW[3]      ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; SW[3]      ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; SW[4]      ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; SW[5]      ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; SW[6]      ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; SW[6]      ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; SW[7]      ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 +------------+----------+----+------+------+----+------+-------+--------+------------------------+--------------------------+
 
@@ -1923,69 +1921,69 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; GPIO_0[35]                                 ;                   ;         ;
 ; GPIO_0[0]                                  ;                   ;         ;
 ; GPIO_0[1]                                  ;                   ;         ;
-;      - rx:uart_rx_inst|done~0              ; 0                 ; 0       ;
-;      - rx:uart_rx_inst|receiving~0         ; 0                 ; 0       ;
-;      - rx:uart_rx_inst|bit_cnt~0           ; 0                 ; 0       ;
-;      - rx:uart_rx_inst|bit_cnt[0]~1        ; 0                 ; 0       ;
-;      - rx:uart_rx_inst|bit_cnt~2           ; 0                 ; 0       ;
-;      - rx:uart_rx_inst|bit_cnt~3           ; 0                 ; 0       ;
-;      - rx:uart_rx_inst|bit_cnt~4           ; 0                 ; 0       ;
-;      - rx:uart_rx_inst|shift_reg[9]~feeder ; 0                 ; 0       ;
+;      - rx:uart_rx_inst|receiving~0         ; 1                 ; 0       ;
+;      - rx:uart_rx_inst|bit_counter~0       ; 1                 ; 0       ;
+;      - rx:uart_rx_inst|bit_counter[0]~1    ; 1                 ; 0       ;
+;      - rx:uart_rx_inst|bit_counter~2       ; 1                 ; 0       ;
+;      - rx:uart_rx_inst|bit_counter~3       ; 1                 ; 0       ;
+;      - rx:uart_rx_inst|bit_counter~4       ; 1                 ; 0       ;
+;      - rx:uart_rx_inst|shift_reg[7]~feeder ; 1                 ; 0       ;
 ; CLOCK_50                                   ;                   ;         ;
 ; KEY[1]                                     ;                   ;         ;
-;      - LEDR[7]~0                           ; 0                 ; 0       ;
+;      - LEDR[7]~0                           ; 1                 ; 0       ;
 ; KEY[0]                                     ;                   ;         ;
-;      - tx:uart_tx_inst|shift_reg~1         ; 1                 ; 0       ;
-;      - tx:uart_tx_inst|sending~0           ; 1                 ; 0       ;
-;      - tx:uart_tx_inst|shift_reg~0         ; 1                 ; 0       ;
-;      - tx:uart_tx_inst|bit_cnt[0]~0        ; 1                 ; 0       ;
-;      - tx:uart_tx_inst|bit_cnt~1           ; 1                 ; 0       ;
-;      - tx:uart_tx_inst|bit_cnt~2           ; 1                 ; 0       ;
-;      - tx:uart_tx_inst|bit_cnt~3           ; 1                 ; 0       ;
-;      - tx:uart_tx_inst|bit_cnt~4           ; 1                 ; 0       ;
-;      - tx:uart_tx_inst|always0~0           ; 1                 ; 0       ;
+;      - tx:uart_tx_inst|tx~1                ; 0                 ; 0       ;
+;      - tx:uart_tx_inst|sending~0           ; 0                 ; 0       ;
+;      - tx:uart_tx_inst|shift_reg~0         ; 0                 ; 0       ;
+;      - tx:uart_tx_inst|shift_reg[0]~1      ; 0                 ; 0       ;
+;      - tx:uart_tx_inst|bit_cnt~0           ; 0                 ; 0       ;
+;      - tx:uart_tx_inst|bit_cnt~1           ; 0                 ; 0       ;
+;      - tx:uart_tx_inst|bit_cnt~2           ; 0                 ; 0       ;
+;      - tx:uart_tx_inst|bit_cnt~3           ; 0                 ; 0       ;
+;      - tx:uart_tx_inst|always0~0           ; 0                 ; 0       ;
+;      - tx:uart_tx_inst|shift_reg~2         ; 0                 ; 0       ;
 ; SW[0]                                      ;                   ;         ;
-;      - tx:uart_tx_inst|WideXnor0~0         ; 1                 ; 0       ;
-;      - tx:uart_tx_inst|shift_reg[1]~feeder ; 1                 ; 0       ;
+;      - tx:uart_tx_inst|WideXor0~0          ; 0                 ; 0       ;
+;      - tx:uart_tx_inst|shift_reg[1]~feeder ; 0                 ; 0       ;
 ; SW[1]                                      ;                   ;         ;
-;      - tx:uart_tx_inst|WideXnor0~0         ; 0                 ; 0       ;
+;      - tx:uart_tx_inst|WideXor0~0          ; 0                 ; 0       ;
 ;      - tx:uart_tx_inst|shift_reg[2]~feeder ; 0                 ; 0       ;
 ; SW[2]                                      ;                   ;         ;
-;      - tx:uart_tx_inst|WideXnor0~0         ; 1                 ; 0       ;
+;      - tx:uart_tx_inst|WideXor0~0          ; 1                 ; 0       ;
 ;      - tx:uart_tx_inst|shift_reg[3]~feeder ; 1                 ; 0       ;
 ; SW[3]                                      ;                   ;         ;
-;      - tx:uart_tx_inst|WideXnor0~0         ; 1                 ; 0       ;
-;      - tx:uart_tx_inst|shift_reg[4]~feeder ; 1                 ; 0       ;
+;      - tx:uart_tx_inst|WideXor0~0          ; 0                 ; 0       ;
+;      - tx:uart_tx_inst|shift_reg[4]~feeder ; 0                 ; 0       ;
 ; SW[4]                                      ;                   ;         ;
-;      - tx:uart_tx_inst|WideXnor0~0         ; 1                 ; 0       ;
+;      - tx:uart_tx_inst|WideXor0            ; 1                 ; 0       ;
 ;      - tx:uart_tx_inst|shift_reg[5]~feeder ; 1                 ; 0       ;
 ; SW[5]                                      ;                   ;         ;
-;      - tx:uart_tx_inst|WideXnor0~0         ; 1                 ; 0       ;
+;      - tx:uart_tx_inst|WideXor0            ; 1                 ; 0       ;
 ;      - tx:uart_tx_inst|shift_reg[6]~feeder ; 1                 ; 0       ;
 ; SW[6]                                      ;                   ;         ;
-;      - tx:uart_tx_inst|shift_reg~1         ; 1                 ; 0       ;
-;      - tx:uart_tx_inst|shift_reg[7]~feeder ; 1                 ; 0       ;
+;      - tx:uart_tx_inst|WideXor0            ; 0                 ; 0       ;
+;      - tx:uart_tx_inst|shift_reg[7]~feeder ; 0                 ; 0       ;
 ; SW[7]                                      ;                   ;         ;
-;      - tx:uart_tx_inst|shift_reg~1         ; 0                 ; 0       ;
+;      - tx:uart_tx_inst|WideXor0            ; 0                 ; 0       ;
 ;      - tx:uart_tx_inst|shift_reg[8]~feeder ; 0                 ; 0       ;
 +--------------------------------------------+-------------------+---------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                                                ;
-+-----------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; Name                              ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+-----------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; CLOCK_50                          ; PIN_AF14           ; 67      ; Clock        ; yes    ; Global Clock         ; GCLK6            ; --                        ;
-; LEDR[7]~0                         ; LABCELL_X64_Y7_N36 ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; div_clock:div_clock_inst|Equal0~2 ; LABCELL_X62_Y7_N57 ; 17      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
-; rx:uart_rx_inst|bit_cnt[0]~1      ; LABCELL_X63_Y7_N45 ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; rx:uart_rx_inst|data_out[0]~0     ; LABCELL_X63_Y7_N39 ; 9       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; rx:uart_rx_inst|done              ; FF_X63_Y7_N32      ; 10      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
-; rx:uart_rx_inst|shift_reg[1]~0    ; LABCELL_X63_Y7_N21 ; 12      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; tx:uart_tx_inst|always0~0         ; LABCELL_X61_Y4_N33 ; 8       ; Sync. load   ; no     ; --                   ; --               ; --                        ;
-; tx:uart_tx_inst|bit_cnt[0]~0      ; LABCELL_X61_Y4_N15 ; 13      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-+-----------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                                 ;
++-----------------------------------+---------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; Name                              ; Location            ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++-----------------------------------+---------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; CLOCK_50                          ; PIN_AF14            ; 65      ; Clock        ; yes    ; Global Clock         ; GCLK6            ; --                        ;
+; LEDR[7]~0                         ; LABCELL_X51_Y1_N54  ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; div_clock:div_clock_inst|Equal0~2 ; LABCELL_X50_Y1_N42  ; 18      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
+; rx:uart_rx_inst|bit_counter[0]~1  ; MLABCELL_X52_Y1_N3  ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; rx:uart_rx_inst|data_out[0]~0     ; LABCELL_X51_Y1_N18  ; 9       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; rx:uart_rx_inst|done              ; FF_X51_Y1_N44       ; 9       ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
+; rx:uart_rx_inst|shift_reg[0]~0    ; MLABCELL_X52_Y1_N24 ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; tx:uart_tx_inst|always0~0         ; LABCELL_X48_Y1_N36  ; 9       ; Sync. load   ; no     ; --                   ; --               ; --                        ;
+; tx:uart_tx_inst|shift_reg[0]~1    ; LABCELL_X48_Y1_N33  ; 14      ; Clock enable ; no     ; --                   ; --               ; --                        ;
++-----------------------------------+---------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------+
@@ -1993,7 +1991,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------+----------+---------+----------------------+------------------+---------------------------+
 ; Name     ; Location ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +----------+----------+---------+----------------------+------------------+---------------------------+
-; CLOCK_50 ; PIN_AF14 ; 67      ; Global Clock         ; GCLK6            ; --                        ;
+; CLOCK_50 ; PIN_AF14 ; 65      ; Global Clock         ; GCLK6            ; --                        ;
 +----------+----------+---------+----------------------+------------------+---------------------------+
 
 
@@ -2002,10 +2000,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------+------------------------+
 ; Routing Resource Type                       ; Usage                  ;
 +---------------------------------------------+------------------------+
-; Block interconnects                         ; 70 / 289,320 ( < 1 % ) ;
-; C12 interconnects                           ; 9 / 13,420 ( < 1 % )   ;
-; C2 interconnects                            ; 22 / 119,108 ( < 1 % ) ;
-; C4 interconnects                            ; 14 / 56,300 ( < 1 % )  ;
+; Block interconnects                         ; 62 / 289,320 ( < 1 % ) ;
+; C12 interconnects                           ; 0 / 13,420 ( 0 % )     ;
+; C2 interconnects                            ; 12 / 119,108 ( < 1 % ) ;
+; C4 interconnects                            ; 9 / 56,300 ( < 1 % )   ;
 ; DQS bus muxes                               ; 0 / 25 ( 0 % )         ;
 ; DQS-18 I/O buses                            ; 0 / 25 ( 0 % )         ;
 ; DQS-9 I/O buses                             ; 0 / 25 ( 0 % )         ;
@@ -2065,12 +2063,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; HPS_INTERFACE_TPIU_TRACE_INPUTs             ; 0 / 2 ( 0 % )          ;
 ; HPS_INTERFACE_TPIU_TRACE_OUTPUTs            ; 0 / 33 ( 0 % )         ;
 ; Horizontal periphery clocks                 ; 0 / 72 ( 0 % )         ;
-; Local interconnects                         ; 42 / 84,580 ( < 1 % )  ;
+; Local interconnects                         ; 49 / 84,580 ( < 1 % )  ;
 ; Quadrant clocks                             ; 0 / 66 ( 0 % )         ;
-; R14 interconnects                           ; 32 / 12,676 ( < 1 % )  ;
-; R14/C12 interconnect drivers                ; 33 / 20,720 ( < 1 % )  ;
-; R3 interconnects                            ; 31 / 130,992 ( < 1 % ) ;
-; R6 interconnects                            ; 30 / 266,960 ( < 1 % ) ;
+; R14 interconnects                           ; 21 / 12,676 ( < 1 % )  ;
+; R14/C12 interconnect drivers                ; 21 / 20,720 ( < 1 % )  ;
+; R3 interconnects                            ; 29 / 130,992 ( < 1 % ) ;
+; R6 interconnects                            ; 47 / 266,960 ( < 1 % ) ;
 ; Spine clocks                                ; 1 / 360 ( < 1 % )      ;
 ; Wire stub REs                               ; 0 / 15,858 ( 0 % )     ;
 +---------------------------------------------+------------------------+
@@ -2241,39 +2239,42 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------+----------------------+-------------------+
 ; Source Clock(s) ; Destination Clock(s) ; Delay Added in ns ;
 +-----------------+----------------------+-------------------+
-; CLOCK_50        ; CLOCK_50             ; 6.9               ;
+; CLOCK_50        ; CLOCK_50             ; 5.1               ;
 +-----------------+----------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the TimeQuest Timing Analyzer.
 
 
-+-----------------------------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Details                                     ;
-+--------------------------------+------------------------------+-------------------+
-; Source Register                ; Destination Register         ; Delay Added in ns ;
-+--------------------------------+------------------------------+-------------------+
-; tx:uart_tx_inst|shift_reg[9]   ; tx:uart_tx_inst|shift_reg[9] ; 0.272             ;
-; tx:uart_tx_inst|bit_cnt[2]     ; tx:uart_tx_inst|bit_cnt[3]   ; 0.271             ;
-; tx:uart_tx_inst|bit_cnt[1]     ; tx:uart_tx_inst|bit_cnt[3]   ; 0.270             ;
-; rx:uart_rx_inst|bit_cnt[1]     ; rx:uart_rx_inst|bit_cnt[2]   ; 0.270             ;
-; rx:uart_rx_inst|bit_cnt[0]     ; rx:uart_rx_inst|bit_cnt[1]   ; 0.267             ;
-; tx:uart_tx_inst|sending        ; tx:uart_tx_inst|bit_cnt[3]   ; 0.240             ;
-; tx:uart_tx_inst|bit_cnt[0]     ; tx:uart_tx_inst|bit_cnt[3]   ; 0.224             ;
-; rx:uart_rx_inst|receiving      ; rx:uart_rx_inst|done         ; 0.221             ;
-; tx:uart_tx_inst|shift_reg[1]   ; tx:uart_tx_inst|shift_reg[0] ; 0.187             ;
-; rx:uart_rx_inst|bit_cnt[2]     ; rx:uart_rx_inst|bit_cnt[3]   ; 0.179             ;
-; rx:uart_rx_inst|bit_cnt[3]     ; rx:uart_rx_inst|done         ; 0.152             ;
-; div_clock:div_clock_inst|pulse ; rx:uart_rx_inst|done         ; 0.152             ;
-; tx:uart_tx_inst|shift_reg[0]   ; tx:uart_tx_inst|tx           ; 0.150             ;
-; tx:uart_tx_inst|bit_cnt[3]     ; tx:uart_tx_inst|sending      ; 0.110             ;
-; rx:uart_rx_inst|shift_reg[9]   ; rx:uart_rx_inst|shift_reg[8] ; 0.083             ;
-; rx:uart_rx_inst|shift_reg[8]   ; rx:uart_rx_inst|shift_reg[7] ; 0.083             ;
-; rx:uart_rx_inst|shift_reg[6]   ; rx:uart_rx_inst|shift_reg[5] ; 0.083             ;
-; rx:uart_rx_inst|shift_reg[7]   ; rx:uart_rx_inst|shift_reg[6] ; 0.069             ;
-; rx:uart_rx_inst|shift_reg[5]   ; rx:uart_rx_inst|shift_reg[4] ; 0.069             ;
-; rx:uart_rx_inst|shift_reg[2]   ; rx:uart_rx_inst|data_out[1]  ; 0.012             ;
-+--------------------------------+------------------------------+-------------------+
-Note: This table only shows the top 20 path(s) that have the largest delay added for hold.
++-------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                                       ;
++--------------------------------+--------------------------------+-------------------+
+; Source Register                ; Destination Register           ; Delay Added in ns ;
++--------------------------------+--------------------------------+-------------------+
+; tx:uart_tx_inst|bit_cnt[2]     ; tx:uart_tx_inst|bit_cnt[3]     ; 0.246             ;
+; rx:uart_rx_inst|bit_counter[1] ; rx:uart_rx_inst|bit_counter[3] ; 0.243             ;
+; rx:uart_rx_inst|bit_counter[0] ; rx:uart_rx_inst|bit_counter[1] ; 0.242             ;
+; tx:uart_tx_inst|sending        ; tx:uart_tx_inst|bit_cnt[3]     ; 0.215             ;
+; rx:uart_rx_inst|receiving      ; rx:uart_rx_inst|bit_counter[0] ; 0.180             ;
+; tx:uart_tx_inst|bit_cnt[1]     ; tx:uart_tx_inst|bit_cnt[2]     ; 0.176             ;
+; tx:uart_tx_inst|shift_reg[1]   ; tx:uart_tx_inst|shift_reg[0]   ; 0.162             ;
+; tx:uart_tx_inst|bit_cnt[0]     ; tx:uart_tx_inst|bit_cnt[1]     ; 0.161             ;
+; rx:uart_rx_inst|bit_counter[2] ; rx:uart_rx_inst|bit_counter[3] ; 0.152             ;
+; div_clock:div_clock_inst|pulse ; rx:uart_rx_inst|receiving      ; 0.118             ;
+; tx:uart_tx_inst|bit_cnt[3]     ; tx:uart_tx_inst|sending        ; 0.095             ;
+; rx:uart_rx_inst|bit_counter[3] ; rx:uart_rx_inst|receiving      ; 0.087             ;
+; rx:uart_rx_inst|data_out[7]    ; LEDR[7]~reg0                   ; 0.044             ;
+; rx:uart_rx_inst|data_out[4]    ; LEDR[4]~reg0                   ; 0.044             ;
+; rx:uart_rx_inst|data_out[2]    ; LEDR[2]~reg0                   ; 0.044             ;
+; rx:uart_rx_inst|shift_reg[7]   ; rx:uart_rx_inst|shift_reg[6]   ; 0.044             ;
+; rx:uart_rx_inst|shift_reg[2]   ; rx:uart_rx_inst|shift_reg[1]   ; 0.044             ;
+; tx:uart_tx_inst|shift_reg[0]   ; tx:uart_tx_inst|tx             ; 0.034             ;
+; rx:uart_rx_inst|data_out[6]    ; LEDR[6]~reg0                   ; 0.032             ;
+; rx:uart_rx_inst|data_out[3]    ; LEDR[3]~reg0                   ; 0.032             ;
+; rx:uart_rx_inst|data_out[0]    ; LEDR[0]~reg0                   ; 0.032             ;
+; rx:uart_rx_inst|shift_reg[5]   ; rx:uart_rx_inst|shift_reg[4]   ; 0.031             ;
+; rx:uart_rx_inst|shift_reg[3]   ; rx:uart_rx_inst|shift_reg[2]   ; 0.031             ;
++--------------------------------+--------------------------------+-------------------+
+Note: This table only shows the top 23 path(s) that have the largest delay added for hold.
 
 
 +-----------------+
@@ -2688,74 +2689,74 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "VGA_R[7]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "VGA_SYNC_N" is assigned to location or region, but does not exist in design
     Warning (15706): Node "VGA_VS" is assigned to location or region, but does not exist in design
-Info (11798): Fitter preparation operations ending: elapsed time is 00:00:11
+Info (11798): Fitter preparation operations ending: elapsed time is 00:00:09
 Info (170189): Fitter placement preparation operations beginning
 Info (14951): The Fitter is using Advanced Physical Optimization.
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:01
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:02
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X56_Y0 to location X66_Y10
+    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X45_Y0 to location X55_Y10
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.32 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.27 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:03
+Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:02
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169064): Following 36 pins have no output enable or a GND or VCC output enable - later changes to this connectivity may change fitting results
-    Info (169065): Pin GPIO_0[2] has a permanently disabled output enable File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_board.sv Line: 9
-    Info (169065): Pin GPIO_0[3] has a permanently disabled output enable File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_board.sv Line: 9
-    Info (169065): Pin GPIO_0[4] has a permanently disabled output enable File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_board.sv Line: 9
-    Info (169065): Pin GPIO_0[5] has a permanently disabled output enable File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_board.sv Line: 9
-    Info (169065): Pin GPIO_0[6] has a permanently disabled output enable File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_board.sv Line: 9
-    Info (169065): Pin GPIO_0[7] has a permanently disabled output enable File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_board.sv Line: 9
-    Info (169065): Pin GPIO_0[8] has a permanently disabled output enable File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_board.sv Line: 9
-    Info (169065): Pin GPIO_0[9] has a permanently disabled output enable File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_board.sv Line: 9
-    Info (169065): Pin GPIO_0[10] has a permanently disabled output enable File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_board.sv Line: 9
-    Info (169065): Pin GPIO_0[11] has a permanently disabled output enable File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_board.sv Line: 9
-    Info (169065): Pin GPIO_0[12] has a permanently disabled output enable File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_board.sv Line: 9
-    Info (169065): Pin GPIO_0[13] has a permanently disabled output enable File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_board.sv Line: 9
-    Info (169065): Pin GPIO_0[14] has a permanently disabled output enable File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_board.sv Line: 9
-    Info (169065): Pin GPIO_0[15] has a permanently disabled output enable File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_board.sv Line: 9
-    Info (169065): Pin GPIO_0[16] has a permanently disabled output enable File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_board.sv Line: 9
-    Info (169065): Pin GPIO_0[17] has a permanently disabled output enable File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_board.sv Line: 9
-    Info (169065): Pin GPIO_0[18] has a permanently disabled output enable File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_board.sv Line: 9
-    Info (169065): Pin GPIO_0[19] has a permanently disabled output enable File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_board.sv Line: 9
-    Info (169065): Pin GPIO_0[20] has a permanently disabled output enable File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_board.sv Line: 9
-    Info (169065): Pin GPIO_0[21] has a permanently disabled output enable File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_board.sv Line: 9
-    Info (169065): Pin GPIO_0[22] has a permanently disabled output enable File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_board.sv Line: 9
-    Info (169065): Pin GPIO_0[23] has a permanently disabled output enable File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_board.sv Line: 9
-    Info (169065): Pin GPIO_0[24] has a permanently disabled output enable File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_board.sv Line: 9
-    Info (169065): Pin GPIO_0[25] has a permanently disabled output enable File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_board.sv Line: 9
-    Info (169065): Pin GPIO_0[26] has a permanently disabled output enable File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_board.sv Line: 9
-    Info (169065): Pin GPIO_0[27] has a permanently disabled output enable File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_board.sv Line: 9
-    Info (169065): Pin GPIO_0[28] has a permanently disabled output enable File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_board.sv Line: 9
-    Info (169065): Pin GPIO_0[29] has a permanently disabled output enable File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_board.sv Line: 9
-    Info (169065): Pin GPIO_0[30] has a permanently disabled output enable File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_board.sv Line: 9
-    Info (169065): Pin GPIO_0[31] has a permanently disabled output enable File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_board.sv Line: 9
-    Info (169065): Pin GPIO_0[32] has a permanently disabled output enable File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_board.sv Line: 9
-    Info (169065): Pin GPIO_0[33] has a permanently disabled output enable File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_board.sv Line: 9
-    Info (169065): Pin GPIO_0[34] has a permanently disabled output enable File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_board.sv Line: 9
-    Info (169065): Pin GPIO_0[35] has a permanently disabled output enable File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_board.sv Line: 9
-    Info (169065): Pin GPIO_0[0] has a permanently enabled output enable File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_board.sv Line: 9
-    Info (169065): Pin GPIO_0[1] has a permanently disabled output enable File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_board.sv Line: 9
-Info (144001): Generated suppressed messages file /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/quartus/output_files/uart_board.fit.smsg
+    Info (169065): Pin GPIO_0[2] has a permanently disabled output enable File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 10
+    Info (169065): Pin GPIO_0[3] has a permanently disabled output enable File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 10
+    Info (169065): Pin GPIO_0[4] has a permanently disabled output enable File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 10
+    Info (169065): Pin GPIO_0[5] has a permanently disabled output enable File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 10
+    Info (169065): Pin GPIO_0[6] has a permanently disabled output enable File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 10
+    Info (169065): Pin GPIO_0[7] has a permanently disabled output enable File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 10
+    Info (169065): Pin GPIO_0[8] has a permanently disabled output enable File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 10
+    Info (169065): Pin GPIO_0[9] has a permanently disabled output enable File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 10
+    Info (169065): Pin GPIO_0[10] has a permanently disabled output enable File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 10
+    Info (169065): Pin GPIO_0[11] has a permanently disabled output enable File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 10
+    Info (169065): Pin GPIO_0[12] has a permanently disabled output enable File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 10
+    Info (169065): Pin GPIO_0[13] has a permanently disabled output enable File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 10
+    Info (169065): Pin GPIO_0[14] has a permanently disabled output enable File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 10
+    Info (169065): Pin GPIO_0[15] has a permanently disabled output enable File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 10
+    Info (169065): Pin GPIO_0[16] has a permanently disabled output enable File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 10
+    Info (169065): Pin GPIO_0[17] has a permanently disabled output enable File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 10
+    Info (169065): Pin GPIO_0[18] has a permanently disabled output enable File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 10
+    Info (169065): Pin GPIO_0[19] has a permanently disabled output enable File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 10
+    Info (169065): Pin GPIO_0[20] has a permanently disabled output enable File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 10
+    Info (169065): Pin GPIO_0[21] has a permanently disabled output enable File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 10
+    Info (169065): Pin GPIO_0[22] has a permanently disabled output enable File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 10
+    Info (169065): Pin GPIO_0[23] has a permanently disabled output enable File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 10
+    Info (169065): Pin GPIO_0[24] has a permanently disabled output enable File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 10
+    Info (169065): Pin GPIO_0[25] has a permanently disabled output enable File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 10
+    Info (169065): Pin GPIO_0[26] has a permanently disabled output enable File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 10
+    Info (169065): Pin GPIO_0[27] has a permanently disabled output enable File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 10
+    Info (169065): Pin GPIO_0[28] has a permanently disabled output enable File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 10
+    Info (169065): Pin GPIO_0[29] has a permanently disabled output enable File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 10
+    Info (169065): Pin GPIO_0[30] has a permanently disabled output enable File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 10
+    Info (169065): Pin GPIO_0[31] has a permanently disabled output enable File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 10
+    Info (169065): Pin GPIO_0[32] has a permanently disabled output enable File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 10
+    Info (169065): Pin GPIO_0[33] has a permanently disabled output enable File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 10
+    Info (169065): Pin GPIO_0[34] has a permanently disabled output enable File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 10
+    Info (169065): Pin GPIO_0[35] has a permanently disabled output enable File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 10
+    Info (169065): Pin GPIO_0[0] has a permanently enabled output enable File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 10
+    Info (169065): Pin GPIO_0[1] has a permanently disabled output enable File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 10
+Info (144001): Generated suppressed messages file /home/c-ec2023/ra252974/Documents/MC613/lab06/quartus/output_files/uart_board.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 395 warnings
-    Info: Peak virtual memory: 2716 megabytes
-    Info: Processing ended: Tue May 13 19:10:34 2025
-    Info: Elapsed time: 00:00:29
-    Info: Total CPU time (on all processors): 00:00:50
+    Info: Peak virtual memory: 2760 megabytes
+    Info: Processing ended: Sun May 18 20:06:35 2025
+    Info: Elapsed time: 00:00:25
+    Info: Total CPU time (on all processors): 00:00:46
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/quartus/output_files/uart_board.fit.smsg.
+The suppressed messages can be found in /home/c-ec2023/ra252974/Documents/MC613/lab06/quartus/output_files/uart_board.fit.smsg.
 
 

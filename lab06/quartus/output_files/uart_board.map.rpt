@@ -1,5 +1,5 @@
-Analysis & Elaboration report for uart_board
-Tue May 13 20:27:57 2025
+Analysis & Synthesis report for uart_board
+Sun May 18 20:40:01 2025
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -7,13 +7,10 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Elaboration Summary
-  3. Parallel Compilation
-  4. Parameter Settings for User Entity Instance: Top-level Entity: |uart_tb
-  5. Parameter Settings for User Entity Instance: uart:uart_inst|div_clock:clock_inst
-  6. Analysis & Elaboration Settings
-  7. Port Connectivity Checks: "uart:uart_inst"
-  8. Analysis & Elaboration Messages
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Messages
 
 
 
@@ -36,69 +33,31 @@ refer to the applicable agreement for further details.
 
 
 
-+-----------------------------------------------------------------------------+
-; Analysis & Elaboration Summary                                              ;
-+-------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status ; Successful - Tue May 13 20:27:57 2025       ;
-; Quartus Prime Version         ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
-; Revision Name                 ; uart_board                                  ;
-; Top-level Entity Name         ; uart_tb                                     ;
-; Family                        ; Cyclone V                                   ;
-; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
-; Total registers               ; N/A until Partition Merge                   ;
-; Total pins                    ; N/A until Partition Merge                   ;
-; Total virtual pins            ; N/A until Partition Merge                   ;
-; Total block memory bits       ; N/A until Partition Merge                   ;
-; Total PLLs                    ; N/A until Partition Merge                   ;
-; Total DLLs                    ; N/A until Partition Merge                   ;
-+-------------------------------+---------------------------------------------+
-
-
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 6           ;
-; Maximum allowed            ; 6           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
-
-
-+-------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |uart_tb ;
-+----------------+--------+-----------------------------------------------+
-; Parameter Name ; Value  ; Type                                          ;
-+----------------+--------+-----------------------------------------------+
-; CLK_PERIOD     ; 20     ; Signed Integer                                ;
-; BAUD_RATE      ; 9600   ; Signed Integer                                ;
-; BAUD_TICK      ; 104166 ; Signed Integer                                ;
-+----------------+--------+-----------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: uart:uart_inst|div_clock:clock_inst ;
-+----------------+-------+---------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                    ;
-+----------------+-------+---------------------------------------------------------+
-; DIV            ; 5208  ; Signed Integer                                          ;
-+----------------+-------+---------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Failed - Sun May 18 20:40:01 2025           ;
+; Quartus Prime Version       ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Revision Name               ; uart_board                                  ;
+; Top-level Entity Name       ; uart_board                                  ;
+; Family                      ; Cyclone V                                   ;
+; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
+; Total registers             ; N/A until Partition Merge                   ;
+; Total pins                  ; N/A until Partition Merge                   ;
+; Total virtual pins          ; N/A until Partition Merge                   ;
+; Total block memory bits     ; N/A until Partition Merge                   ;
+; Total PLLs                  ; N/A until Partition Merge                   ;
+; Total DLLs                  ; N/A until Partition Merge                   ;
++-----------------------------+---------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Elaboration Settings                                                                                           ;
+; Analysis & Synthesis Settings                                                                                             ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; uart_tb            ; uart_board         ;
+; Top-level entity name                                                           ; uart_board         ; uart_board         ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Verilog Show LMF Mapping Messages                                               ; Off                ;                    ;
 ; Verilog Version                                                                 ; SystemVerilog_2005 ; Verilog_2001       ;
@@ -180,256 +139,60 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "uart:uart_inst"                                                                              ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port          ; Type   ; Severity ; Details                                                                             ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
-; rst           ; Input  ; Info     ; Stuck at GND                                                                        ;
-; send          ; Input  ; Info     ; Stuck at GND                                                                        ;
-; tx_data[4..3] ; Input  ; Info     ; Stuck at GND                                                                        ;
-; tx_data[7]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; tx_data[6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
-; tx_data[5]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; tx_data[2]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; tx_data[1]    ; Input  ; Info     ; Stuck at GND                                                                        ;
-; tx_data[0]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; rx_data       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; tx_busy       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; rx_done       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 6           ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
 
 
-+---------------------------------+
-; Analysis & Elaboration Messages ;
-+---------------------------------+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Elaboration
+Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Tue May 13 20:27:49 2025
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab06 -c uart_board --analysis_and_elaboration
+    Info: Processing started: Sun May 18 20:39:54 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab06 -c uart_board
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/tx.sv
-    Info (12023): Found entity 1: tx File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/tx.sv Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/rx.sv
-    Info (12023): Found entity 1: rx File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/rx.sv Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/div_clock.sv
-    Info (12023): Found entity 1: div_clock File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/div_clock.sv Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_tb.sv
-    Info (12023): Found entity 1: uart_tb File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_tb.sv Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart.sv
-    Info (12023): Found entity 1: uart File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart.sv Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_board.sv
-    Info (12023): Found entity 1: uart_board File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_board.sv Line: 3
-Info (12127): Elaborating entity "uart_tb" for the top level hierarchy
-Warning (10755): Verilog HDL warning at uart_tb.sv(38): assignments to clk create a combinational loop File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_tb.sv Line: 38
-Info (10648): Verilog HDL Display System Task info at uart_tb.sv(56): Iniciando simulacao UART... File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_tb.sv Line: 56
-Warning (10175): Verilog HDL warning at uart_tb.sv(57): ignoring unsupported system task File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_tb.sv Line: 57
-Warning (10175): Verilog HDL warning at uart_tb.sv(58): ignoring unsupported system task File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_tb.sv Line: 58
-Warning (10193): Verilog HDL unsupported feature warning at uart_tb.sv(50): Wait Statement is not supported and is ignored File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_tb.sv Line: 50
-Info (10648): Verilog HDL Display System Task info at uart_tb.sv(66): Byte enviado: 0xA5 File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_tb.sv Line: 66
-Warning (10193): Verilog HDL unsupported feature warning at uart_tb.sv(69): Wait Statement is not supported and is ignored File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_tb.sv Line: 69
-Info (10648): Verilog HDL Display System Task info at uart_tb.sv(73): SUCESSO! Byte recebido corretamente: 00 File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_tb.sv Line: 73
-Info (10648): Verilog HDL Display System Task info at uart_tb.sv(75): ERRO! Byte recebido: 00 (esperado: A5) File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_tb.sv Line: 75
-Warning (10175): Verilog HDL warning at uart_tb.sv(79): ignoring unsupported system task File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_tb.sv Line: 79
-Info (12128): Elaborating entity "uart" for hierarchy "uart:uart_inst" File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart_tb.sv Line: 35
-Info (12128): Elaborating entity "div_clock" for hierarchy "uart:uart_inst|div_clock:clock_inst" File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart.sv Line: 22
-Warning (10230): Verilog HDL assignment warning at div_clock.sv(19): truncated value with size 32 to match size of target (13) File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/div_clock.sv Line: 19
-Info (12128): Elaborating entity "tx" for hierarchy "uart:uart_inst|tx:tx_inst" File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart.sv Line: 32
-Warning (10230): Verilog HDL assignment warning at tx.sv(23): truncated value with size 11 to match size of target (10) File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/tx.sv Line: 23
-Warning (10230): Verilog HDL assignment warning at tx.sv(32): truncated value with size 32 to match size of target (4) File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/tx.sv Line: 32
-Info (12128): Elaborating entity "rx" for hierarchy "uart:uart_inst|rx:rx_inst" File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/uart.sv Line: 41
-Warning (10230): Verilog HDL assignment warning at rx.sv(22): truncated value with size 32 to match size of target (4) File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/rx.sv Line: 22
-Warning (20013): Ignored 184 assignments for entity "DE1_SoC" -- entity does not exist in design
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[0] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[10] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[11] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[12] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[13] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[14] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[1] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[2] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[3] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[4] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[5] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[6] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[7] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[8] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[9] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_BA[0] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_BA[1] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_BA[2] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_CAS_N -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_CKE -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_CK_N -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_CK_P -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_CS_N -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DM[0] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DM[1] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DM[2] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DM[3] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQS_N[0] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQS_N[1] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQS_N[2] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQS_N[3] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQS_P[0] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQS_P[1] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQS_P[2] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQS_P[3] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[0] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[10] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[11] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[12] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[13] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[14] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[15] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[16] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[17] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[18] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[19] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[1] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[20] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[21] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[22] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[23] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[24] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[25] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[26] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[27] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[28] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[29] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[2] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[30] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[31] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[3] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[4] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[5] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[6] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[7] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[8] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[9] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ODT -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_RAS_N -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_RESET_N -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_WE_N -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_ADDR[0] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_ADDR[10] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_ADDR[11] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_ADDR[12] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_ADDR[13] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_ADDR[14] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_ADDR[1] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_ADDR[2] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_ADDR[3] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_ADDR[4] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_ADDR[5] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_ADDR[6] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_ADDR[7] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_ADDR[8] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_ADDR[9] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_BA[0] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_BA[1] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_BA[2] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_CAS_N -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_CKE -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_CS_N -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_ODT -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_RAS_N -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_RESET_N -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_WE_N -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQS_N[0] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQS_N[1] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQS_N[2] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQS_N[3] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQS_P[0] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQS_P[1] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQS_P[2] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQS_P[3] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[0] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[10] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[11] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[12] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[13] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[14] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[15] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[16] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[17] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[18] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[19] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[1] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[20] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[21] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[22] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[23] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[24] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[25] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[26] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[27] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[28] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[29] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[2] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[30] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[31] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[3] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[4] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[5] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[6] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[7] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[8] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[9] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITHOUT CALIBRATION" -to HPS_DDR3_CK_N -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITHOUT CALIBRATION" -to HPS_DDR3_CK_P -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DM[0] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DM[1] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DM[2] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DM[3] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQS_N[0] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQS_N[1] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQS_N[2] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQS_N[3] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQS_P[0] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQS_P[1] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQS_P[2] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQS_P[3] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[0] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[10] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[11] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[12] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[13] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[14] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[15] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[16] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[17] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[18] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[19] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[1] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[20] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[21] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[22] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[23] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[24] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[25] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[26] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[27] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[28] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[29] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[2] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[30] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[31] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[3] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[4] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[5] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[6] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[7] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[8] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[9] -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name D5_DELAY 2 -to HPS_DDR3_CK_N -entity DE1_SoC was ignored
-    Warning (20014): Assignment for entity set_instance_assignment -name D5_DELAY 2 -to HPS_DDR3_CK_P -entity DE1_SoC was ignored
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 196 warnings
-    Info: Peak virtual memory: 1465 megabytes
-    Info: Processing ended: Tue May 13 20:27:57 2025
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:17
+Info (12021): Found 1 design units, including 1 entities, in source file /home/c-ec2023/ra252974/Documents/MC613/lab06/tx.sv
+    Info (12023): Found entity 1: tx File: /home/c-ec2023/ra252974/Documents/MC613/lab06/tx.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /home/c-ec2023/ra252974/Documents/MC613/lab06/rx.sv
+    Info (12023): Found entity 1: rx File: /home/c-ec2023/ra252974/Documents/MC613/lab06/rx.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /home/c-ec2023/ra252974/Documents/MC613/lab06/div_clock.sv
+    Info (12023): Found entity 1: div_clock File: /home/c-ec2023/ra252974/Documents/MC613/lab06/div_clock.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_tb.sv
+    Info (12023): Found entity 1: uart_tb File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_tb.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /home/c-ec2023/ra252974/Documents/MC613/lab06/uart.sv
+    Info (12023): Found entity 1: uart File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv
+    Info (12023): Found entity 1: uart_board File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 4
+Warning (10236): Verilog HDL Implicit Net warning at uart_tb.sv(35): created implicit net for "rx_error" File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_tb.sv Line: 35
+Info (12127): Elaborating entity "uart_board" for the top level hierarchy
+Error (10028): Can't resolve multiple constant drivers for net "LEDR[7]" at uart_board.sv(61) File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 61
+Error (10029): Constant driver at uart_board.sv(53) File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 53
+Error (10028): Can't resolve multiple constant drivers for net "LEDR[6]" at uart_board.sv(61) File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 61
+Error (10028): Can't resolve multiple constant drivers for net "LEDR[5]" at uart_board.sv(61) File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 61
+Error (10028): Can't resolve multiple constant drivers for net "LEDR[4]" at uart_board.sv(61) File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 61
+Error (10028): Can't resolve multiple constant drivers for net "LEDR[3]" at uart_board.sv(61) File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 61
+Error (10028): Can't resolve multiple constant drivers for net "LEDR[2]" at uart_board.sv(61) File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 61
+Error (10028): Can't resolve multiple constant drivers for net "LEDR[1]" at uart_board.sv(61) File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 61
+Error (10028): Can't resolve multiple constant drivers for net "LEDR[0]" at uart_board.sv(61) File: /home/c-ec2023/ra252974/Documents/MC613/lab06/uart_board.sv Line: 61
+Error (12153): Can't elaborate top-level user hierarchy
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 10 errors, 2 warnings
+    Error: Peak virtual memory: 1141 megabytes
+    Error: Processing ended: Sun May 18 20:40:01 2025
+    Error: Elapsed time: 00:00:07
+    Error: Total CPU time (on all processors): 00:00:15
 
 

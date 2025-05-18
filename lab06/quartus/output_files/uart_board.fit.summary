@@ -1,4 +1,4 @@
-Fitter Status : Successful - Tue May 13 19:10:34 2025
+Fitter Status : Successful - Sun May 18 20:06:35 2025
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : uart_board
 Top-level Entity Name : uart_board
@@ -6,7 +6,7 @@ Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
 Logic utilization (in ALMs) : 32 / 32,070 ( < 1 % )
-Total registers : 67
+Total registers : 65
 Total pins : 55 / 457 ( 12 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 4,065,280 ( 0 % )

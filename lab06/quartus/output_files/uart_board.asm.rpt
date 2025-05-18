@@ -1,5 +1,5 @@
 Assembler report for uart_board
-Tue May 13 19:10:43 2025
+Sun May 18 20:06:43 2025
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -37,7 +37,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Tue May 13 19:10:43 2025 ;
+; Assembler Status      ; Successful - Sun May 18 20:06:43 2025 ;
 ; Revision Name         ; uart_board                            ;
 ; Top-level Entity Name ; uart_board                            ;
 ; Family                ; Cyclone V                             ;
@@ -79,13 +79,13 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------------+----------------+
 
 
-+-----------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                               ;
-+-----------------------------------------------------------------------------------------+
-; File Name                                                                               ;
-+-----------------------------------------------------------------------------------------+
-; /home/c-ec2022/ra248220/Documents/MC613/MC613/lab06/quartus/output_files/uart_board.sof ;
-+-----------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------+
+; Assembler Generated Files                                                         ;
++-----------------------------------------------------------------------------------+
+; File Name                                                                         ;
++-----------------------------------------------------------------------------------+
+; /home/c-ec2023/ra252974/Documents/MC613/lab06/quartus/output_files/uart_board.sof ;
++-----------------------------------------------------------------------------------+
 
 
 +------------------------------------------+
@@ -93,8 +93,8 @@ refer to the applicable agreement for further details.
 +----------------+-------------------------+
 ; Option         ; Setting                 ;
 +----------------+-------------------------+
-; JTAG usercode  ; 0x00B062A2              ;
-; Checksum       ; 0x00B062A2              ;
+; JTAG usercode  ; 0x00B05B49              ;
+; Checksum       ; 0x00B05B49              ;
 +----------------+-------------------------+
 
 
@@ -104,7 +104,7 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Tue May 13 19:10:37 2025
+    Info: Processing started: Sun May 18 20:06:38 2025
 Info: Command: quartus_asm --read_settings_files=on --write_settings_files=off lab06 -c uart_board
 Warning (20013): Ignored 184 assignments for entity "DE1_SoC" -- entity does not exist in design
     Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[0] -entity DE1_SoC was ignored
@@ -294,9 +294,9 @@ Warning (20013): Ignored 184 assignments for entity "DE1_SoC" -- entity does not
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 186 warnings
-    Info: Peak virtual memory: 1180 megabytes
-    Info: Processing ended: Tue May 13 19:10:43 2025
-    Info: Elapsed time: 00:00:06
+    Info: Peak virtual memory: 1177 megabytes
+    Info: Processing ended: Sun May 18 20:06:43 2025
+    Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:05
 
 

@@ -31,7 +31,8 @@ module uart_tb();
         .tx(tx),
         .rx_data(rx_data),
         .tx_busy(tx_busy),
-        .rx_done(rx_done)
+        .rx_done(rx_done),
+        .rx_error(rx_error) // Adicionei o sinal de erro
     );
 
     // Gera clock de 50 MHz
@@ -62,7 +63,7 @@ module uart_tb();
         rst = 0;
 
         // Envia o byte 0xA5
-        send_byte(8'hA5);
+        send_byte(8'hA5); // 10100101
         $display("Byte enviado: 0xA5");
 
         // Espera o receptor sinalizar conclusão
@@ -75,6 +76,52 @@ module uart_tb();
         end else begin
             $display("ERRO! Byte recebido: %h (esperado: A5)", rx_data);
         end
+        if (!rx_error) begin
+            $display("SUCESSO! Paridade correta.");
+        end else begin
+            $display("ERRO! Paridade incorreta.");
+        end
+
+        #100;
+        rst = 0;
+        // Envia o byte 0xFF
+        send_byte(8'hFF); // 11111111
+        $display("Byte enviado: 0xFF");
+        // Espera o receptor sinalizar conclusão
+        wait (rx_done);
+        # (BAUD_TICK);
+        // Espera um ciclo para estabilidade
+        if (rx_data == 8'hFF) begin
+            $display("SUCESSO! Byte recebido corretamente: %h", rx_data);
+        end else begin
+            $display("ERRO! Byte recebido: %h (esperado: FF)", rx_data);
+        end
+        if (!rx_error) begin
+            $display("SUCESSO! Paridade correta.");
+        end else begin
+            $display("ERRO! Paridade incorreta.");
+        end
+
+        #100;
+        rst = 0;
+        // Envia o byte 0xB4
+        send_byte(8'hB4); // 10110100
+        $display("Byte enviado: 0xB4");
+        // Espera o receptor sinalizar conclusão
+        wait (rx_done);
+        # (BAUD_TICK);
+        // Espera um ciclo para estabilidade
+        if (rx_data == 8'hB4) begin
+            $display("SUCESSO! Byte recebido corretamente: %h", rx_data);
+        end else begin
+            $display("ERRO! Byte recebido: %h (esperado: FF)", rx_data);
+        end
+        if (!rx_error) begin
+            $display("SUCESSO! Paridade correta.");
+        end else begin
+            $display("ERRO! Paridade incorreta.");
+        end
+
 
         #20000; // Espera extra para observação no GTKWave
         $finish;
