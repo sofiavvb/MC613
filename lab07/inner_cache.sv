@@ -1,4 +1,4 @@
-module INNER_CACHE #(
+module inner_cache #(
   parameter DATA_WIDTH   = 32,
   parameter ADDR_WIDTH   = 16,
   parameter TAG_WIDTH    = 10,
@@ -13,21 +13,51 @@ module INNER_CACHE #(
 );
 
   localparam INDEX_WIDTH  = ADDR_WIDTH - TAG_WIDTH - OFFSET_WIDTH;
-  localparam CACHE_LINES  = 1 << INDEX_WIDTH; 
+  localparam CACHE_LINES  = 1 << INDEX_WIDTH; // shifta o 1 INDEX_WIDTH vezes porque o numero de linhas sempre e 2 elevado a esse numero
 
-  // Substituindo struct por arrays separados
-  logic [CACHE_LINES-1:0]    valid;
-  logic [TAG_WIDTH-1:0]    tags [CACHE_LINES-1:0];
-  logic [DATA_WIDTH-1:0]   datas [CACHE_LINES-1:0];
+  // estrutura da cache
+  logic [CACHE_LINES-1:0] valid;
+  logic [TAG_WIDTH-1:0] tags[CACHE_LINES-1:0];
+  logic [DATA_WIDTH-1:0] datas[CACHE_LINES-1:0];
 
   // Divisão do endereço
-  logic [TAG_WIDTH-1:0]   tag;
+  logic [TAG_WIDTH-1:0] tag;
   logic [INDEX_WIDTH-1:0] index;
 
   assign tag   = addr[ADDR_WIDTH-1 -: TAG_WIDTH];
   assign index = addr[OFFSET_WIDTH + INDEX_WIDTH - 1 -: INDEX_WIDTH];
 
-  // Inicialização (compatível com Icarus)
+/*
+  // logica de leitura
+  always_comb begin
+    if (valid[index] && tags[index] == tag) begin
+      hit = 1;
+      data_out = datas[index];
+    end else begin
+      hit = 0;
+      data_out = '0;
+    end
+  end
+
+  // logica de escrita e reset síncrono
+  always_ff @(posedge clk) begin
+    if (rst) begin
+      integer i;
+      for (i = 0; i < CACHE_LINES; i++) begin
+        valid[i] <= 0;
+        tags[i]  <= 0;
+        datas[i] <= 0;
+      end
+    end else if (write) begin
+      valid[index] <= 1;
+      tags[index]  <= tag;
+      datas[index] <= data_in;
+    end
+  end
+endmodule
+*/
+
+
   initial begin
     integer i;
     for (i = 0; i < CACHE_LINES; i++) begin
@@ -39,7 +69,7 @@ module INNER_CACHE #(
 
   // Leitura combinacional
   always_comb begin
-    if (valid[index] && tags[index] == tag) begin
+    if (valid[index] && tags[index] == tag && !write) begin
       hit = 1;
       data_out = datas[index];
     end else begin
@@ -67,7 +97,7 @@ endmodule
 //   parameter OFFSET_WIDTH = 2    // Bits de offset (não usados nesta implementação)
 // )(
 //   input  logic clk, 
-//   input  logic [ADDR_WIDTH-1:0] addr,
+//   input  logic [ADDR_WIDTH-1:0] addr,  // Substituindo struct por arrays separados
 //   input  logic [DATA_WIDTH-1:0] data_in,
 //   input  logic  write,
 //   output logic [DATA_WIDTH-1:0] data_out,
