@@ -1,5 +1,5 @@
-Analysis & Elaboration report for clock
-Wed May 14 17:49:43 2025
+Analysis & Synthesis report for clock
+Sun May 18 15:13:09 2025
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -7,10 +7,21 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Elaboration Summary
-  3. Parallel Compilation
-  4. Analysis & Elaboration Settings
-  5. Analysis & Elaboration Messages
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Port Connectivity Checks: "dec_7seg:dis_45"
+ 11. Port Connectivity Checks: "dec_7seg:dis_23"
+ 12. Port Connectivity Checks: "dec_7seg:dis_01"
+ 13. Port Connectivity Checks: "stopwatch:stopwatch_inst"
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
 
 
 
@@ -33,47 +44,36 @@ refer to the applicable agreement for further details.
 
 
 
-+-----------------------------------------------------------------------------+
-; Analysis & Elaboration Summary                                              ;
-+-------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status ; Failed - Wed May 14 17:49:43 2025           ;
-; Quartus Prime Version         ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
-; Revision Name                 ; clock                                       ;
-; Top-level Entity Name         ; watch_tb                                    ;
-; Family                        ; Cyclone V                                   ;
-; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
-; Total registers               ; N/A until Partition Merge                   ;
-; Total pins                    ; N/A until Partition Merge                   ;
-; Total virtual pins            ; N/A until Partition Merge                   ;
-; Total block memory bits       ; N/A until Partition Merge                   ;
-; Total PLLs                    ; N/A until Partition Merge                   ;
-; Total DLLs                    ; N/A until Partition Merge                   ;
-+-------------------------------+---------------------------------------------+
-
-
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 20          ;
-; Maximum allowed            ; 12          ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sun May 18 15:13:09 2025       ;
+; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Revision Name                   ; clock                                       ;
+; Top-level Entity Name           ; clock                                       ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 95                                          ;
+; Total pins                      ; 53                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Elaboration Settings                                                                                           ;
+; Analysis & Synthesis Settings                                                                                             ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; watch_tb           ; clock              ;
+; Top-level entity name                                                           ; clock              ; clock              ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Verilog Show LMF Mapping Messages                                               ; Off                ;                    ;
 ; Verilog Version                                                                 ; SystemVerilog_2005 ; Verilog_2001       ;
@@ -155,41 +155,237 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+---------------------------------+
-; Analysis & Elaboration Messages ;
-+---------------------------------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 6           ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 6           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-6         ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                   ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                               ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------+---------+
+; ../clock.sv                      ; yes             ; User SystemVerilog HDL File  ; /home/c-ec2023/ra252974/Documents/MC613/lab05/clock.sv     ;         ;
+; ../watch.sv                      ; yes             ; User SystemVerilog HDL File  ; /home/c-ec2023/ra252974/Documents/MC613/lab05/watch.sv     ;         ;
+; ../dec_7seg.sv                   ; yes             ; User SystemVerilog HDL File  ; /home/c-ec2023/ra252974/Documents/MC613/lab05/dec_7seg.sv  ;         ;
+; ../stopwatch.sv                  ; yes             ; User SystemVerilog HDL File  ; /home/c-ec2023/ra252974/Documents/MC613/lab05/stopwatch.sv ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                   ;
++---------------------------------------------+-----------------+
+; Resource                                    ; Usage           ;
++---------------------------------------------+-----------------+
+; Estimate of Logic utilization (ALMs needed) ; 170             ;
+;                                             ;                 ;
+; Combinational ALUT usage for logic          ; 243             ;
+;     -- 7 input functions                    ; 0               ;
+;     -- 6 input functions                    ; 95              ;
+;     -- 5 input functions                    ; 36              ;
+;     -- 4 input functions                    ; 33              ;
+;     -- <=3 input functions                  ; 79              ;
+;                                             ;                 ;
+; Dedicated logic registers                   ; 95              ;
+;                                             ;                 ;
+; I/O pins                                    ; 53              ;
+;                                             ;                 ;
+; Total DSP Blocks                            ; 0               ;
+;                                             ;                 ;
+; Maximum fan-out node                        ; CLOCK_100~input ;
+; Maximum fan-out                             ; 95              ;
+; Total fan-out                               ; 1461            ;
+; Average fan-out                             ; 3.29            ;
++---------------------------------------------+-----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                   ;
++-------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------+-------------+--------------+
+; Compilation Hierarchy Node    ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name             ; Entity Name ; Library Name ;
++-------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------+-------------+--------------+
+; |clock                        ; 243 (31)            ; 95 (6)                    ; 0                 ; 0          ; 53   ; 0            ; |clock                          ; clock       ; work         ;
+;    |dec_7seg:dis_01|          ; 29 (29)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|dec_7seg:dis_01          ; dec_7seg    ; work         ;
+;    |dec_7seg:dis_23|          ; 35 (35)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|dec_7seg:dis_23          ; dec_7seg    ; work         ;
+;    |dec_7seg:dis_45|          ; 29 (29)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|dec_7seg:dis_45          ; dec_7seg    ; work         ;
+;    |stopwatch:stopwatch_inst| ; 52 (52)             ; 41 (41)                   ; 0                 ; 0          ; 0    ; 0            ; |clock|stopwatch:stopwatch_inst ; stopwatch   ; work         ;
+;    |watch:watch_inst|         ; 67 (67)             ; 48 (48)                   ; 0                 ; 0          ; 0    ; 0            ; |clock|watch:watch_inst         ; watch       ; work         ;
++-------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 95    ;
+; Number of registers using Synchronous Clear  ; 45    ;
+; Number of registers using Synchronous Load   ; 4     ;
+; Number of registers using Asynchronous Clear ; 41    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 36    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |clock|watch:watch_inst|seg_reg[0]  ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |clock|watch:watch_inst|min_reg[3]  ;
+; 7:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |clock|watch:watch_inst|hour_reg[2] ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |clock|numero_0[5]                  ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |clock|numero_1[3]                  ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |clock|numero_2[0]                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dec_7seg:dis_45"                                                                                                                                                                ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; bin  ; Input ; Warning  ; Input port expression (8 bits) is wider than the input port (7 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dec_7seg:dis_23"                                                                                                                                                                ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; bin  ; Input ; Warning  ; Input port expression (8 bits) is wider than the input port (7 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dec_7seg:dis_01"                                                                                                                                                                ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; bin  ; Input ; Warning  ; Input port expression (8 bits) is wider than the input port (7 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "stopwatch:stopwatch_inst"                                                                                                                                                 ;
++----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                               ;
++----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; segundos ; Output ; Warning  ; Output or bidir port (6 bits) is smaller than the port expression (7 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND. ;
++----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 95                          ;
+;     CLR               ; 3                           ;
+;     CLR SCLR          ; 19                          ;
+;     ENA               ; 13                          ;
+;     ENA CLR           ; 19                          ;
+;     ENA SLD           ; 4                           ;
+;     SCLR              ; 26                          ;
+;     plain             ; 11                          ;
+; arriav_lcell_comb     ; 253                         ;
+;     arith             ; 58                          ;
+;         1 data inputs ; 57                          ;
+;         2 data inputs ; 1                           ;
+;     normal            ; 195                         ;
+;         1 data inputs ; 14                          ;
+;         2 data inputs ; 4                           ;
+;         3 data inputs ; 13                          ;
+;         4 data inputs ; 33                          ;
+;         5 data inputs ; 36                          ;
+;         6 data inputs ; 95                          ;
+; boundary_port         ; 53                          ;
+;                       ;                             ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 2.94                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Elaboration
+Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Wed May 14 17:49:38 2025
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab05 -c clock --analysis_and_elaboration
+    Info: Processing started: Sun May 18 15:13:00 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab05 -c clock
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file /home/c-ec2022/ra248220/Documents/MC613/MC613/lab05/watch_tb.sv
-    Info (12023): Found entity 1: watch_tb File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab05/watch_tb.sv Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /home/c-ec2022/ra248220/Documents/MC613/MC613/lab05/stopwatch_tb.sv
-    Info (12023): Found entity 1: tb_stopwatch File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab05/stopwatch_tb.sv Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /home/c-ec2022/ra248220/Documents/MC613/MC613/lab05/watch.sv
-    Info (12023): Found entity 1: watch File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab05/watch.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/c-ec2022/ra248220/Documents/MC613/MC613/lab05/dec_7seg.sv
-    Info (12023): Found entity 1: dec_7seg File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab05/dec_7seg.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/c-ec2022/ra248220/Documents/MC613/MC613/lab05/clock.sv
-    Info (12023): Found entity 1: clock File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab05/clock.sv Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /home/c-ec2022/ra248220/Documents/MC613/MC613/lab05/stopwatch.sv
-    Info (12023): Found entity 1: stopwatch File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab05/stopwatch.sv Line: 1
-Info (12127): Elaborating entity "watch_tb" for the top level hierarchy
-Warning (10755): Verilog HDL warning at watch_tb.sv(27): assignments to clk create a combinational loop File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab05/watch_tb.sv Line: 27
-Warning (10175): Verilog HDL warning at watch_tb.sv(31): ignoring unsupported system task File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab05/watch_tb.sv Line: 31
-Warning (10175): Verilog HDL warning at watch_tb.sv(32): ignoring unsupported system task File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab05/watch_tb.sv Line: 32
-Error (10106): Verilog HDL Loop error at watch_tb.sv(57): loop must terminate within 5000 iterations File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab05/watch_tb.sv Line: 57
-Info (10648): Verilog HDL Display System Task info at watch_tb.sv(59): Hora atual: 0:0:0 File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab05/watch_tb.sv Line: 59
-Info (10648): Verilog HDL Display System Task info at watch_tb.sv(77): 0:0:0 File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab05/watch_tb.sv Line: 77
-Warning (10175): Verilog HDL warning at watch_tb.sv(80): ignoring unsupported system task File: /home/c-ec2022/ra248220/Documents/MC613/MC613/lab05/watch_tb.sv Line: 80
-Error (12153): Can't elaborate top-level user hierarchy
-Error: Quartus Prime Analysis & Elaboration was unsuccessful. 2 errors, 5 warnings
-    Error: Peak virtual memory: 1464 megabytes
-    Error: Processing ended: Wed May 14 17:49:43 2025
-    Error: Elapsed time: 00:00:05
-    Error: Total CPU time (on all processors): 00:00:13
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /home/c-ec2023/ra252974/Documents/MC613/lab05/clock.sv
+    Info (12023): Found entity 1: clock File: /home/c-ec2023/ra252974/Documents/MC613/lab05/clock.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /home/c-ec2023/ra252974/Documents/MC613/lab05/watch_tb.sv
+    Info (12023): Found entity 1: tb_timer File: /home/c-ec2023/ra252974/Documents/MC613/lab05/watch_tb.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/c-ec2023/ra252974/Documents/MC613/lab05/stopwatch_tb.sv
+    Info (12023): Found entity 1: tb_stopwatch File: /home/c-ec2023/ra252974/Documents/MC613/lab05/stopwatch_tb.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /home/c-ec2023/ra252974/Documents/MC613/lab05/watch.sv
+    Info (12023): Found entity 1: watch File: /home/c-ec2023/ra252974/Documents/MC613/lab05/watch.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/c-ec2023/ra252974/Documents/MC613/lab05/dec_7seg.sv
+    Info (12023): Found entity 1: dec_7seg File: /home/c-ec2023/ra252974/Documents/MC613/lab05/dec_7seg.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/c-ec2023/ra252974/Documents/MC613/lab05/stopwatch.sv
+    Info (12023): Found entity 1: stopwatch File: /home/c-ec2023/ra252974/Documents/MC613/lab05/stopwatch.sv Line: 1
+Info (12127): Elaborating entity "clock" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at clock.sv(17): object "set_numero" assigned a value but never read File: /home/c-ec2023/ra252974/Documents/MC613/lab05/clock.sv Line: 17
+Warning (10230): Verilog HDL assignment warning at clock.sv(34): truncated value with size 32 to match size of target (1) File: /home/c-ec2023/ra252974/Documents/MC613/lab05/clock.sv Line: 34
+Warning (10230): Verilog HDL assignment warning at clock.sv(35): truncated value with size 32 to match size of target (1) File: /home/c-ec2023/ra252974/Documents/MC613/lab05/clock.sv Line: 35
+Warning (10230): Verilog HDL assignment warning at clock.sv(40): truncated value with size 32 to match size of target (1) File: /home/c-ec2023/ra252974/Documents/MC613/lab05/clock.sv Line: 40
+Info (12128): Elaborating entity "stopwatch" for hierarchy "stopwatch:stopwatch_inst" File: /home/c-ec2023/ra252974/Documents/MC613/lab05/clock.sv Line: 59
+Warning (10230): Verilog HDL assignment warning at stopwatch.sv(33): truncated value with size 32 to match size of target (19) File: /home/c-ec2023/ra252974/Documents/MC613/lab05/stopwatch.sv Line: 33
+Warning (10230): Verilog HDL assignment warning at stopwatch.sv(62): truncated value with size 32 to match size of target (7) File: /home/c-ec2023/ra252974/Documents/MC613/lab05/stopwatch.sv Line: 62
+Warning (10230): Verilog HDL assignment warning at stopwatch.sv(64): truncated value with size 32 to match size of target (6) File: /home/c-ec2023/ra252974/Documents/MC613/lab05/stopwatch.sv Line: 64
+Warning (10230): Verilog HDL assignment warning at stopwatch.sv(67): truncated value with size 32 to match size of target (7) File: /home/c-ec2023/ra252974/Documents/MC613/lab05/stopwatch.sv Line: 67
+Info (12128): Elaborating entity "watch" for hierarchy "watch:watch_inst" File: /home/c-ec2023/ra252974/Documents/MC613/lab05/clock.sv Line: 71
+Warning (10230): Verilog HDL assignment warning at watch.sv(32): truncated value with size 32 to match size of target (26) File: /home/c-ec2023/ra252974/Documents/MC613/lab05/watch.sv Line: 32
+Warning (10230): Verilog HDL assignment warning at watch.sv(41): truncated value with size 32 to match size of target (2) File: /home/c-ec2023/ra252974/Documents/MC613/lab05/watch.sv Line: 41
+Warning (10230): Verilog HDL assignment warning at watch.sv(75): truncated value with size 32 to match size of target (5) File: /home/c-ec2023/ra252974/Documents/MC613/lab05/watch.sv Line: 75
+Warning (10230): Verilog HDL assignment warning at watch.sv(78): truncated value with size 32 to match size of target (6) File: /home/c-ec2023/ra252974/Documents/MC613/lab05/watch.sv Line: 78
+Warning (10230): Verilog HDL assignment warning at watch.sv(81): truncated value with size 32 to match size of target (6) File: /home/c-ec2023/ra252974/Documents/MC613/lab05/watch.sv Line: 81
+Info (12128): Elaborating entity "dec_7seg" for hierarchy "dec_7seg:dis_01" File: /home/c-ec2023/ra252974/Documents/MC613/lab05/clock.sv Line: 93
+Info (10264): Verilog HDL Case Statement information at dec_7seg.sv(115): all case item expressions in this case statement are onehot File: /home/c-ec2023/ra252974/Documents/MC613/lab05/dec_7seg.sv Line: 115
+Info (10264): Verilog HDL Case Statement information at dec_7seg.sv(131): all case item expressions in this case statement are onehot File: /home/c-ec2023/ra252974/Documents/MC613/lab05/dec_7seg.sv Line: 131
+Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[0]" File: /home/c-ec2023/ra252974/Documents/MC613/lab05/clock.sv Line: 5
+Info (21057): Implemented 301 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 11 input pins
+    Info (21059): Implemented 42 output pins
+    Info (21061): Implemented 248 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 17 warnings
+    Info: Peak virtual memory: 1257 megabytes
+    Info: Processing ended: Sun May 18 15:13:09 2025
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:14
 
 

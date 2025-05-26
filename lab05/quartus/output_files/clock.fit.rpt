@@ -1,5 +1,5 @@
 Fitter report for clock
-Wed May 14 17:42:30 2025
+Sun May 18 15:13:41 2025
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -63,7 +63,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Successful - Wed May 14 17:42:30 2025       ;
+; Fitter Status                   ; Successful - Sun May 18 15:13:41 2025       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; clock                                       ;
 ; Top-level Entity Name           ; clock                                       ;
@@ -150,25 +150,19 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 20          ;
-; Maximum allowed            ; 12          ;
+; Number detected on machine ; 6           ;
+; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.05        ;
-; Maximum used               ; 12          ;
+; Maximum used               ; 6           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.5%      ;
-;     Processor 3            ;   0.4%      ;
-;     Processor 4            ;   0.4%      ;
-;     Processor 5            ;   0.4%      ;
-;     Processor 6            ;   0.4%      ;
-;     Processor 7            ;   0.4%      ;
-;     Processor 8            ;   0.4%      ;
-;     Processor 9            ;   0.4%      ;
-;     Processor 10           ;   0.4%      ;
-;     Processor 11           ;   0.4%      ;
-;     Processor 12           ;   0.4%      ;
+;     Processor 2            ;   1.0%      ;
+;     Processor 3            ;   1.0%      ;
+;     Processor 4            ;   1.0%      ;
+;     Processor 5            ;   1.0%      ;
+;     Processor 6            ;   1.0%      ;
 +----------------------------+-------------+
 
 
@@ -450,7 +444,7 @@ refer to the applicable agreement for further details.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in /home/c-ec2022/ra248220/Documents/MC613/MC613/lab05/quartus/output_files/clock.pin.
+The pin-out file can be found in /home/c-ec2023/ra252974/Documents/MC613/lab05/quartus/output_files/clock.pin.
 
 
 +------------------------------------------------------------------------------------------+
@@ -2166,7 +2160,7 @@ Note: This table only shows the top 46 path(s) that have the largest delay added
 ; Fitter Messages ;
 +-----------------+
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (119006): Selected device 5CSEMA5F31C6 for design "clock"
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
@@ -2393,7 +2387,7 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "VGA_R[7]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "VGA_SYNC_N" is assigned to location or region, but does not exist in design
     Warning (15706): Node "VGA_VS" is assigned to location or region, but does not exist in design
-Info (11798): Fitter preparation operations ending: elapsed time is 00:00:05
+Info (11798): Fitter preparation operations ending: elapsed time is 00:00:11
 Info (170189): Fitter placement preparation operations beginning
 Info (14951): The Fitter is using Advanced Physical Optimization.
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:01
@@ -2406,24 +2400,24 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.25 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.35 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:02
+Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:03
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
-Info (144001): Generated suppressed messages file /home/c-ec2022/ra248220/Documents/MC613/MC613/lab05/quartus/output_files/clock.fit.smsg
+Info (144001): Generated suppressed messages file /home/c-ec2023/ra252974/Documents/MC613/lab05/quartus/output_files/clock.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 213 warnings
-    Info: Peak virtual memory: 3137 megabytes
-    Info: Processing ended: Wed May 14 17:42:30 2025
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:59
+    Info: Peak virtual memory: 2759 megabytes
+    Info: Processing ended: Sun May 18 15:13:41 2025
+    Info: Elapsed time: 00:00:32
+    Info: Total CPU time (on all processors): 00:00:53
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in /home/c-ec2022/ra248220/Documents/MC613/MC613/lab05/quartus/output_files/clock.fit.smsg.
+The suppressed messages can be found in /home/c-ec2023/ra252974/Documents/MC613/lab05/quartus/output_files/clock.fit.smsg.
 
 
