@@ -1,0 +1,138 @@
+module controlador_uart (
+    input  wire        CLOCK_50,
+    output wire [7:0]  LEDR
+);
+
+    wire clk = CLOCK_50;
+    wire reset = 1'b0;
+
+    // === UART interface <-> controlador ===
+    wire [7:0] rx_data;
+    wire       rx_valid;
+    reg  [7:0] tx_data;
+    reg        tx_valid;
+    wire       tx_ready;
+
+    // === JTAG UART Avalon-MM signals ===
+    wire        jtag_uart_cs;
+    wire        jtag_uart_addr;
+    wire        jtag_uart_read;
+    wire [31:0] jtag_uart_readdata;
+    wire        jtag_uart_write;
+    wire [31:0] jtag_uart_writedata;
+    wire        jtag_uart_waitrequest;
+
+    // === UART instância ===
+    uart_interface uart_inst (
+        .clk                (clk),
+        .reset              (reset),
+        .rx_data            (rx_data),
+        .rx_valid           (rx_valid),
+        .tx_data            (tx_data),
+        .tx_valid           (tx_valid),
+        .tx_ready           (tx_ready),
+        .jtag_uart_cs       (jtag_uart_cs),
+        .jtag_uart_addr     (jtag_uart_addr),
+        .jtag_uart_read     (jtag_uart_read),
+        .jtag_uart_readdata (jtag_uart_readdata),
+        .jtag_uart_write    (jtag_uart_write),
+        .jtag_uart_writedata(jtag_uart_writedata),
+        .jtag_uart_waitrequest(jtag_uart_waitrequest)
+    );
+
+    // === FSM ===
+    typedef enum logic [2:0] {
+        IDLE,
+        RECEBE_ALTURA,
+        RECEBE_LARGURA,
+        RECEBE_PIXELS,
+        PROCESSA,
+        ENVIA_HEADER,
+        ENVIA_PIXELS
+    } estado_t;
+
+    estado_t estado = IDLE;
+
+    reg [7:0] altura, largura;
+    reg [15:0] byte_count;
+    reg [7:0] imagem [0:65535];  // Suporte até 256x256
+
+    always @(posedge clk) begin
+        tx_valid <= 0;  // default desativado
+
+        case (estado)
+            IDLE: begin
+                if (rx_valid && rx_data == 8'hAA) begin
+                    estado <= RECEBE_ALTURA;
+                end
+            end
+
+            RECEBE_ALTURA: begin
+                if (rx_valid) begin
+                    altura <= rx_data;
+                    estado <= RECEBE_LARGURA;
+                end
+            end
+
+            RECEBE_LARGURA: begin
+                if (rx_valid) begin
+                    largura <= rx_data;
+                    byte_count <= 0;
+                    estado <= RECEBE_PIXELS;
+                end
+            end
+
+            RECEBE_PIXELS: begin
+                if (rx_valid) begin
+                    imagem[byte_count] <= rx_data;
+                    byte_count <= byte_count + 1;
+                    if (byte_count + 1 == altura * largura) begin
+                        estado <= PROCESSA;
+                    end
+                end
+            end
+
+            PROCESSA: begin
+                // Aqui você poderá aplicar o filtro Sobel no futuro
+                byte_count <= 0;
+                estado <= ENVIA_HEADER;
+            end
+
+            ENVIA_HEADER: begin
+                if (tx_ready) begin
+                    tx_data <= 8'h55;
+                    tx_valid <= 1;
+                    estado <= ENVIA_PIXELS;
+                end
+            end
+
+            ENVIA_PIXELS: begin
+                if (tx_ready) begin
+                    tx_data <= imagem[byte_count];  // eco do pixel
+                    tx_valid <= 1;
+                    byte_count <= byte_count + 1;
+                    if (byte_count + 1 == altura * largura) begin
+                        estado <= IDLE;
+                    end
+                end
+            end
+        endcase
+    end
+
+    assign LEDR = tx_data;  // Debug visual
+
+    // === JTAG UART IP core (do Platform Designer) ===
+    jtag_uart jtag_uart_inst (
+        .clk_clk           (clk),
+        .reset_reset_n     (~reset),
+        .av_chipselect     (jtag_uart_cs),
+        .av_address        (jtag_uart_addr),
+        .av_read_n         (~jtag_uart_read),
+        .av_readdata       (jtag_uart_readdata),
+        .av_write_n        (~jtag_uart_write),
+        .av_writedata      (jtag_uart_writedata),
+        .av_waitrequest    (jtag_uart_waitrequest),
+        .irq_irq           ()  // ignorado
+    );
+
+endmodule

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="simulation/submodules/uart_jtag_uart_0.v"
+   type="VERILOG"
+   library="jtag_uart_0" />
+ <file path="simulation/uart.v" type="VERILOG" />
+ <topLevel name="uart" />
+ <deviceFamily name="cyclonev" />
+</simPackage>
