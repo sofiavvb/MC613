@@ -1,17 +1,18 @@
 module uart (
+	 // === Clock e Rest ===
     input  wire        clk,
     input  wire        reset,
 
-    // Interface de leitura para o controlador
+    // === UART Leitura ===
     output reg  [7:0]  rx_data,
     output reg         rx_valid,
-
-    // Interface de escrita vinda do controlador
+	 
+	 // === UART Escrita ===
     input  wire [7:0]  tx_data,
     input  wire        tx_valid,
     output wire        tx_ready,
 
-    // JTAG UART Avalon-MM
+    // === Sinais Avalon-MM para a JTAG UART ===
     output wire        av_chipselect,
     output wire        av_address,
     output wire        av_read_n,
@@ -24,11 +25,11 @@ module uart (
     assign av_chipselect = 1'b1;
     assign av_address = 1'b0;
 
-    // === Leitura ===
+    // leitura
     reg reading = 0;
     assign av_read_n = ~reading;
 
-    // === Escrita ===
+    // escrita
     reg writing = 0;
     assign av_write_n = ~writing;
     assign av_writedata = {24'd0, tx_data};
